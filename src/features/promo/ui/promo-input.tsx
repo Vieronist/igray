@@ -1,12 +1,12 @@
-import { useCheckPromo } from "@/shared";
-import { useState } from "react";
+import { FC, useState } from "react";
 
-export const PromoInput = () => {
+interface IProps {
+  checkPromo: (code: string) => void;
+  discount: number
+}
+
+export const PromoInput: FC<IProps> = ({ checkPromo, discount }) => {
   const [promoValue, setPromoValue] = useState("");
-
-  const { checkPromo} = useCheckPromo();
-
-  const handleCheckPromo = () => checkPromo(promoValue);
 
   const handleChangeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPromoValue(e.target.value);
@@ -22,15 +22,15 @@ export const PromoInput = () => {
           id="promo"
           type="text"
           placeholder="Уменьши комиссию..."
-          className="outline-none p-0"
+          className="outline-none p-0 bg-transparent"
           onChange={handleChangeValue}
         />
       </div>
       <button
-        onClick={handleCheckPromo}
+        onClick={() => checkPromo(promoValue)}
         className="bg-[#E4FAF3] rounded-[14px] py-[15px] px-[20px]"
       >
-        Применить
+        {discount ? `Ваша скидка - ${discount} %` : "Применить"}
       </button>
     </div>
   );

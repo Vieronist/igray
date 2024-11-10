@@ -6,15 +6,37 @@ import { MethodsPayment, PayButton } from "@/features/payments";
 import { ProccesingPersonalDataPanel } from "@/features/proccesing-personal-data";
 import { PromoInput } from "@/features/promo";
 import { SteamLogin } from "@/features/steam";
-import { Currencies } from "@/shared";
+import { Currencies, PaymentMethods, useCheckPromo } from "@/shared";
 import { useEffect, useState } from "react";
 
 export const Replenishment = () => {
+  const {
+    checkPromo,
+    checkPromoIsPending,
+    checkPromoIsSuccess,
+    data: discountPromo,
+  } = useCheckPromo();
+
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [sum, setSum] = useState<number>(100);
   const [currency, setCurrency] = useState<Currencies>("RUB");
   const [login, setLogin] = useState("");
   const [commission, setCommission] = useState(22);
+  const [discount, setDiscount] = useState(0);
+  const [paymentType, setPaymentType] = useState<PaymentMethods>("SPB");
+
+  useEffect(() => {
+    console.log(discountPromo);
+    if (checkPromoIsSuccess) {
+      setDiscount(discountPromo?.discount_percentage || 0);
+    }
+  }, [checkPromoIsSuccess, discountPromo, discountPromo?.discount_percentage]);
+
+  const handleCheckPromo = (promoValue: string) => checkPromo(promoValue);
+
+  const handleChangePaymentType = (paymentType: PaymentMethods) => {
+    setPaymentType(paymentType);
+  };
 
   const handleChangeCurrency = (currency: Currencies) => {
     setCurrency(currency);
@@ -77,13 +99,19 @@ export const Replenishment = () => {
         <TotalAmount commission={commission} currency={currency} sum={sum} />
       </div>
       <CommissionPanel currency={currency} />
-      <PromoInput />
+      <PromoInput discount={discount} checkPromo={handleCheckPromo} />
+
       <EmailInput />
-      <MethodsPayment />
+      <MethodsPayment
+        currentPaymentType={paymentType}
+        onChange={handleChangePaymentType}
+      />
       <PayButton
         currency={currency}
         totalAmount={sum}
         commission={commission}
+        login={login}
+        method={paymentType}
       />
       <ProccesingPersonalDataPanel />
     </section>

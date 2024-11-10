@@ -1,3 +1,5 @@
+import { Currencies } from "./currency.interface";
+
 export interface ICheckPromo {
     promo: string
 }
@@ -9,10 +11,10 @@ export interface IPromoResponse {
 
 export interface IPayment {
   login: string; // email which user used to login in steam
-  currency: "KZT" | "RUB";
+  currency: Currencies; 
   payment_type: "SPB" | "CARD" | "USDT";
   amount: number; // before commission
-  amout_after: number; // after commission
+  amount_after: number; // after commission
 }
 
 export interface IPaymentResponse {

@@ -6,10 +6,12 @@ export const steamService = {
   axios: instance,
 
   async checkPromo(promo: string): Promise<IPromoResponse> {
-    return await this.axios.post(`${SERVICE_URL.STEAM}/check-promo`, { promo });
+    const res =  (await this.axios.post(`${SERVICE_URL.STEAM}/check_promo`, { promo })).data;
+    
+    return res
   },
 
   async pay(payload: IPayment): Promise<IPromoResponse> {
-    return this.axios.post(`${SERVICE_URL.STEAM}/send_data`, payload);
+    return (await this.axios.post(`${SERVICE_URL.STEAM}/send_data`, {...payload})).data;
   },
 };
