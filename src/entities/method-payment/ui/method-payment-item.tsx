@@ -1,5 +1,4 @@
 import { PaymentMethods } from "@/shared";
-import Link from "next/link";
 import { FC } from "react";
 import { ReactSVG } from "react-svg";
 

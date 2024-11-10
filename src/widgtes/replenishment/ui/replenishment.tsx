@@ -12,7 +12,6 @@ import { useEffect, useState } from "react";
 export const Replenishment = () => {
   const {
     checkPromo,
-    checkPromoIsPending,
     checkPromoIsSuccess,
     data: discountPromo,
   } = useCheckPromo();

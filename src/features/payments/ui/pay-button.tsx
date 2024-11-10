@@ -21,7 +21,7 @@ export const PayButton: FC<IProps> = ({
 
   const router = useRouter();
 
-  const { sendPayment, sendPaymentError, sendPaymentSuccess, sendPaymentData} = usePayment();
+  const { sendPayment, sendPaymentSuccess, sendPaymentData} = usePayment();
 
   const handleClick = () => {
     sendPayment({
