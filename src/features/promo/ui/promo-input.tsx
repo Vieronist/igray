@@ -4,7 +4,7 @@ import { useState } from "react";
 export const PromoInput = () => {
   const [promoValue, setPromoValue] = useState("");
 
-  const { checkPromo, data } = useCheckPromo();
+  const { checkPromo} = useCheckPromo();
 
   const handleCheckPromo = () => checkPromo(promoValue);
 

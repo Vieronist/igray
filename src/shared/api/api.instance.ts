@@ -27,9 +27,7 @@ instance.interceptors.response.use(
       try {
         return instance.request(originalRequest);
       } catch (error) {
-        if (errorCatch(error) === "jwt expired") {
-          // set auth false
-        }
+          console.log(error)
       }
     }
 
