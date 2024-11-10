@@ -1,6 +1,6 @@
 import { SERVICE_URL } from "@/shared/";
 import { instance } from "../api.instance";
-import type { IPayment, IPromoResponse } from "@/shared/";
+import type { IPayment, IPaymentResponse, IPromoResponse } from "@/shared/";
 
 export const steamService = {
   axios: instance,
@@ -11,7 +11,7 @@ export const steamService = {
     return res
   },
 
-  async pay(payload: IPayment): Promise<IPromoResponse> {
+  async pay(payload: IPayment): Promise<IPaymentResponse> {
     return (await this.axios.post(`${SERVICE_URL.STEAM}/send_data`, {...payload})).data;
   },
 };
