@@ -8,7 +8,6 @@ export const symbols = {
 
 export const BASE_URL = "https://www.igray24back.ru"
 
-
 export const enum SERVICE_URL {
   STEAM = "steam"
 }
