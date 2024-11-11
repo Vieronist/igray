@@ -2,9 +2,10 @@
 // import { BASE_URL } from "../model/constants";
 // import errorCatch from "./api.error";
 import axios from "axios";
+import { BASE_URL } from "../model/constants";
 
 export const instance = axios.create({
-  baseURL: "http://www.igray24back.ru/",
+  baseURL: BASE_URL,
  // withCredentials: true,
 });
 
