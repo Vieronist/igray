@@ -1,7 +1,6 @@
 import { Currencies, PaymentMethods, symbols, usePayment } from "@/shared";
 import { FC, useEffect } from "react";
-import { useRouter } from 'next/router';
-
+import { useRouter } from "next/router";
 
 interface IProps {
   currency: Currencies;
@@ -18,10 +17,9 @@ export const PayButton: FC<IProps> = ({
   method,
   login,
 }) => {
-
   const router = useRouter();
 
-  const { sendPayment, sendPaymentSuccess, sendPaymentData} = usePayment();
+  const { sendPayment, sendPaymentSuccess, sendPaymentData } = usePayment();
 
   const handleClick = () => {
     sendPayment({
@@ -34,11 +32,10 @@ export const PayButton: FC<IProps> = ({
   };
 
   useEffect(() => {
-      if(sendPaymentSuccess){
-        router.push(sendPaymentData?.link || "/")
-      }
-  },[sendPaymentSuccess])
-
+    if (sendPaymentSuccess) {
+      router.push(sendPaymentData?.link || "/");
+    }
+  }, [sendPaymentSuccess]);
 
   return (
     <button

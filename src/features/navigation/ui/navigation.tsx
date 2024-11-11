@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { NavItem } from "@/entities/nav-item";
-import { useEffect } from "react";
 
 export const Navigation = () => {
 
