@@ -8,6 +8,7 @@ interface IProps {
   commission: number;
   method: PaymentMethods;
   login: string; // login steam
+  discount: number;
 }
 
 export const PayButton: FC<IProps> = ({
@@ -16,6 +17,7 @@ export const PayButton: FC<IProps> = ({
   commission,
   method,
   login,
+  discount,
 }) => {
   const router = useRouter();
 
@@ -26,7 +28,11 @@ export const PayButton: FC<IProps> = ({
       amount: totalAmount,
       currency,
       payment_type: method,
-      amount_after: totalAmount + totalAmount * (commission / 100),
+      amount_after: discount
+        ? totalAmount +
+          totalAmount * (commission / 100) -
+          totalAmount * (discount / 100)
+        : totalAmount + totalAmount * (commission / 100),
       login,
     });
   };
@@ -42,7 +48,12 @@ export const PayButton: FC<IProps> = ({
       onClick={handleClick}
       className="bg-[#66D8AD] w-full py-[23px] rounded-[18px] text-[white] mb-[23px]"
     >
-      Пополнить баланс · {totalAmount + totalAmount * (commission / 100)}{" "}
+      Пополнить баланс ·{" "}
+      {discount
+        ? totalAmount +
+          totalAmount * (commission / 100) -
+          totalAmount * (discount / 100)
+        : totalAmount + totalAmount * (commission / 100)}{" "}
       {symbols[currency]}
     </button>
   );

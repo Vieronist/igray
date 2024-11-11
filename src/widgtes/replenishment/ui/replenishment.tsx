@@ -106,6 +106,7 @@ export const Replenishment = () => {
         onChange={handleChangePaymentType}
       />
       <PayButton
+        discount={discount}
         currency={currency}
         totalAmount={sum}
         commission={commission}
