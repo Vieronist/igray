@@ -3,7 +3,7 @@ import { NavItem } from "@/entities/nav-item";
 export const FooterNavigation = () => {
   return (
     <nav>
-      <ul className="flex gap-[25px] mb-[80px]">
+      <ul className="flex gap-[25px] mb-[80px] flex-wrap">
         <NavItem label={"Бонусы"} href={"#"} />
         <NavItem label={"Подарочный сертификат"} href={"#"} />
         <NavItem label={"О сервисе"} href={"#"} />

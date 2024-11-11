@@ -6,7 +6,7 @@ export const symbols = {
     USD: "$",
   };
 
-export const BASE_URL = "http://www.igray24back.ru"
+export const BASE_URL = "https://www.igray24back.ru"
 
 
 export const enum SERVICE_URL {
