@@ -46,7 +46,7 @@ export const PayButton: FC<IProps> = ({
   return (
     <button
       onClick={handleClick}
-      className="bg-[#66D8AD] w-full py-[23px] rounded-[18px] text-[white] mb-[23px]"
+      className="bg-[#66D8AD] w-full mx-auto block sm:w-1/3 md:w-1/2 py-[23px] rounded-[18px] text-[white] mb-[23px]"
     >
       Пополнить баланс ·{" "}
       {discount

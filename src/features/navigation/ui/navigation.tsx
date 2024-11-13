@@ -1,15 +1,14 @@
-import Link from "next/link";
-import Image from "next/image";
 import { NavItem } from "@/entities/nav-item";
+import { FC } from "react";
 
-export const Navigation = () => {
+interface IProps {
+  className?: string
+}
 
+export const Navigation: FC<IProps> = ({className}) => {
   return (
     <>
-      <Link href={"/"}>
-        <Image width={200} height={200} alt="logo" src={"/logo.png"} />
-      </Link>
-      <ul className="flex gap-[30px]">
+      <ul className={`${className}`}>
         <NavItem href="/pc" label="PC" />
         <NavItem href="/xbox" label="Xbox" />
         <NavItem href="/playstation" label="PlayStation" />

@@ -21,6 +21,9 @@ const config: Config = {
             "linear-gradient(141.87deg, #62CEA6 -13.43%, #72F2C1 46.91%, #66D7AD 98.32%)",
         },
       },
+      screens: {
+        'custom-1410': '1410px',
+      },
 
       // fontFamily: {
       //   otans:

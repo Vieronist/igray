@@ -1,9 +1,15 @@
 import { ReactSVG } from "react-svg";
 import Image from "next/image";
+import { FC } from "react";
 
-export const SpeedPaymentBanner = () => {
+interface IProps {
+  className?: string
+}
+
+
+export const SpeedPaymentBanner: FC<IProps> = ({className}) => {
   return (
-    <div className="relative p-4 mb-[15px]">
+    <div className={`relative p-4 mb-[15px] ${className}`}>
       <div className="absolute inset-0 rounded-[60px] border-[17px] border-transparent bg-gradient-to-r from-[#62CEA6] via-[#72F2C1] to-[#66D7AD]"></div>
       <div className="relative bg-white rounded-[43px] p-16 z-10">
         <ReactSVG src="speed.svg" className="mb-[20px]" />
@@ -15,7 +21,7 @@ export const SpeedPaymentBanner = () => {
           src={"/lighting.png"}
         />
 
-        <div className="w-[260px]">
+        <div className="md:w-[250px]">
           <h6 className="font-extrabold text-[22px] leading-[22px] tracking-[-0.04em] mb-[17px]">
             Моментальное <br /> пополнение за 2 минуты
           </h6>

@@ -8,7 +8,7 @@ interface IProps {
 
 export const NavItem: FC<IProps> = ({ label, href }) => {
   return (
-    <li className="text-[22px]">
+    <li className="text-[14px] sm:text-[20px]">
       <Link href={href}>{label}</Link>
     </li>
   );

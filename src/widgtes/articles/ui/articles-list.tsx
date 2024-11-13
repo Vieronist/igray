@@ -22,7 +22,7 @@ export const ArticlesList = () => {
   ];
 
   return (
-    <ul className="p-[58px] rounded-[40px] border-[#1F3238] border border-opacity-10">
+    <ul className="p-[58px] rounded-[40px] border-[#1F3238] border border-opacity-10 hidden 2xl:block">
       {articles.map((article, idx) => (
         <ArticleItem
           content={article.content}

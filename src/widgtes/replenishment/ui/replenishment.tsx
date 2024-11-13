@@ -85,7 +85,7 @@ export const Replenishment = () => {
   }, [sum, currency]);
 
   return (
-    <section className="bg-[#ffff] rounded-[60px] px-[60px] py-[50px]">
+    <section className="bg-[#ffffff] rounded-[60px] px-[20px] 2xl:px-[50px]  py-[50px] mb-[35px]">
       <h3 className="font-extrabold text-[22px] mb-[20px]">
         Быстрое пополнение
       </h3>
@@ -95,7 +95,7 @@ export const Replenishment = () => {
         currency={currency}
         sum={sum}
       />
-      <div className="flex gap-[15px] items-center mb-5">
+      <div className="flex flex-col sm:flex-row gap-[15px] mb-5">
         <SteamLogin login={login} onChange={handleChangeLogin} />
         <TotalAmount commission={commission} currency={currency} sum={sum} />
       </div>

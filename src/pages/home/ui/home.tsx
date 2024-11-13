@@ -5,11 +5,11 @@ import { SteamInfo } from "@/widgtes/steam-info";
 
 export const Home = () => {
   return (
-    <main className="flex gap-[10px]">
+    <main className="block 2xl:flex gap-[10px]">
       <SteamInfo />
       <Replenishment />
       <section>
-        <SpeedPaymentBanner />
+        <SpeedPaymentBanner className="md:hidden 2xl:block" />
         <FaqList />
       </section>
     </main>

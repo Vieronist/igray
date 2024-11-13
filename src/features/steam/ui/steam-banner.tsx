@@ -2,13 +2,10 @@ import { ReactSVG } from "react-svg";
 
 export const SteamBanner = () => {
   return (
-    <div className="bg-[url('../public/steam-bg.png')] bg-no-repeat w-[490px] h-[306px] bg-cover relative mb-[10px]">
-      <ReactSVG
-        src="steam-logo.svg"
-        className="absolute top-[60px] left-[60px]"
-      />
+    <div className="bg-[url('../public/steam-bg.png')] bg-no-repeat w-[320px] md:w-[370px] bg-contain bg-center h-[306px] mb-[10px] relative">
+      <ReactSVG src="steam-logo.svg" className="absolute top-[88px] left-5" />
 
-      <p className="left-[60px] bottom-[50px] absolute text-[white] glowing-text text-shadow text-[46px] font-extrabold leading-[50.6px] tracking-[-0.04em] text-left decoration-skip-ink-none">
+      <p className="text-[white] absolute bottom-[80px] left-[15px] glowing-text text-shadow text-[26px] md:text-[35px] font-extrabold leading-[29.6px] tracking-[-0.04em] text-left decoration-skip-ink-none ">
         Пополни <br /> баланс Steam
       </p>
     </div>
