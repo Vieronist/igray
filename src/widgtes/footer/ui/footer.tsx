@@ -7,7 +7,7 @@ export const Footer = () => {
   return (
     <footer className="px-[60px] gap-[70px] flex">
       <div className="w-[25%]">
-        <SearchPanel className="bg-transparent py-[20px] px-[20px] w-full  mb-[60px]" />
+        <SearchPanel classNameDiv="bg-transparent py-[20px] px-[20px] w-full flex mb-[60px]" />
         <SocialMediaList />
       </div>
       <div>
