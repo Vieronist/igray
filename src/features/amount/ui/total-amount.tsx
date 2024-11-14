@@ -19,7 +19,7 @@ export const TotalAmount: FC<IProps> = ({ sum, currency, commission }) => {
       <span className="text-[12px] font-medium block text-[#AFC5BE]">
         Сумма с коммисией
       </span>
-      <span>{`${sum === null ? 0 : sum + sum * (commission / 100)} ${
+      <span className="text-gray-800">{`${sum === null ? 0 : sum + sum * (commission / 100)} ${
         symbols[currency]
       }`}</span>
     </div>

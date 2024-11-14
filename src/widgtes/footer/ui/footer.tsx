@@ -5,14 +5,19 @@ import { SocialMediaList } from "@/features/social-media";
 
 export const Footer = () => {
   return (
-    <footer className="px-[60px] gap-[70px] flex">
-      <div className="w-[25%]">
-        <SearchPanel classNameDiv="bg-transparent py-[20px] px-[20px] w-full flex mb-[60px]" />
-        <SocialMediaList />
+    <footer className=" gap-[70px] flex flex-wrap md:flex-nowrap px-5">
+      <div className="w-full md:w-[45%] lg:w-[25%]">
+        <SearchPanel classNameDiv="bg-transparent py-[25px] px-[25px] w-full flex gap-[15px] items-center md:mb-5" />
+        <SocialMediaList  />
       </div>
       <div>
         <FooterNavigation />
         <div className="flex gap-[60px] flex-wrap">
+        <PlatformsList
+            title="Играй"
+            options={["PC","Xbox","PlayStation","Nintendo","Mobile"]}
+            className="block md:hidden"
+          />
           <PlatformsList
             title="PC"
             options={[

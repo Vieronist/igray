@@ -5,5 +5,5 @@ interface IProps {
 }
 
 export const PlatformItem: FC<IProps> = ({ name }) => {
-  return <li className="text-[14px] font-medium mb-[12px]">{name}</li>;
+  return <li className="text-[14px] font-medium mb-[12px] text-gray-800">{name}</li>;
 };

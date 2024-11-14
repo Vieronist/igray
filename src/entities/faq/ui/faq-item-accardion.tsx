@@ -16,7 +16,7 @@ export const FaqItemAccardion: FC<IProps> = ({ title, content }) => {
         className=" cursor-pointer py-2 px-3 flex justify-between items-center"
         onClick={() => setIsActive((prev) => !prev)}
       >
-        <p className="text-[14px] font-medium">{title}</p>
+        <p className="text-[14px] font-medium text-gray-800">{title}</p>
         <button className="rounded-[12px] bg-gradient-to-r from-[#E4FAF3] via-[rgba(228,250,243,0.29)] to-[#E4FAF3] p-3">
           <ReactSVG src="arrow-up-right.svg" />
         </button>
@@ -33,7 +33,7 @@ export const FaqItemAccardion: FC<IProps> = ({ title, content }) => {
               : "0px",
         }}
       >
-        <div className="p-4">{content}</div>
+        <div className="p-4 text-gray-800">{content}</div>
       </div>
     </div>
   );

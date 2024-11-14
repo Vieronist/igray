@@ -16,3 +16,6 @@ export type {
 export { usePayment, useCheckPromo } from "./api/queries/steam.queries";
 
 export type { PaymentMethods } from "./model/types/payment.interface"
+
+
+export { navigationLinks } from "./model/constants"

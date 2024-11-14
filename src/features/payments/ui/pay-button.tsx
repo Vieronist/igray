@@ -23,16 +23,16 @@ export const PayButton: FC<IProps> = ({
 
   const { sendPayment, sendPaymentSuccess, sendPaymentData } = usePayment();
 
+  const cost = Math.round(totalAmount * 100) / 100;
+
   const handleClick = () => {
     sendPayment({
-      amount: totalAmount,
+      amount: cost,
       currency,
       payment_type: method,
       amount_after: discount
-        ? totalAmount +
-          totalAmount * (commission / 100) -
-          totalAmount * (discount / 100)
-        : totalAmount + totalAmount * (commission / 100),
+        ? cost + cost * (commission / 100) - cost * (discount / 100)
+        : cost + cost * (commission / 100),
       login,
     });
   };
@@ -41,19 +41,17 @@ export const PayButton: FC<IProps> = ({
     if (sendPaymentSuccess) {
       router.push(sendPaymentData?.link || "/");
     }
-  }, [sendPaymentSuccess]);
+  }, [router, sendPaymentData?.link, sendPaymentSuccess]);
 
   return (
     <button
       onClick={handleClick}
-      className="bg-[#66D8AD] w-full mx-auto block sm:w-1/3 md:w-1/2 py-[23px] rounded-[18px] text-[white] mb-[23px]"
+      className="bg-[#66D8AD] w-full mx-auto block py-[23px] rounded-[18px] text-[white] mb-[23px]"
     >
       Пополнить баланс ·{" "}
       {discount
-        ? totalAmount +
-          totalAmount * (commission / 100) -
-          totalAmount * (discount / 100)
-        : totalAmount + totalAmount * (commission / 100)}{" "}
+        ? cost + cost * (commission / 100) - cost * (discount / 100)
+        : cost + cost * (commission / 100)}{" "}
       {symbols[currency]}
     </button>
   );

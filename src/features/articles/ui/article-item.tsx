@@ -16,7 +16,7 @@ export const ArticleItem: FC<IProps> = ({ content, avatar }) => {
         width={80}
         alt="icon"
       />
-      <p>{content}</p>
+      <p className="w-[180px] text-gray-800">{content}</p>
     </li>
   );
 };

@@ -4,12 +4,13 @@ import { FC } from "react";
 interface IProps {
   title: string;
   options: string[];
+  className?: string
 }
 
-export const PlatformsList: FC<IProps> = ({ title, options }) => {
+export const PlatformsList: FC<IProps> = ({ title, options, className }) => {
   return (
-    <div>
-      <h5 className="font-extrabold	text-[#4FCA9C] mb-[22px] text-[22px]">
+    <div className={`${className}`}>
+      <h5 className={`font-extrabold	text-[#4FCA9C] mb-[22px] text-[22px]`}>
         {title}
       </h5>
       <ul>

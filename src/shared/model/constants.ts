@@ -15,3 +15,5 @@ export const enum SERVICE_URL {
 export const enum QUERY_KEYS {
   STEAM = "steam"
 }
+
+export const navigationLinks = ["PC","Xbox","PlayStation","Nintendo","Mobile"]

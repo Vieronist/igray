@@ -4,12 +4,12 @@ import { ArticlesList } from "@/widgtes/articles";
 
 export const SteamInfo = () => {
   return (
-    <section className="w-full flex justify-between 2xl:block 2xl:w-[370px] gap-[5px] 2xl:gap-0 ">
-      <div className="flex gap-[5px] mx-auto ">
+    <section className="flex justify-center 2xl:block gap-[5px] 2xl:gap-0 ">
+      <div className="flex gap-3 items-center md:mx-auto">
         <SteamBanner />
         <SpeedPaymentBanner className="hidden md:block 2xl:hidden" />
       </div>
-      <ArticlesList />
+      <ArticlesList className="hidden 2xl:block " />
     </section>
   );
 };

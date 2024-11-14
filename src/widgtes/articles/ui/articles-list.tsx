@@ -1,11 +1,16 @@
 import { ArticleItem } from "@/features/articles";
+import { FC } from "react";
 
 interface IArticle {
   content: string;
   avatar: string;
 }
 
-export const ArticlesList = () => {
+interface IProps {
+  className: string;
+}
+
+export const ArticlesList: FC<IProps> = ({ className }) => {
   const articles: IArticle[] = [
     {
       content: "Как пополнить свой Steam бесплатно?",
@@ -22,7 +27,9 @@ export const ArticlesList = () => {
   ];
 
   return (
-    <ul className="p-[58px] rounded-[40px] border-[#1F3238] border border-opacity-10 hidden 2xl:block">
+    <ul
+      className={`p-[60px] max-w-[1055px] rounded-[40px] border-[#1F3238] border border-opacity-10  ${className}  `}
+    >
       {articles.map((article, idx) => (
         <ArticleItem
           content={article.content}

@@ -38,7 +38,7 @@ export const CurrencyInput: FC<IProps> = ({
             max={100000}
   
             onChange={handleChangeSum}
-            className="pl-8 outline-none w-full"
+            className="pl-8 outline-none w-full text-gray-800"
           />
           <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#AFC5BE]">
             {symbols[currency]}

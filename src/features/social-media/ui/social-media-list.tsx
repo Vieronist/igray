@@ -2,7 +2,7 @@ import { SocialMediaItem } from "@/entities/social-media";
 
 export const SocialMediaList = () => {
   return (
-    <ul className="grid grid-rows-2 grid-cols-4 gap-[15px] gap-x-12">
+    <ul className="md:grid grid-rows-2 grid-cols-4 gap-[15px] gap-x-12 hidden">
       <SocialMediaItem svg={"dzen.svg"} name={"Dzen"} />
       <SocialMediaItem svg={"instagram.svg"} name={"Instagram"} />
       <SocialMediaItem svg={"tg.svg"} name={"Telegram"} />
