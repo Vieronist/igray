@@ -9,7 +9,7 @@ export const SteamInfo = () => {
         <SteamBanner />
         <SpeedPaymentBanner className="hidden md:block 2xl:hidden" />
       </div>
-      <ArticlesList className="hidden 2xl:block " />
+      <ArticlesList className="hidden 2xl:block" />
     </section>
   );
 };

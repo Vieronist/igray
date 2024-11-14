@@ -28,7 +28,7 @@ export const ArticlesList: FC<IProps> = ({ className }) => {
 
   return (
     <ul
-      className={`p-[60px] max-w-[1055px] rounded-[40px] border-[#1F3238] border border-opacity-10  ${className}  `}
+      className={`p-[60px] max-w-[1055px] rounded-[40px] border-[#1F3238] border border-opacity-10 ${className}  `}
     >
       {articles.map((article, idx) => (
         <ArticleItem

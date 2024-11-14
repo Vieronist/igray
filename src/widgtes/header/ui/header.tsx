@@ -15,12 +15,12 @@ export const Header = () => {
       <div className="flex gap-[15px] max-[1410px]:gap-[26px]">
         <SearchPanel
           classNameInput="w-full"
-          classNameDiv="gap-[15px] hidden md:flex md:items-center md:w-[250px] lg:w-[300px]"
+          classNameDiv="gap-[15px] hidden md:flex md:items-center md:w-[250px] lg:w-[300px] px-5"
         />
         <UserButtons />
       </div>
     </div>
-    <Navigation className="flex justify-between w-full sm:w-[75%] md:w-[50%] xl:hidden mx-auto" />
+    <Navigation className="flex justify-between w-full sm:w-[75%] md:w-[50%] xl:hidden mx-auto " />
   </header>
   );
 };

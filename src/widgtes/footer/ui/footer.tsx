@@ -5,9 +5,9 @@ import { SocialMediaList } from "@/features/social-media";
 
 export const Footer = () => {
   return (
-    <footer className=" gap-[70px] flex flex-wrap md:flex-nowrap px-5">
+    <footer className="gap-[30px] md:gap-[70px] flex flex-wrap md:flex-nowrap px-5">
       <div className="w-full md:w-[45%] lg:w-[25%]">
-        <SearchPanel classNameDiv="bg-transparent py-[25px] px-[25px] w-full flex gap-[15px] items-center md:mb-5" />
+        <SearchPanel classNameDiv="bg-transparent h-[52px] px-[25px] w-full flex gap-[15px] items-center md:mb-5" />
         <SocialMediaList  />
       </div>
       <div>
