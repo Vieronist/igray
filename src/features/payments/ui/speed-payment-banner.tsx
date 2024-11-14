@@ -21,7 +21,7 @@ export const SpeedPaymentBanner: FC<IProps> = ({ className }) => {
         />
 
         <div className="md:w-[250px]">
-          <h6 className="font-extrabold text-[22px] leading-[22px] tracking-[-0.04em] mb-[17px]">
+          <h6 className="font-extrabold text-[22px] leading-[22px] tracking-[-0.04em] mb-[17px] text-gray-800">
             Моментальное <br /> пополнение за 2 минуты
           </h6>
           <p className="text-[#A3BDB5]">
