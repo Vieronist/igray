@@ -12,7 +12,7 @@ export const Navigation: FC<IProps> = ({className}) => {
     <>
       <ul className={`${className}`}>
         {
-          ["PC","Xbox","PlayStation","Nintendo","Mobile"].map((link, idx) => <NavItem href={`/${link}`} label={link} key={idx} />)
+          ["PC","Xbox","PlayStation","Nintendo","Mobile"].map((link, idx) => <NavItem href={`/public/${link}`} label={link} key={idx} />)
         }
       </ul>
     </>

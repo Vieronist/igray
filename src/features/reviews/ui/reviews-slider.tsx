@@ -62,13 +62,13 @@ export const ReviewsSlider = () => {
               className="px-[15px] bg-white rounded-[18px]"
               onClick={() => swiperRef.current?.slidePrev()}
             >
-              <ReactSVG src="arrow-right.svg" />
+              <ReactSVG src="/arrow-right.svg" />
             </button>
             <button
               className="p-[15px] bg-white rounded-[18px]"
               onClick={() => swiperRef.current?.slideNext()}
             >
-              <ReactSVG src="arrow-left.svg" />
+              <ReactSVG src="/arrow-left.svg" />
             </button>
           </div>
           <Link
