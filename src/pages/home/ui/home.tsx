@@ -12,7 +12,7 @@ export const Home = () => {
       <section>
         <SpeedPaymentBanner className="hidden 2xl:block" />
         <FaqList />
-        <ArticlesList className="flex overflow-x-auto whitespace-nowrap flex-shrink-0 lg:hidden" />
+        <ArticlesList className="flex overflow-x-auto whitespace-nowrap flex-shrink-0 lg:hidden mb-5" />
       </section>
     </main>
   );

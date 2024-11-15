@@ -1,9 +1,12 @@
+import { AdminFormLogin } from "@/widgtes/auth";
 
 
 
 
-export default function AdminAuth() {
+export default function Index() {
     return (
-        <div>AdminAuth</div>
+        <div>
+            <AdminFormLogin />
+        </div>
     )
 }

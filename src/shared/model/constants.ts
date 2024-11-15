@@ -9,11 +9,14 @@ export const symbols = {
 export const BASE_URL = "https://www.igray24back.ru"
 
 export const enum SERVICE_URL {
-  STEAM = "steam"
+  STEAM = "steam",
+  ADMIN = "admin"
 }
 
 export const enum QUERY_KEYS {
-  STEAM = "steam"
+  STEAM = "steam",
+  ADMIN = "admin",
+  GET_STEAM_ORDERS = "get_steam_orders"
 }
 
 export const navigationLinks = ["PC","Xbox","PlayStation","Nintendo","Mobile"]
