@@ -37,8 +37,6 @@ export const Replenishment = () => {
     setPaymentType(paymentType);
   };
 
-  // change currency
-
   const handleChangeCurrency = (currency: Currencies) => {
     setCurrency(currency);
     switch (currency) {
