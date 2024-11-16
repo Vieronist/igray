@@ -7,9 +7,9 @@ import Image from "next/image";
 export const Header = () => {
   return (
     <header className="mb-[6px] md:mb-[36px]">
-    <div className="flex items-center rounded-[40px] justify-between p-[20px] bg-white md:gap-[5px] mb-[10px] gap-[15px]">
+    <div className="flex items-center rounded-[40px] justify-between px-[12px] py-[5px] md:p-[20px] bg-white md:gap-[5px] mb-[10px] gap-[15px]">
       <Link href="/">
-        <Image width={200} height={200} alt="logo" src="/logo.png" />
+        <Image width={140} height={200} alt="logo" src="/logo.png" />
       </Link>
       <Navigation className="hidden xl:flex xl:gap-[25px] 2xl:gap-[30px] xs:gap-[5px]" />
       <div className="flex gap-[15px] max-[1410px]:gap-[26px]">
