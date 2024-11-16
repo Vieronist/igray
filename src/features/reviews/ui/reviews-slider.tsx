@@ -20,8 +20,7 @@ export const ReviewsSlider = () => {
           }}
           spaceBetween={50}
           slidesPerView={1}
-          height={260}
-  
+
         >
           <SwiperSlide>
             <ReviewsSlide
@@ -56,8 +55,8 @@ export const ReviewsSlider = () => {
             />
           </SwiperSlide>
         </Swiper>
-        <div className="flex items-center justify-between gap-[10px] mx-[20px] lg:mx-[0px] lg:absolute right-[10px] bottom-[-45px] z-50">
-          <div className="z-20 flex gap-[10px] ">
+        <div className="flex items-center justify-between gap-[10px] mx-[20px] lg:mx-[0px] absolute md:bottom-2  lg:absolute lg:right-[10px] lg:bottom-[5px] z-50">
+          <div className="z-20 flex gap-[10px]">
             <button
               className="px-[15px] bg-white rounded-[18px]"
               onClick={() => swiperRef.current?.slidePrev()}

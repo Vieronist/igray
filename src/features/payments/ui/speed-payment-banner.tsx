@@ -10,7 +10,7 @@ export const SpeedPaymentBanner: FC<IProps> = ({ className }) => {
   return (
     <div className={`relative p-4 mb-[15px] ${className}`}>
       <div className="absolute inset-0 rounded-[60px] border-[17px] border-transparent bg-gradient-to-r from-[#62CEA6] via-[#72F2C1] to-[#66D7AD]"></div>
-      <div className="relative bg-white rounded-[43px] p-16 z-10">
+      <div className="relative bg-white rounded-[43px] p-11 z-10">
         <ReactSVG src="speed.svg" className="mb-[20px]" />
         <Image
           className="absolute top-[-51px] right-[105px]"

@@ -36,12 +36,12 @@ export const AdminFormLogin = () => {
   return (
     <>
       <AlertModal isAdmin={isAdmin} isVisible={isVisible} />
-      <div className="mx-auto w-1/2 mt-[9%]">
-        <h3 className="text-[#4FCA9C] text-5xl mb-[20px]">
-          Log in to Admin Panel
+      <div className="mx-auto w-full sm:w-[75%] md:w-[55%] xl:w-[40%] mt-[9%]">
+        <h3 className="text-[#4FCA9C] text-5xl mb-[35px]">
+          Welcome to Admin Panel
         </h3>
         <form className="w-full" onSubmit={handleSubmit(onSubmit)}>
-          <div className="mb-5 w-2/5">
+          <div className="mb-5 w-full">
             <input
               type="text"
               className="bg-transparent border-[#4FCA9C] border-b-2 outline-none w-full pb-2"
@@ -49,7 +49,7 @@ export const AdminFormLogin = () => {
               {...register("login", { required: true })}
             />
           </div>
-          <div className="mb-5 w-2/5">
+          <div className="mb-5 w-full">
             <input
               type="text"
               className="bg-transparent border-[#4FCA9C] border-b-2 outline-none w-full pb-2"
@@ -57,7 +57,7 @@ export const AdminFormLogin = () => {
               {...register("password", { required: true })}
             />
           </div>
-          <button className="bg-[#4FCA9C] text-white rounded-[14px] py-[15px] px-[12px] sm:w-auto sm:px-[30px] sm:py-[15px]">
+          <button className="bg-[#4FCA9C] text-white rounded-[14px] py-[15px] px-[42px] sm:w-auto sm:px-[30px] sm:py-[15px]">
             Log in
           </button>
         </form>

@@ -11,9 +11,9 @@ export const FaqItemAccardion: FC<IProps> = ({ title, content }) => {
   const contentRef = useRef<HTMLDivElement | null>(null);
 
   return (
-    <div className="bg-[#FFFFFF] rounded-[18px] mb-2">
+    <li className="bg-[#FFFFFF] rounded-[18px] mb-2 pl-[20px] 2xl:w-[300px]">
       <div
-        className=" cursor-pointer py-2 px-3 flex justify-between items-center"
+        className=" cursor-pointer py-2 pr-[5px] flex justify-between items-center"
         onClick={() => setIsActive((prev) => !prev)}
       >
         <p className="text-[14px] font-medium text-gray-800">{title}</p>
@@ -33,8 +33,8 @@ export const FaqItemAccardion: FC<IProps> = ({ title, content }) => {
               : "0px",
         }}
       >
-        <div className="p-4 text-gray-800">{content}</div>
+        <div className="p-4 text-gray-800 ">{content}</div>
       </div>
-    </div>
+    </li>
   );
 };

@@ -9,7 +9,7 @@ interface IProps {
 
 export const ReviewsSlide: FC<IProps> = ({ date, text, userName }) => {
   return (
-    <div className="bg-gradient-to-r from-[#E4FAF3] via-[rgba(228,250,243,0.29)] to-[#E4FAF3] p-[20px] rounded-[50px] h-[180px] md:h-[200px]">
+    <div className="bg-gradient-to-r from-[#E4FAF3] via-[rgba(228,250,243,0.29)] to-[#E4FAF3] p-[20px] rounded-[50px] h-[180px] md:h-[250px]">
       <div className="flex items-center w-full mb-[25px]">
         <div className="flex gap-2 sm:w-[50%]">
           <Image
@@ -20,7 +20,7 @@ export const ReviewsSlide: FC<IProps> = ({ date, text, userName }) => {
             className="object-contain rounded-full"
           />
           <div>
-            <span className="text-[#AFC5BE] block text-[10px] md:text-[12px]">
+            <span className="text-[#AFC5BE] block text-[10px] md:text-[12px] leading-[32px]">
               {date}
             </span>
             <span className="block md:text-[20px] text-gray-800">{userName}</span>
