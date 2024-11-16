@@ -21,7 +21,7 @@ export const CurrencyInput: FC<IProps> = ({
   //   USD: 5,
   // };
   return (
-    <div className="rounded-[18px] border-[#DDF1EA] border px-[15px] py-[10px] flex mb-[15px] justify-between">
+    <div className="rounded-[18px] border-[#DDF1EA] border px-[15px] py-[10px] flex mb-[15px] justify-between items-center">
       <div>
         <label
           className="text-[#AFC5BE] text-[12px] font-medium block"
