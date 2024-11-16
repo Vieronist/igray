@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 
 interface IProps {
   currency: Currencies;
-  totalAmount: number;
+  totalAmount: number | null;
   commission: number;
   method: PaymentMethods;
   login: string; // login steam
@@ -23,7 +23,7 @@ export const PayButton: FC<IProps> = ({
 
   const { sendPayment, sendPaymentSuccess, sendPaymentData } = usePayment();
 
-  const cost = Math.round(totalAmount * 100) / 100;
+  const cost = totalAmount ? Math.round(totalAmount * 100) / 100 : 0
 
   const handleClick = () => {
     sendPayment({

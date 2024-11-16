@@ -17,7 +17,7 @@ export const Replenishment = () => {
   } = useCheckPromo();
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [sum, setSum] = useState<number>(100);
+  const [sum, setSum] = useState<number | null>(100);
   const [currency, setCurrency] = useState<Currencies>("RUB");
   const [login, setLogin] = useState("");
   const [commission, setCommission] = useState(22);
@@ -49,8 +49,7 @@ export const Replenishment = () => {
       case "USD":
         setSum(5);
         break;
-      default:
-        setSum(0);
+  
     }
   };
 
@@ -63,15 +62,15 @@ export const Replenishment = () => {
   };
 
   useEffect(() => {
-    if (currency === "RUB") {
-      if (sum > 100 && sum < 1000) {
+    if (currency === "RUB" && sum) {
+      if (sum > 100 && sum  < 1000) {
         setCommission(22);
       } else if (sum >= 1000 && sum < 3000) {
         setCommission(20);
       } else if (sum >= 3000 && sum < 10000) {
         setCommission(18);
       }
-    } else if (currency === "KZT") {
+    } else if (currency === "KZT" && sum) {
       if (sum > 500 && sum < 5000) {
         setCommission(22);
       } else if (sum >= 5000 && sum < 15000) {
@@ -83,7 +82,7 @@ export const Replenishment = () => {
   }, [sum, currency]);
 
   return (
-    <section className="bg-[#ffffff] rounded-[60px] px-[12px] py-[50px] mb-[35px] md:w-[540px] md:mx-auto 2xl:px-[50px]">
+    <section className="bg-[#ffffff] rounded-[60px] px-[10px] py-[50px] mb-[35px] md:w-[540px] md:mx-auto 2xl:px-[50px]">
       <h3 className="font-extrabold text-[22px] mb-[20px] text-gray-800">
         Быстрое пополнение
       </h3>

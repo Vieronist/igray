@@ -6,7 +6,7 @@ interface IProps {
   currency: Currencies;
   onChangeCurrency: (currency: Currencies) => void;
   onChangeSum: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  sum: number;
+  sum: number | null;
 }
 
 export const CurrencyInput: FC<IProps> = ({
@@ -33,10 +33,8 @@ export const CurrencyInput: FC<IProps> = ({
           <input
             placeholder="0.00"
             id="sum"
-            type="number"
-            value={sum}
+            value={sum || 0}
             max={100000}
-  
             onChange={handleChangeSum}
             className="pl-8 outline-none w-full text-gray-800"
           />
