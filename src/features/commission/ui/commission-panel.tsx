@@ -71,7 +71,7 @@ export const CommissionPanel: FC<IProps> = ({ currency }) => {
               {commissions[currency][1].price} {symbols[currency]}
             </span>
           </div>
-          <div className="basis-1/2 py-2 px-4 bg-[#93FFD4] rounded-[18px]  z-10">
+          <div className="basis-1/2 py-2 px-2 bg-[#93FFD4] rounded-[18px]  z-10">
             <p className="text-gray-800">
               {commissions[currency][2].commission} %
             </p>
