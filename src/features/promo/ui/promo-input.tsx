@@ -13,7 +13,7 @@ export const PromoInput: FC<IProps> = ({ checkPromo, discount }) => {
   };
 
   return (
-    <div className="border-[#DDF1EA] border rounded-[18px] flex px-3 py-3 pl-5 w-full mb-5">
+    <div className="border-[#DDF1EA] border rounded-[18px] flex px-3 pt-3 pb-2 pl-3 w-full mb-5">
       <div className="flex-grow w-[20%]">
         <label className="blocktext-gray-800 " htmlFor="promo">
           У вас есть промокод?
@@ -22,7 +22,7 @@ export const PromoInput: FC<IProps> = ({ checkPromo, discount }) => {
           id="promo"
           type="text"
           placeholder="Уменьши комиссию..."
-          className="outline-none text-[16px] sm:text-[20px] p-0 bg-transparent block"
+          className="outline-none p-0 bg-transparent block"
           onChange={handleChangeValue}
         />
       </div>
