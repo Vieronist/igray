@@ -5,10 +5,10 @@ export const UserButtons = () => {
   return (
     <ul className="flex gap-2">
       <li
-        className={`block md:hidden p-[10px] rounded-[18px] bg-gradient-to-r from-[#E4FAF3] via-[rgba(228,250,243,0.29)] to-[#E4FAF3]`}
+        className={`block md:hidden p-[4px] sm:p-[10px] rounded-[18px] bg-gradient-to-r from-[#E4FAF3] via-[rgba(228,250,243,0.29)] to-[#E4FAF3]`}
       >
         <button className="">
-          <ReactSVG src={"lupa-big.svg"} />
+          <ReactSVG src={"lupa.svg"} />
         </button>
       </li>
       <UserButton className="" path="HeartStraight.svg" />

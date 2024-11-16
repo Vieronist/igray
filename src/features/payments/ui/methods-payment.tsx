@@ -16,7 +16,7 @@ export const MethodsPayment: FC<IProps> = ({
       <h3 className="text-[#AFC5BE] text-[12px] mb-7">
         Выберите вариант оплаты
       </h3>
-      <ul className="flex flex-col gap-5 sm:flex-row sm:justify-center sm:gap-[25px]">
+      <ul className="flex flex-col sm:flex-row sm:justify-center gap-[10px]">
         <MethodPaymentItem
           currentPaymentType={currentPaymentType}
           method="CARD"

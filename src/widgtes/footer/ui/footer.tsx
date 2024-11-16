@@ -12,7 +12,7 @@ export const Footer = () => {
       </div>
       <div>
         <FooterNavigation />
-        <div className="flex gap-[60px] flex-wrap">
+        <div className="flex gap-[65px] flex-wrap">
         <PlatformsList
             title="Играй"
             options={["PC","Xbox","PlayStation","Nintendo","Mobile"]}
