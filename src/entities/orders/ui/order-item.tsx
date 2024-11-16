@@ -10,10 +10,10 @@ export const OrderItem: FC<IOrderItem> = ({
 }) => {
   return (
     <li className="mb-2 border-gray-800 border-2 p-2 rounded-lg">
-      <div>email: {email}</div>
-      <div>steam: {login}</div>
-      <div>amount: {amount}</div>
-      <p>date: {date}</p>
+      <div className="text-gray-800">email: {email}</div>
+      <div className="text-gray-800">steam: {login}</div>
+      <div className="text-gray-800">amount: {amount}</div>
+      <p className="text-gray-800">date: {date}</p>
     </li>
   );
 };
