@@ -83,7 +83,7 @@ export const Replenishment = () => {
   }, [sum, currency]);
 
   return (
-    <section className="bg-[#ffffff] rounded-[60px] px-[20px] py-[50px] mb-[35px] md:w-[540px] md:mx-auto 2xl:px-[50px]">
+    <section className="bg-[#ffffff] rounded-[60px] px-[12px] py-[50px] mb-[35px] md:w-[540px] md:mx-auto 2xl:px-[50px]">
       <h3 className="font-extrabold text-[22px] mb-[20px] text-gray-800">
         Быстрое пополнение
       </h3>
