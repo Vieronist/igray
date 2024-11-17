@@ -13,10 +13,10 @@ export const MethodsPayment: FC<IProps> = ({
 }) => {
   return (
     <div className="mb-7">
-      <h3 className="text-[#AFC5BE] text-[12px] sm:mb-3">
+      <h3 className="text-[#AFC5BE] text-[12px] sm:mb-3 ">
         Выберите вариант оплаты
       </h3>
-      <ul className="flex flex-col sm:flex-row justify-between gap-2 sm:gap-0">
+      <ul className="flex flex-col sm:flex-row justify-between gap-2 sm:gap-2">
         <MethodPaymentItem
           currentPaymentType={currentPaymentType}
           method="CARD"
