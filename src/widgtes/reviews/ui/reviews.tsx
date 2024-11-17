@@ -3,7 +3,7 @@ import { AboutService } from "@/features/service";
 import { FC } from "react";
 
 interface IProps {
-  className: string;
+  className?: string;
 }
 
 export const Reviews: FC<IProps> = ({ className }) => {

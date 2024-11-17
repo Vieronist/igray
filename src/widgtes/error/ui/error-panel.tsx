@@ -5,11 +5,11 @@ export const ErrorPanel = () => {
   return (
     <section className="mt-5 mb-[120px] mx-auto flex flex-col items-center md:flex-row md:justify-between w-[95%] md:w-full">
       <div className="w-[350px] sm:w-[450px] md:w-[723px] mx-auto">
-        <h3 className="text-4xl font-extrabold leading-[35.2px] tracking-tight text-left mb-[27px]">
+        <h3 className="text-4xl font-extrabold leading-[35.2px] tracking-tight text-left mb-[27px] text-gray-800">
           Ooops... 😭 <br className="sm:hidden" /> оплата не удалась
         </h3>
 
-        <p className="text-[18px] mb-[40px] md:w-[510px]">
+        <p className="text-[18px] mb-[40px] md:w-[510px] text-gray-800">
           Возможно вы ввели неправильные данные карты, или недостаточно средств
           на вашем счете.
         </p>
@@ -20,7 +20,7 @@ export const ErrorPanel = () => {
           >
             Перейти на главную
           </Link>
-          <button className="border-[#66D8AD] w-[98%] md:w-[30%] border py-[21px] text-center rounded-[18px]">
+          <button className="border-[#66D8AD] w-[98%] md:w-[30%] border py-[21px] text-center rounded-[18px] text-gray-800">
             Отменить оплату
           </button>
         </div>
