@@ -1,4 +1,4 @@
-import { Home } from "@/pages/home";
+import { Home } from '@/pages-fsd/home/';
 import { Container } from "@/shared";
 
 import { Footer } from "@/widgtes/footer";
