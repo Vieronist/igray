@@ -1,3 +1,4 @@
+import { ArticlesList } from "@/widgtes/articles";
 import { ErrorPanel } from "@/widgtes/error";
 import { Footer } from "@/widgtes/footer";
 import { Header } from "@/widgtes/header";
@@ -8,7 +9,8 @@ export default function Index() {
         <div>
             <Header />
             <ErrorPanel />
-            <Reviews />
+            <ArticlesList className="hidden xl:flex justify-center mb-[120px] mx-auto" />
+            <Reviews className="hidden xl:block" />
             <Footer />
         </div>
     )

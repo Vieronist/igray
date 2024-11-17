@@ -16,7 +16,8 @@ export const enum SERVICE_URL {
 export const enum QUERY_KEYS {
   STEAM = "steam",
   ADMIN = "admin",
-  GET_STEAM_ORDERS = "get_steam_orders"
+  GET_STEAM_ORDERS = "get_steam_orders",
+  CARRENCY_RATE = "currency_rate"
 }
 
 export const navigationLinks = ["PC","Xbox","PlayStation","Nintendo","Mobile"]

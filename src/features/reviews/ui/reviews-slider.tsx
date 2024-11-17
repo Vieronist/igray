@@ -26,7 +26,7 @@ export const ReviewsSlider = () => {
             <ReviewsSlide
               text="Самый удобный сервис
             для пополнения Стима🔥Купила уже 9 игр! "
-              userName="Alex"
+              userName="MartinaStrike"
               date="Сен 13, 2023"
             />
           </SwiperSlide>
@@ -34,7 +34,7 @@ export const ReviewsSlider = () => {
             <ReviewsSlide
               text="Самый удобный сервис
             для пополнения Стима🔥Купила уже 9 игр! "
-              userName="Alex"
+              userName="MartinaStrike"
               date="Сен 13, 2023"
             />
           </SwiperSlide>
@@ -42,7 +42,7 @@ export const ReviewsSlider = () => {
             <ReviewsSlide
               text="Самый удобный сервис
             для пополнения Стима🔥Купила уже 9 игр! "
-              userName="Alex"
+              userName="MartinaStrike"
               date="Сен 13, 2023"
             />
           </SwiperSlide>
@@ -50,7 +50,7 @@ export const ReviewsSlider = () => {
             <ReviewsSlide
               text="Самый удобный сервис
             для пополнения Стима🔥Купила уже 9 игр! "
-              userName="Alex"
+              userName="MartinaStrike"
               date="Сен 13, 2023"
             />
           </SwiperSlide>

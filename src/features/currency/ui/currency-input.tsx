@@ -1,12 +1,11 @@
 import { CurrencyButton } from "@/entities/currency";
 import { Currencies, symbols } from "@/shared";
-import { FC} from "react";
-
+import { FC } from "react";
 interface IProps {
   currency: Currencies;
   onChangeCurrency: (currency: Currencies) => void;
   onChangeSum: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  sum: number | null;
+  sum: string | null;
 }
 
 export const CurrencyInput: FC<IProps> = ({
@@ -15,33 +14,19 @@ export const CurrencyInput: FC<IProps> = ({
   onChangeSum: handleChangeSum,
   sum,
 }) => {
-  // const minSum = {
-  //   RUB: 100,
-  //   KZT: 500,
-  //   USD: 5,
-  // };
   return (
-    <div className="rounded-[18px] border-[#DDF1EA] border px-[15px] py-[10px] flex mb-[15px] justify-between items-center">
-      <div>
-        <label
-          className="text-[#AFC5BE] text-[12px] font-medium block"
-          htmlFor="sum"
-        >
-          Сумма пополнения
-        </label>
-        <div className="relative">
-          <input
-            placeholder="0.00"
-            id="sum"
-            value={sum || 0}
-            max={100000}
-            onChange={handleChangeSum}
-            className="pl-8 outline-none w-full text-gray-800"
-          />
-          <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#AFC5BE]">
-            {symbols[currency]}
-          </span>
-        </div>
+    <div className="rounded-[18px] border-[#DDF1EA] border px-[10px] py-[10px] flex mb-[10px] justify-between items-center w-full">
+      <div className="w-[40%]">
+        <span className="text-[12px] font-medium text-[#AFC5BE]">
+          Сумма с комиссией
+        </span>
+
+        <input
+          type="text"
+          onChange={handleChangeSum}
+          className="outline-none"
+          value={sum ? `${sum} ${symbols[currency]}` : "" }
+        />
       </div>
       <ul className="flex gap-1">
         <li>

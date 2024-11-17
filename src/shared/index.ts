@@ -35,3 +35,7 @@ export type {
 } from "./model/types/orders.interface";
 
 export { useGetOrders } from "./api/queries/orders.queries";
+
+export { useGetCurrencyRate } from "./api/queries/currency.queries";
+
+export { convertFromRub } from "./model/functions/convertToRub"; 
