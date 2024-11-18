@@ -34,18 +34,16 @@ export const PayButton: FC<IProps> = ({
 
   const cost = totalAmount ? Math.round(Number(totalAmount) * 100) / 100 : 0;
 
-  const calculatedSum = cost
-    ? Number(cost) + Number(cost) * (commission / 100)
-    : 0;
+  const calculatedSum = discount
+    ? cost + cost * (commission / 100) - cost * (discount / 100)
+    : cost + cost * (commission / 100);
 
   const handleClick = () => {
     sendPayment({
       amount: cost,
       currency,
       payment_type: method,
-      amount_after: discount
-        ? cost + cost * (commission / 100) - cost * (discount / 100)
-        : cost + cost * (commission / 100),
+      amount_after: calculatedSum,
       login,
     });
   };

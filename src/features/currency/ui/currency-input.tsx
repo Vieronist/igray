@@ -20,13 +20,14 @@ export const CurrencyInput: FC<IProps> = ({
         <span className="text-[12px] font-medium text-[#AFC5BE]">
           Сумма с комиссией
         </span>
-        <div>
+        <div className="relative">
           <input
             type="text"
             onChange={handleChangeSum}
             className="outline-none"
             value={sum ? `${sum} ${symbols[currency]}` : ""}
           />
+         
           {currency === "USD" && (
             <input
               type="range"
