@@ -47,19 +47,33 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
-input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  width: 16px;
-  height: 16px;
-  background: #66d8ad;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-input[type="range"]::-moz-range-thumb {
-  width: 16px;
-  height: 16px;
-  background-color: #66d8ad;
-  border-radius: 50%;
-  cursor: pointer;
-}
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 224px;
+    height: 2px;
+    background:#66D8AD; /* bg-gray-200 */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Плавный переход */
+  }
+  
+  /* Стили для ползунка */
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    background: white; /* Зеленый цвет */
+    border: 3px solid #66D8AD;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Плавный переход */
+  }
+  
+  input[type="range"]::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background: white; /* Зеленый цвет */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Плавный переход */
+  }

@@ -39,10 +39,11 @@ export const CurrencyInput: FC<IProps> = ({
               onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                 const value = Number(e.target.value);
                 const roundedValue =
-                  Math.round(value / 5) * 5 < 20 ? Math.round(value / 5) * 5 : "100";
+                  Math.round(value / 5) * 5 < 25 ? Math.round(value / 5) * 5 : "100";
                   handleChangeSum(roundedValue.toString())
               }}
-              className="absolute w-[224px]"
+              className="absolute w-[224px] bottom-[-10px]"
+              
             />
           )}
         </div>
