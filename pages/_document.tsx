@@ -1,6 +1,6 @@
 import { Html, Head, Main, NextScript } from "next/document";
 
-import { Layout } from "@/app/ui/Layout";
+import { Layout } from "@/application/ui/Layout";
 
 export default function Document() {
   return (
