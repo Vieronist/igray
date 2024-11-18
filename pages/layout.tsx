@@ -1,4 +1,4 @@
-import { Layout as Container } from "@/app/ui/Layout";
+import { Layout as Container } from "@/application/ui/Layout";
 
 
 

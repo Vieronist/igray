@@ -7,12 +7,19 @@ import { ProccesingPersonalDataPanel } from "@/features/proccesing-personal-data
 import { PromoInput } from "@/features/promo";
 import { SteamLogin } from "@/features/steam";
 import {
+  convertFromRub,
+  countTotalAmoutWithCommission,
   Currencies,
+  extractNumber,
+  IPaymentInputs,
   PaymentMethods,
   useCheckPromo,
   useGetCurrencyRate,
+  usePayment,
 } from "@/shared";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import { SubmitHandler, useForm } from "react-hook-form";
 
 export const Replenishment = () => {
   const {
@@ -24,10 +31,28 @@ export const Replenishment = () => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [sum, setSum] = useState<string>("100");
   const [currency, setCurrency] = useState<Currencies>("RUB");
-  const [login, setLogin] = useState("");
   const [commission, setCommission] = useState(22);
   const [discount, setDiscount] = useState(0);
   const [paymentType, setPaymentType] = useState<PaymentMethods>("SPB");
+
+  const minSums = {
+    RUB: "100",
+    KZT: "500",
+    USD: "1",
+  };
+
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm<IPaymentInputs>({
+    defaultValues: {
+      sum: minSums[currency],
+      login: "",
+      email: "",
+    },
+  });
 
   useEffect(() => {
     console.log(discountPromo);
@@ -36,9 +61,34 @@ export const Replenishment = () => {
     }
   }, [checkPromoIsSuccess, discountPromo, discountPromo?.discount_percentage]);
 
+  const router = useRouter();
+
   const { currencyData, currencyIsLoading } = useGetCurrencyRate(currency);
 
+  const { sendPayment, sendPaymentSuccess, sendPaymentData } = usePayment();
+
   const handleCheckPromo = (promoValue: string) => checkPromo(promoValue);
+
+  const handlePayment: SubmitHandler<IPaymentInputs> = (data) => {
+    const { sum, login } = data;
+
+    sendPayment({
+      login,
+      amount: extractNumber(sum),
+      currency,
+      payment_type: paymentType,
+      amount_after: Number(
+        countTotalAmoutWithCommission(
+          convertFromRub(Number(sum), currency, {
+            usdToRub: currencyData?.data,
+            kztToRub: currencyData?.data,
+          }),
+          commission,
+          discount
+        ).toFixed(2)
+      ),
+    });
+  };
 
   const handleChangePaymentType = (paymentType: PaymentMethods) => {
     setPaymentType(paymentType);
@@ -59,12 +109,8 @@ export const Replenishment = () => {
     }
   };
 
-  const handleChangeLogin = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setLogin(e.target.value);
-  };
-
   const handleChangeSum = (e: React.ChangeEvent<HTMLInputElement> | string) => {
-    if (typeof e === 'string') {
+    if (typeof e === "string") {
       setSum(e);
     } else {
       const rawValue = e.target.value.replace(/[^0-9.]/g, "");
@@ -77,13 +123,18 @@ export const Replenishment = () => {
   }, [sum]);
 
   useEffect(() => {
-    const numericSum = Number(sum); // Преобразуем sum в число
+    if (sendPaymentSuccess) {
+      router.push(sendPaymentData?.link || "/");
+    }
+  }, [router, sendPaymentData?.link, sendPaymentSuccess]);
+
+  useEffect(() => {
+    const numericSum = Number(watch().sum);
 
     if (currency === "RUB" && numericSum) {
-      console.log(sum);
       if (numericSum >= 100 && numericSum < 1000) {
         setCommission(22);
-      } else if (numericSum > 1000 && numericSum < 3000) {
+      } else if (numericSum >= 1000 && numericSum < 3000) {
         setCommission(20);
       } else if (numericSum >= 3000 && numericSum <= 10000) {
         setCommission(18);
@@ -91,54 +142,58 @@ export const Replenishment = () => {
     } else if (currency === "KZT" && numericSum) {
       if (numericSum >= 500 && numericSum < 5000) {
         setCommission(22);
-      } else if (numericSum > 5000 && numericSum < 15000) {
+      } else if (numericSum >= 5000 && numericSum < 15000) {
         setCommission(20);
-      } else if (numericSum > 15000 && numericSum < 505617) {
+      } else if (numericSum >= 15000 && numericSum <= 505617) {
         setCommission(18);
       }
     }
-  }, [sum, currency]);
+  }, [sum, currency, watch]);
 
   return (
-    <section className="bg-[#ffffff] rounded-[60px] px-[10px] py-[50px] mb-[35px] md:w-[540px] md:mx-auto 2xl:px-[50px]">
+    <form
+      onSubmit={handleSubmit(handlePayment)}
+      className="bg-[#ffffff] rounded-[60px] px-[10px] py-[50px] mb-[35px] md:w-[540px] md:mx-auto md:px-[30px] xl:px-[50px]"
+    >
       <h3 className="font-extrabold text-[22px] mb-[20px] text-gray-800">
         Быстрое пополнение
       </h3>
       <CurrencyInput
+        errors={errors}
+        register={register}
         onChangeCurrency={handleChangeCurrency}
         onChangeSum={handleChangeSum}
         currency={currency}
         sum={sum}
       />
       <div className="flex flex-col sm:flex-row gap-[5px] mb-5">
-        <SteamLogin login={login} onChange={handleChangeLogin} />
+        <SteamLogin register={register} errors={errors} />
         <TotalAmount
           currencyRate={currencyData?.data}
           currencyIsLoading={currencyIsLoading}
-          commission={commission}
           currency={currency}
-          sum={sum}
+          sum={Number(sum)}
+          commission={commission}
+          discount={discount}
         />
       </div>
       <CommissionPanel currency={currency} />
       <PromoInput discount={discount} checkPromo={handleCheckPromo} />
 
-      <EmailInput />
+      <EmailInput register={register} errors={errors} />
       <MethodsPayment
         currentPaymentType={paymentType}
         onChange={handleChangePaymentType}
       />
       <PayButton
+      discount={discount}
+        commission={commission}
         currencyRate={currencyData?.data}
         currencyIsLoading={currencyIsLoading}
-        discount={discount}
         currency={currency}
-        totalAmount={sum}
-        commission={commission}
-        login={login}
-        method={paymentType}
+        sum={sum}
       />
       <ProccesingPersonalDataPanel />
-    </section>
+    </form>
   );
 };

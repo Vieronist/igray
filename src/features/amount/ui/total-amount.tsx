@@ -1,25 +1,24 @@
-import { convertFromRub, Currencies } from "@/shared";
+import { convertFromRub, countTotalAmoutWithCommission, Currencies } from "@/shared";
 import { FC } from "react";
 
 interface IProps {
-  sum: string | null;
-  commission: number;
+  sum: number;
   currency: Currencies;
   currencyRate: number;
   currencyIsLoading: boolean;
+  commission: number;
+  discount: number;
 }
 
 export const TotalAmount: FC<IProps> = ({
   sum,
   currency,
-  commission,
   currencyIsLoading,
   currencyRate,
+  commission,
+  discount
 }) => {
-  const calculatedSum = sum
-    ? Number(sum) + Number(sum) * (commission / 100)
-    : 0;
-
+ 
   return (
     <div className="rounded-[18px] flex justify-between items-center py-[8px] basis-[50%] bg-[linear-gradient(100.65deg,_#E4FAF3_0.34%,_rgba(228,250,243,0.29)_47.86%,_#E4FAF3_92.62%,_rgba(228,250,243,0.34)_138.07%)] px-[15px]">
       {currencyIsLoading ? (
@@ -33,10 +32,10 @@ export const TotalAmount: FC<IProps> = ({
             <span className="text-gray-800">{`${
               sum === null && currencyRate && currencyRate
                 ? 0
-                : convertFromRub(calculatedSum, currency, {
+                : countTotalAmoutWithCommission(convertFromRub(sum, currency, {
                     usdToRub: currencyRate,
                     kztToRub: currencyRate,
-                  })
+                  }),commission,discount).toFixed(2)
             } ${"₽"}`}</span>
           </div>
           {currency !== "RUB" && (

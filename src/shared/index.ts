@@ -38,4 +38,10 @@ export { useGetOrders } from "./api/queries/orders.queries";
 
 export { useGetCurrencyRate } from "./api/queries/currency.queries";
 
-export { convertFromRub } from "./model/functions/convertToRub"; 
+export { convertFromRub } from "./model/functions/convertToRub";
+
+export type { IPaymentInputs } from "./model/types/payment.interface";
+
+export { extractNumber } from "./model/functions/extractSum";
+
+export { countTotalAmoutWithCommission } from "./model/functions/countCommision"
