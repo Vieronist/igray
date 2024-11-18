@@ -63,10 +63,13 @@ export const Replenishment = () => {
     setLogin(e.target.value);
   };
 
-  const handleChangeSum = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const rawValue = e.target.value.replace(/[^0-9.]/g, ""); //
-
-    setSum(rawValue);
+  const handleChangeSum = (e: React.ChangeEvent<HTMLInputElement> | string) => {
+    if (typeof e === 'string') {
+      setSum(e);
+    } else {
+      const rawValue = e.target.value.replace(/[^0-9.]/g, "");
+      setSum(rawValue);
+    }
   };
 
   useEffect(() => {
@@ -76,9 +79,8 @@ export const Replenishment = () => {
   useEffect(() => {
     const numericSum = Number(sum); // Преобразуем sum в число
 
-    
     if (currency === "RUB" && numericSum) {
-      console.log(sum)
+      console.log(sum);
       if (numericSum >= 100 && numericSum <= 1000) {
         setCommission(22);
       } else if (numericSum >= 1000 && numericSum < 3000) {
