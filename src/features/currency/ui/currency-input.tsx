@@ -23,11 +23,22 @@ export const CurrencyInput: FC<IProps> = ({
         <div className="relative">
           <input
             type="text"
-            onChange={handleChangeSum}
-            className="outline-none"
+            onChange={(e) => {
+              if (currency === "USD") {
+                const rawValue = Number(e.target.value.replace(/[^0-9.]/g, ""));
+                if (rawValue >= 25) {
+                  handleChangeSum("100");
+                } else {
+                  handleChangeSum((Math.round(rawValue / 5) * 5).toString());
+                }
+              } else {
+                handleChangeSum(e);
+              }
+            }}
+            className="outline-none text-gray-800"
             value={sum ? `${sum} ${symbols[currency]}` : ""}
           />
-         
+
           {currency === "USD" && (
             <input
               type="range"
@@ -37,13 +48,17 @@ export const CurrencyInput: FC<IProps> = ({
               value={Number(sum)}
               max={100}
               onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                console.log(sum);
+
                 const value = Number(e.target.value);
                 const roundedValue =
-                  Math.round(value / 5) * 5 < 25 ? Math.round(value / 5) * 5 : "100";
-                  handleChangeSum(roundedValue.toString())
+                  Math.round(value / 5) * 5 < 25
+                    ? Math.round(value / 5) * 5
+                    : "100";
+
+                handleChangeSum(roundedValue.toString());
               }}
               className="absolute w-[224px] bottom-[-10px]"
-              
             />
           )}
         </div>

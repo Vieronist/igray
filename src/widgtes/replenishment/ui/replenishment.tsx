@@ -81,19 +81,19 @@ export const Replenishment = () => {
 
     if (currency === "RUB" && numericSum) {
       console.log(sum);
-      if (numericSum >= 100 && numericSum <= 1000) {
+      if (numericSum >= 100 && numericSum < 1000) {
         setCommission(22);
-      } else if (numericSum >= 1000 && numericSum < 3000) {
+      } else if (numericSum > 1000 && numericSum < 3000) {
         setCommission(20);
       } else if (numericSum >= 3000 && numericSum <= 10000) {
         setCommission(18);
       }
     } else if (currency === "KZT" && numericSum) {
-      if (numericSum >= 500 && numericSum <= 5000) {
+      if (numericSum >= 500 && numericSum < 5000) {
         setCommission(22);
-      } else if (numericSum >= 5000 && numericSum <= 15000) {
+      } else if (numericSum > 5000 && numericSum < 15000) {
         setCommission(20);
-      } else if (numericSum >= 15000 && numericSum <= 505617) {
+      } else if (numericSum > 15000 && numericSum < 505617) {
         setCommission(18);
       }
     }
