@@ -15,7 +15,7 @@ export const SearchPanel: FC<IProps> = ({ classNameDiv, classNameInput }) => {
     >
       <ReactSVG src="/lupa.svg" className="" />
       <input
-        className={`outline-none bg-transparent ${
+        className={`outline-none bg-transparent text-gray-800 ${
           classNameInput ? classNameInput : ""
         }`}
         placeholder="Search"
