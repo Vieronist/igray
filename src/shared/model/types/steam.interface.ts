@@ -15,6 +15,7 @@ export interface IPayment {
   payment_type: "SPB" | "CARD" | "USDT";
   amount: number; // before commission
   amount_after: number; // after commission
+  email: string
 }
 
 export interface IPaymentResponse {

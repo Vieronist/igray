@@ -68,13 +68,14 @@ export const Replenishment = () => {
   const handleTouchSumInput = () => setTouchedSumInput(true);
 
   const handlePayment: SubmitHandler<IPaymentInputs> = (data) => {
-    const { login } = data;
+    const { login,email } = data;
 
     const currentSum = Number(extractNumber(sum));
 
     if (currentSum >= minSums[currency] && currentSum <= maxSums[currency]) {
       sendPayment({
         login,
+        email,
         amount: extractNumber(sum),
         currency,
         payment_type: paymentType,
