@@ -22,7 +22,7 @@ export const PromoInput: FC<IProps> = ({ checkPromo, discount }) => {
           id="promo"
           type="text"
           placeholder="Уменьши комиссию..."
-          className="outline-none p-0 bg-transparent block"
+          className="outline-none p-0 bg-transparent block text-gray-800"
           onChange={handleChangeValue}
         />
       </div>
