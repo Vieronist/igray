@@ -18,7 +18,7 @@ export const EmailInput: FC<IProps> = ({ register, errors }) => {
           type="text"
           {...register("email", { required: true })}
           placeholder="name@mail.com"
-          className="outline-none"
+          className="outline-none text-gray-800"
         />
       </div>
       <p className="mb-[15px]">
