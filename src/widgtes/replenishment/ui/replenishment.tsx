@@ -126,10 +126,10 @@ export const Replenishment = () => {
       setSum("10000");
     } else if (currency === "KZT" && sum === "15000") {
       setSum("15000");
-    } else if (currency === "USD" && sum === "100") { 
+    } else if (currency === "USD" && sum === "100") {
       setSum("100");
     }
-  }, [sum]);
+  }, [sum, currency]);
 
   useEffect(() => {
     if (sendPaymentSuccess) {
@@ -149,13 +149,19 @@ export const Replenishment = () => {
         setCommission(18);
       }
     } else if (currency === "KZT" && numericSum) {
-      console.log(currency, numericSum);
-
       if (numericSum >= 500 && numericSum < 5000) {
         setCommission(22);
       } else if (numericSum >= 5000 && numericSum < 15000) {
         setCommission(20);
       } else if (numericSum >= 15000 && numericSum <= 505617) {
+        setCommission(18);
+      }
+    } else if (currency === "USD" && numericSum) {
+      if (numericSum >= 5 && numericSum < 10) {
+        setCommission(22);
+      } else if (numericSum >= 10 && numericSum < 30) {
+        setCommission(20);
+      } else if (numericSum >= 30 && numericSum <= 100) {
         setCommission(18);
       }
     }

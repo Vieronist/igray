@@ -48,11 +48,7 @@ export const CurrencyInput: FC<IProps> = ({
                   const rawValue = Number(
                     e.target.value.replace(/[^0-9.]/g, "")
                   );
-                  if (rawValue >= 25) {
-                    handleChangeSum("100");
-                  } else {
-                    handleChangeSum((Math.round(rawValue / 5) * 5).toString());
-                  }
+                  handleChangeSum((Math.round(rawValue / 5) * 5).toString());
                 } else {
                   handleChangeSum(e);
                 }
@@ -65,18 +61,15 @@ export const CurrencyInput: FC<IProps> = ({
               <input
                 type="range"
                 step={5}
-                min={1}
+                min={5}
                 value={Number(sum)}
-                max={100}
-                className="block w-[95%] absolute bottom-[-10px]"
+                max={105}
+                className="block w-full absolute bottom-[-10px]"
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                   onTouch();
                   const value = Number(e.target.value);
-                  const roundedValue =
-                    Math.round(value / 5) * 5 < 25
-                      ? Math.round(value / 5) * 5
-                      : "100";
-
+                  const roundedValue = Math.round(value / 5) * 5;
+            
                   handleChangeSum(roundedValue.toString());
                 }}
               />
