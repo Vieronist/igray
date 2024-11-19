@@ -4,6 +4,7 @@ export interface IOrderItem {
   amount: number;
   amount_usd: number;
   date: string;
+  order_item: number
 }
 
 

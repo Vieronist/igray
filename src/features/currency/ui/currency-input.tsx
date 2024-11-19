@@ -63,7 +63,7 @@ export const CurrencyInput: FC<IProps> = ({
                 step={5}
                 min={5}
                 value={Number(sum)}
-                max={105}
+                max={100}
                 className="block w-full absolute bottom-[-10px]"
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                   onTouch();
