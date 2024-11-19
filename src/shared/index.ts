@@ -4,7 +4,7 @@ export { SliderButton } from "./ui/slider-button";
 
 export type { Currencies } from "./model/types/currency.interface";
 
-export { symbols, SERVICE_URL, QUERY_KEYS } from "./model/constants";
+export { symbols, SERVICE_URL, QUERY_KEYS, minSums, maxSums } from "./model/constants";
 
 export type {
   ICheckPromo,
@@ -45,3 +45,4 @@ export type { IPaymentInputs } from "./model/types/payment.interface";
 export { extractNumber } from "./model/functions/extractSum";
 
 export { countTotalAmoutWithCommission } from "./model/functions/countCommision"
+

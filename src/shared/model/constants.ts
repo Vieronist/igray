@@ -21,3 +21,15 @@ export const enum QUERY_KEYS {
 }
 
 export const navigationLinks = ["PC","Xbox","PlayStation","Nintendo","Mobile"]
+
+export const minSums = {
+  USD: 1,
+  RUB: 100,
+  KZT: 500,
+};
+
+export const maxSums = {
+  USD: 100,
+  RUB: 10000,
+  KZT: 15000,
+};

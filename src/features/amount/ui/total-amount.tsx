@@ -18,6 +18,8 @@ export const TotalAmount: FC<IProps> = ({
   commission,
   discount
 }) => {
+
+  console.log(commission);
  
   return (
     <div className="rounded-[18px] flex justify-between items-center py-[8px] basis-[50%] bg-[linear-gradient(100.65deg,_#E4FAF3_0.34%,_rgba(228,250,243,0.29)_47.86%,_#E4FAF3_92.62%,_rgba(228,250,243,0.34)_138.07%)] px-[15px]">
