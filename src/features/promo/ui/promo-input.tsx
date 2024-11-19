@@ -28,6 +28,7 @@ export const PromoInput: FC<IProps> = ({ checkPromo, discount }) => {
       </div>
       <button
         onClick={() => checkPromo(promoValue)}
+        type="button"
         className="bg-[#E4FAF3] rounded-[14px] py-[15px] px-[12px] sm:w-auto sm:px-[12px] sm:py-[15px] flex-shrink-0 text-gray-800"
       >
         {discount ? `Ваша скидка - ${discount} %` : "Применить"}
