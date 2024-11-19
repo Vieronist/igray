@@ -6,9 +6,13 @@ export const OrderItem: FC<IOrderItem> = ({
   login,
   amount_usd,
   date,
+  order_id
 }) => {
   return (
     <li className="mb-2 border-gray-800 border-2 p-2 rounded-lg">
+      <div>
+        <span className="text-gray-800">id: {order_id}</span>
+      </div>
       <div className="text-gray-800">email: {email}</div>
       <div className="text-gray-800">steam: {login}</div>
       <div className="text-gray-800">amount: {amount_usd} $</div>
