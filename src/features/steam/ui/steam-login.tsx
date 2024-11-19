@@ -17,7 +17,7 @@ export const SteamLogin: FC<IProps> = ({ register, errors }) => {
         <input
           type="text"
           placeholder="Name..."
-          className="outline-none"
+          className="outline-none text-gray-800"
           id="login"
           {...register("login", { required: true })}
         />
