@@ -16,7 +16,10 @@ export const EmailInput: FC<IProps> = ({ register, errors }) => {
         </label>
         <input
           type="text"
-          {...register("email", { required: true })}
+          {...register("email", {
+            required: true,
+            pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+          })}
           placeholder="name@mail.com"
           className="outline-none text-gray-800"
         />
