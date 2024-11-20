@@ -37,7 +37,7 @@ export const CurrencyInput: FC<IProps> = ({
       <div className="rounded-[18px] border-[#DDF1EA] border px-[7px] py-[10px] flex justify-between items-center w-full">
         <div className="w-full">
           <span className="text-[12px] leading-[-15px] tracking-tight font-medium text-[#AFC5BE]">
-            Сумма с комиссией
+            Сумма попалнения
           </span>
           <div className="relative">
             <input

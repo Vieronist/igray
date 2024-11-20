@@ -20,12 +20,12 @@ export const PayButton: FC<IProps> = ({
   currencyIsLoading,
   sum,
   commission,
-  discount
+  discount,
 }) => {
   return (
     <button
       type="submit"
-      className="bg-[#66D8AD] w-full mx-auto block py-[23px] rounded-[18px] text-[white] mb-[23px]"
+      className="bg-[#66D8AD] w-full mx-auto block py-[23px] rounded-[18px] text-white mb-[23px] border-none shadow-[0_5px_#469677] active:shadow-[0_2px_#469677] active:translate-y-[4px] transition-all"
     >
       {currencyIsLoading ? (
         "Загрузка..."
