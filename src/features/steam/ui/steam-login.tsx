@@ -11,8 +11,8 @@ interface IProps {
 export const SteamLogin: FC<IProps> = ({ register, errors, currency }) => {
   return (
     <>
-      <div>
-        <div className="rounded-[18px] border-[#DDF1EA] border px-[15px] py-[5px] sm:basis-[50%] mb-[5px] sm:mb-0">
+      <div className="relative">
+        <div className="rounded-[18px] border-[#DDF1EA] border px-[15px] py-[5px] sm:basis-[50%] mb-[15px] sm:mb-0">
           <label htmlFor="login" className="block text-gray-800">
               {currency === "USD" ? "Контакт для связи" : "Steam Логин"}
           </label>
@@ -25,7 +25,7 @@ export const SteamLogin: FC<IProps> = ({ register, errors, currency }) => {
           />
         </div>
         {errors.login && (
-          <span className="text-red-600 block text-[12px] ml-2 abso">
+          <span className="text-red-600 block text-[12px] ml-2 absolute bottom-[-2px] sm:bottom-[-18px]">
             Steam логин обязательный
           </span>
         )}
