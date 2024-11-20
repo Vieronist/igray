@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, CircularProgress } from "@mui/material";
 import Modal from "@mui/material/Modal";
 import { FC } from "react";
 
@@ -16,7 +16,7 @@ interface AlertModalProps {
 export const AlertModal: FC<AlertModalProps> = ({
   isVisible,
   success,
-  messages: { errorMessage, successMessage, loadingMessage },
+  messages: { errorMessage, successMessage, },
 }) => {
   return (
     <Modal
@@ -34,13 +34,17 @@ export const AlertModal: FC<AlertModalProps> = ({
           borderRadius: "20px",
         }}
       >
-        <div className="flex flex-col justify-center h-full">
+        <div className="flex flex-col justify-center h-full pt-6">
           <h3 className="text-[#4FCA9C] text-[29px] mb-[20px] text-center">
-            {success === undefined
-              ? `${loadingMessage}`
-              : success
-              ? `${successMessage}`
-              : `${errorMessage}`}
+            {success === undefined ? (
+              <>
+                <CircularProgress color="info" size="3rem" />
+              </>
+            ) : success ? (
+              `${successMessage}`
+            ) : (
+              `${errorMessage}`
+            )}
           </h3>
         </div>
       </Box>
