@@ -1,18 +1,49 @@
+import { Box } from "@mui/material";
 import Modal from "@mui/material/Modal";
 import { FC } from "react";
 
 interface AlertModalProps {
-
   isVisible: boolean;
-  isAdmin?: boolean;
+
+  success?: boolean;
+  messages: {
+    successMessage?: string;
+    errorMessage?: string;
+    loadingMessage: string;
+  };
 }
 
-export const AlertModal: FC<AlertModalProps> = ({ isVisible, isAdmin }) => {
+export const AlertModal: FC<AlertModalProps> = ({
+  isVisible,
+  success,
+  messages: { errorMessage, successMessage, loadingMessage },
+}) => {
   return (
-    <Modal sx={{borderRadius: "20px", opacity:1, zIndex: 100}} open={isVisible} className="w-1/2 bg-white mx-auto h-[300px] mt-[7%] rounded-xl">
-      <div className="">
-        <h3 className="text-[#4FCA9C] text-5xl mb-[20px] text-center mt-[5%]">{isAdmin ? "Успешно!" : "Вы ввели не валидные данные!"}</h3>
-      </div>
+    <Modal
+      sx={{ borderRadius: "20px", zIndex: 100 }}
+      open={isVisible}
+      className="mx-auto mt-[17%] rounded-xl"
+    >
+      <Box
+        sx={{
+          bgcolor: "background.paper",
+          height: "20%",
+          width: "50%",
+          margin: "0 auto",
+          padding: "10px",
+          borderRadius: "20px",
+        }}
+      >
+        <div className="flex flex-col justify-center h-full">
+          <h3 className="text-[#4FCA9C] text-[29px] mb-[20px] text-center mt-[5%]">
+            {success === undefined
+              ? `${loadingMessage}`
+              : success
+              ? `${successMessage}`
+              : `${errorMessage}`}
+          </h3>
+        </div>
+      </Box>
     </Modal>
   );
 };

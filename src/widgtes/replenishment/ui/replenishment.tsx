@@ -7,6 +7,7 @@ import { ProccesingPersonalDataPanel } from "@/features/proccesing-personal-data
 import { PromoInput } from "@/features/promo";
 import { SteamLogin } from "@/features/steam";
 import {
+  AlertModal,
   convertFromRub,
   countTotalAmoutWithCommission,
   Currencies,
@@ -37,6 +38,8 @@ export const Replenishment = () => {
   const [discount, setDiscount] = useState(0);
   const [paymentType, setPaymentType] = useState<PaymentMethods>("SPB");
   const [touchedSumInput, setTouchedSumInput] = useState(false);
+  const [isModalVisible, setIsModalVisible] = useState(false)
+
 
   const {
     register,
@@ -61,14 +64,16 @@ export const Replenishment = () => {
 
   const { currencyData, currencyIsLoading } = useGetCurrencyRate(currency);
 
-  const { sendPayment, sendPaymentSuccess, sendPaymentData } = usePayment();
+  const { sendPayment, sendPaymentSuccess, sendPaymentData, sendPaymentPending } = usePayment();
 
   const handleCheckPromo = (promoValue: string) => checkPromo(promoValue);
 
   const handleTouchSumInput = () => setTouchedSumInput(true);
 
+  const toggleModal = () => setIsModalVisible(prev => !prev)
+
   const handlePayment: SubmitHandler<IPaymentInputs> = (data) => {
-    const { login,email } = data;
+    const { login, email } = data;
 
     const currentSum = Number(extractNumber(sum));
 
@@ -135,8 +140,15 @@ export const Replenishment = () => {
   useEffect(() => {
     if (sendPaymentSuccess) {
       router.push(sendPaymentData?.link || "/");
+      toggleModal()
     }
   }, [router, sendPaymentData?.link, sendPaymentSuccess]);
+
+  useEffect(() => {
+    if (sendPaymentPending) {
+      toggleModal()
+    }
+  },[sendPaymentPending])
 
   useEffect(() => {
     const numericSum = Number(sum);
@@ -169,49 +181,57 @@ export const Replenishment = () => {
   }, [sum, currency, watch]);
 
   return (
-    <form
-      onSubmit={handleSubmit(handlePayment)}
-      className="bg-[#ffffff] rounded-[60px] px-[30px] py-[50px] mb-[35px] md:w-[540px] md:mx-auto md:px-[30px] xl:px-[50px]"
-    >
-      <h3 className="font-extrabold text-[22px] mb-[20px] text-gray-800">
-        Быстрое пополнение
-      </h3>
-      <CurrencyInput
-        onTouch={handleTouchSumInput}
-        touchedSumInput={touchedSumInput}
-        onChangeCurrency={handleChangeCurrency}
-        onChangeSum={handleChangeSum}
-        currency={currency}
-        sum={sum}
-      />
-      <div className="flex flex-col sm:flex-row gap-[5px] mb-5">
-        <SteamLogin register={register} errors={errors} />
-        <TotalAmount
+    <>
+      <form
+        onSubmit={handleSubmit(handlePayment)}
+        className="bg-[#ffffff] rounded-[60px] px-[30px] py-[50px] mb-[35px] md:w-[540px] md:mx-auto md:px-[30px] xl:px-[50px]"
+      >
+        <h3 className="font-extrabold text-[22px] mb-[20px] text-gray-800">
+          Быстрое пополнение
+        </h3>
+        <CurrencyInput
+          onTouch={handleTouchSumInput}
+          touchedSumInput={touchedSumInput}
+          onChangeCurrency={handleChangeCurrency}
+          onChangeSum={handleChangeSum}
+          currency={currency}
+          sum={sum}
+        />
+        <div className="flex flex-col sm:flex-row gap-[5px] mb-5">
+          <SteamLogin currency={currency} register={register} errors={errors} />
+          <TotalAmount
+            currencyRate={currencyData?.data}
+            currencyIsLoading={currencyIsLoading}
+            currency={currency}
+            sum={Number(sum)}
+            commission={commission}
+            discount={discount}
+          />
+        </div>
+        <CommissionPanel currency={currency} />
+        <PromoInput discount={discount} checkPromo={handleCheckPromo} />
+
+        <EmailInput register={register} errors={errors} />
+        <MethodsPayment
+          currentPaymentType={paymentType}
+          onChange={handleChangePaymentType}
+        />
+        <PayButton
+          discount={discount}
+          commission={commission}
           currencyRate={currencyData?.data}
           currencyIsLoading={currencyIsLoading}
           currency={currency}
-          sum={Number(sum)}
-          commission={commission}
-          discount={discount}
+          sum={sum}
         />
-      </div>
-      <CommissionPanel currency={currency} />
-      <PromoInput discount={discount} checkPromo={handleCheckPromo} />
-
-      <EmailInput register={register} errors={errors} />
-      <MethodsPayment
-        currentPaymentType={paymentType}
-        onChange={handleChangePaymentType}
+        <ProccesingPersonalDataPanel />
+      </form>
+      <AlertModal
+        isVisible={isModalVisible}
+        messages={{
+          loadingMessage: "Загрузка...",
+        }}
       />
-      <PayButton
-        discount={discount}
-        commission={commission}
-        currencyRate={currencyData?.data}
-        currencyIsLoading={currencyIsLoading}
-        currency={currency}
-        sum={sum}
-      />
-      <ProccesingPersonalDataPanel />
-    </form>
+    </>
   );
 };

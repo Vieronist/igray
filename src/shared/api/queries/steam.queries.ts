@@ -22,6 +22,7 @@ export const usePayment = () => {
     mutate: sendPayment,
     isError: sendPaymentError,
     isSuccess: sendPaymentSuccess,
+    isPending: sendPaymentPending,
     data: sendPaymentData,
   } = useMutation({
     mutationKey: [QUERY_KEYS.STEAM],
@@ -32,6 +33,7 @@ export const usePayment = () => {
     sendPayment,
     sendPaymentError,
     sendPaymentSuccess,
-    sendPaymentData
+    sendPaymentData,
+    sendPaymentPending
   };
 };

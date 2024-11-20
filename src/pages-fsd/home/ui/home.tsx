@@ -6,7 +6,7 @@ import { SteamInfo } from "@/widgtes/steam-info";
 
 export const Home = () => {
   return (
-    <main className="block 2xl:flex gap-[10px] justify-between">
+    <main className="block 2xl:flex gap-[10px] justify-between mb-[40px] md:mb-[130px]">
       <SteamInfo />
       <Replenishment />
       <section>

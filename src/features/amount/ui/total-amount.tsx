@@ -1,4 +1,8 @@
-import { convertFromRub, countTotalAmoutWithCommission, Currencies } from "@/shared";
+import {
+  convertFromRub,
+  countTotalAmoutWithCommission,
+  Currencies,
+} from "@/shared";
 import { FC } from "react";
 
 interface IProps {
@@ -16,15 +20,14 @@ export const TotalAmount: FC<IProps> = ({
   currencyIsLoading,
   currencyRate,
   commission,
-  discount
+  discount,
 }) => {
-
   console.log(commission);
- 
+
   return (
     <div className="rounded-[18px] flex justify-between items-center py-[8px] basis-[50%] bg-[linear-gradient(100.65deg,_#E4FAF3_0.34%,_rgba(228,250,243,0.29)_47.86%,_#E4FAF3_92.62%,_rgba(228,250,243,0.34)_138.07%)] px-[15px]">
       {currencyIsLoading ? (
-        "Загрузка курса..."
+        <p className="text-gray-800">{"Загрузка курса..."}</p>
       ) : (
         <>
           <div className="flex flex-col justify-center">
@@ -34,10 +37,14 @@ export const TotalAmount: FC<IProps> = ({
             <span className="text-gray-800">{`${
               sum === null && currencyRate && currencyRate
                 ? 0
-                : countTotalAmoutWithCommission(convertFromRub(sum, currency, {
-                    usdToRub: currencyRate,
-                    kztToRub: currencyRate,
-                  }),commission,discount).toFixed(2)
+                : countTotalAmoutWithCommission(
+                    convertFromRub(sum, currency, {
+                      usdToRub: currencyRate,
+                      kztToRub: currencyRate,
+                    }),
+                    commission,
+                    discount
+                  ).toFixed(2)
             } ${"₽"}`}</span>
           </div>
           {currency !== "RUB" && (
@@ -46,7 +53,7 @@ export const TotalAmount: FC<IProps> = ({
                 Курс
               </span>
               {currencyRate && !currencyIsLoading && (
-                <span className="text-[13px] font-medium block text-[#AFC5BE]">
+                <span className="text-[12px] font-medium block text-[#AFC5BE]">
                   {currencyRate} {"₽"}
                 </span>
               )}

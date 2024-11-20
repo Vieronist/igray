@@ -26,16 +26,24 @@ export const AdminFormLogin = () => {
       setIsVisible(true);
       const timer = setTimeout(() => {
         setIsVisible(false);
+        if(loginData?.auth)
         router.push("orders");
       }, 3000);
       return () => clearTimeout(timer);
     }
-
   }, [loginData, loginError, loginSuccess, router]);
 
   return (
     <>
-      <AlertModal isAdmin={isAdmin} isVisible={isVisible} />
+      <AlertModal
+        success={isAdmin}
+        messages={{
+          loadingMessage: "Loading...",
+          successMessage: "Success!",
+          errorMessage: "Error!",
+        }}
+        isVisible={isVisible}
+      />
       <div className="mx-auto w-full sm:w-[75%] md:w-[55%] xl:w-[40%] mt-[9%]">
         <h3 className="text-[#4FCA9C] text-5xl mb-[35px]">
           Welcome to Admin Panel
