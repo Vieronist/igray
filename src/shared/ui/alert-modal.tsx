@@ -22,7 +22,7 @@ export const AlertModal: FC<AlertModalProps> = ({
     <Modal
       sx={{ borderRadius: "20px", zIndex: 100 }}
       open={isVisible}
-      className="mx-auto mt-[17%] rounded-xl"
+      className="mx-auto mt-[17%] rounded-xl md:w-[30%]"
     >
       <Box
         sx={{
