@@ -35,7 +35,7 @@ export const AlertModal: FC<AlertModalProps> = ({
         }}
       >
         <div className="flex flex-col justify-center h-full">
-          <h3 className="text-[#4FCA9C] text-[29px] mb-[20px] text-center mt-[5%]">
+          <h3 className="text-[#4FCA9C] text-[29px] mb-[20px] text-center">
             {success === undefined
               ? `${loadingMessage}`
               : success
