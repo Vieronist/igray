@@ -18,12 +18,12 @@ export const FaqItemAccardion: FC<IProps> = ({
 
   return (
     <li
-    className={`bg-[#FFFFFF] rounded-[18px] mb-2 pl-[20px] 2xl:w-[300px] transition-all duration-300 ease-in-out ${
-      isActive ? "relative z-10 shadow-lg scale-[1.02] border-[2px]" : "z-0"
+    className={`bg-[#FFFFFF] rounded-[18px] overflow-hidden pl-[20px] 2xl:w-[300px] transition-all duration-300 ease-in-out ${
+      isActive ? "shadow-lg scale-[1.02] border-[2px]" : ""
     }`}
     style={{
-      marginBottom: isActive ? "-16px" : "8px", // Накладываем активный вопрос на следующие
-      borderColor: isActive ? "#66D8AD" : "transparent", // Устанавливаем цвет границы
+      borderColor: isActive ? "#66D8AD" : "transparent", // Граница для активного элемента
+      marginBottom: "8px", // Стандартный отступ между элементами
     }}
   >
     <div
@@ -37,19 +37,23 @@ export const FaqItemAccardion: FC<IProps> = ({
     </div>
     <div
       ref={contentRef}
-      className={`absolute left-0 pt-1 pb-5 right-0 bg-white rounded-[18px] overflow-hidden transition-all duration-300 ease-in-out ${
-        isActive ? "opacity-100 max-h-screen border-[2px]" : "opacity-0 max-h-0"
+      className={`transition-all duration-300 ease-in-out ${
+        isActive ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"
       }`}
       style={{
-        top: "100%", // Выпадаем вниз, чтобы не двигать другие вопросы
-        maxHeight:
-          isActive && contentRef.current
-            ? `${contentRef.current.scrollHeight}px`
-            : "0px",
-        borderColor: isActive ? "#66D8AD" : "transparent", // Устанавливаем цвет границы
+        maxHeight: isActive && contentRef.current
+          ? `${contentRef.current.scrollHeight}px`
+          : "0px", // Устанавливаем высоту только если элемент активен
       }}
     >
-      <div className="pt-3 pb-3 px-4 text-gray-800">{content}</div>
+      <div
+        className="pt-3 pb-3 pr-2 text-gray-800 bg-white rounded-[18px]"
+        style={{
+          borderColor: isActive ? "#66D8AD" : "transparent", // Для активного состояния
+        }}
+      >
+        {content}
+      </div>
     </div>
   </li>
   );
