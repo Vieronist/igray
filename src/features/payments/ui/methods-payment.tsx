@@ -33,7 +33,7 @@ Mastercard"
           svg="spb.svg"
           text="Через приложение
 вашего банка"
-          title="Через СПБ"
+          title="Через СБП"
         />
         <MethodPaymentItem
           method="USDT"
