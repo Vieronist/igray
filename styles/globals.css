@@ -76,3 +76,9 @@ input[type="range"] {
     cursor: pointer;
     transition: all 0.3s ease; /* Плавный переход */
   }
+
+
+  * {
+    color:  #1f2937;
+    
+  }

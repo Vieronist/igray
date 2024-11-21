@@ -6,7 +6,7 @@ export const WhereICanGetBackMoney = () => {
       </h3>
       <ol className="list-decimal space-y-4">
         <li className="flex gap-4">
-          <span className="w-8 text-right">1.</span>
+          <span className="w-8 text-right text-gray-800">1.</span>
           <span>
           Подарочкая карта, которую далее можно будет потратить в нашем магазине
           </span>
