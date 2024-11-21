@@ -41,7 +41,7 @@ export const FaqList = () => {
   ];
 
   return (
-    <div className="p-[30px] md:px-[40px] md:py-[50px] border-[#1F3238] border border-opacity-10 rounded-[60px] mb-5 xl:absolute ">
+    <div className="p-[30px] md:px-[40px] md:py-[50px] border-[#1F3238] border border-opacity-10 rounded-[60px] mb-5 ">
       <h6 className="text-[#1F3238] font-extrabold text-[32px] leading-[22px] mb-[22px] tracking-[-0.04em]">
         Частые вопросы
       </h6>

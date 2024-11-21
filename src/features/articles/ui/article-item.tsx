@@ -8,7 +8,7 @@ interface IProps {
 
 export const ArticleItem: FC<IProps> = ({ content, avatar }) => {
   return (
-    <li className=" flex flex-col md:flex-row justify-center items-center  text-balance text-[16px] ">
+    <li className=" flex flex-col md:flex-row justify-center items-center w-[280px] text-balance text-[16px] ">
       <Image
         className=""
         src={`/${avatar}`}
@@ -16,7 +16,7 @@ export const ArticleItem: FC<IProps> = ({ content, avatar }) => {
         width={80}
         alt="icon"
       />
-      <p className="w-[180px] text-gray-800 text-center">{content}</p>
+      <p className="w-[180px] text-gray-800 text-center xl:text-left">{content}</p>
     </li>
   );
 };
