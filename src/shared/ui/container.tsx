@@ -3,5 +3,5 @@ export const Container = ({ children }: { children: React.ReactNode }) => {
     <div className="max-w-[1470px] mx-auto my-[20px] px-[5px] ">
       {children}
     </div>
-  );
-};
+  )
+}
