@@ -5,8 +5,8 @@ export const SuccessPaymentPanel = () => {
     <section className="mt-5 mx-auto mb-[100px] flex flex-col items-center">
         <div>
 
-      <h3 className="font-extrabold text-[32px] mb-[32px]">Ваш заказ оформлен</h3>
-      <p className="mb-[22px]">
+      <h3 className="font-extrabold text-[32px] mb-[32px] text-gray-800">Ваш заказ оформлен</h3>
+      <p className="mb-[22px] text-gray-800">
         Вы успешно оплатили! В скорем времени деньги поступят на ваш Steam
         аккаунт
       </p>

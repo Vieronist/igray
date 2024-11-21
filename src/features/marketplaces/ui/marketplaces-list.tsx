@@ -10,14 +10,12 @@ export const MarketplacesList = () => {
     "wb-full.svg",
   ];
 
+  const paths = [" avito.ru/brands/igray24"];
+
   return (
     <ul className="grid grid-rows-3 grid-cols-2 sm:grid-cols-3 gap-[10px] mx-auto">
       {marketplaces.map((path, idx) => (
-        <MarketplaceItem
-          key={idx}
-          path={path}
-          href={`${path}`}
-        />
+        <MarketplaceItem key={idx} path={path} href={`${path}`} />
       ))}
     </ul>
   );
