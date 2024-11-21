@@ -17,7 +17,7 @@ export const Contacts: FC<IProps> = ({
   svgs,
 }) => {
   return (
-    <article className="bg-white rounded-[50px] p-[30px] h-[320px]">
+    <article className="bg-white rounded-[50px] p-[30px] w-full md:w-[320px] h-[320px]">
       <h6 className="text-[#4FCA9C] mb-[24px]">{title}</h6>
       <p className="text-[32px] leading-[35px]">{phone}</p>
       <p className="text-[#ADADB8] mb-[21px] text-[12px]">{schedule}</p>

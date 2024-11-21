@@ -1,9 +1,11 @@
 import { Contacts } from "@/features/contacts";
 import { MarketplacesList } from "@/features/marketplaces";
 
+
+
 export const ReturnGoodsPanel = () => {
   return (
-    <section className="mb-[120px]">
+    <section className="mb-[50px] xl:mb-[120px]">
       <h3 className="font-extrabold text-[36px] sm:text-[46px] mb-[27px]">Наши контакты</h3>
       <div className="flex gap-2 flex-wrap">
         <div className="flex gap-2 flex-wrap flex-col md:flex-row mx-auto xl:w-[51%]">
