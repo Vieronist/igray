@@ -10,10 +10,6 @@ export const FaqList = () => {
 
   const faqs = [
     {
-      title: "Как Скоро происходит пополнение?",
-      content: "В течении 2х минут с Момента Оплаты",
-    },
-    {
       title: "Что делать если пришла сумма меньше?",
       content: "Максимально допустимая погрешность 3%",
     },
@@ -50,6 +46,7 @@ export const FaqList = () => {
         Частые вопросы
       </h6>
       <ul className="">
+<FaqItemAccardion title="Как Скоро происходит пополнение?"  content="В течении 2х минут с Момента Оплаты"  />
         {faqs.map((faq, index) => (
           <FaqItemAccardion
             key={index}
