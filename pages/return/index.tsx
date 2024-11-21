@@ -1,15 +1,16 @@
 import { ArticlesList } from "@/widgtes/articles";
 import { Footer } from "@/widgtes/footer";
 import { Header } from "@/widgtes/header";
-import { ReturnGoodsPanel } from "@/widgtes/return-goods";
+import { ReturnConditions, WhereICanGetBackMoney, WhyWeCantReturn } from "@/widgtes/return/";
 import { Reviews } from "@/widgtes/reviews";
+import React from "react";
 
 interface IArticle {
   content: string;
   avatar: string;
 }
 
-export default function ReturnGoods() {
+export default function Index() {
   const articles: IArticle[] = [
     {
       content: "Как пополнить свой Steam бесплатно?",
@@ -25,24 +26,26 @@ export default function ReturnGoods() {
     },
     {
       avatar: "baba-v-shlyape.png",
-      content: "Foamstars выйдет 6 февраля"
+      content: "Foamstars выйдет 6 февраля",
     },
     {
       avatar: "overwatch-baba.png",
-      content: "Чарт продаж Steam захватили фритуплей"
-    }
+      content: "Чарт продаж Steam захватили фритуплей",
+    },
   ];
 
   return (
-    <>
+    <div>
       <Header />
-      <ReturnGoodsPanel />
+      <ReturnConditions />
+      <WhyWeCantReturn />
+      <WhereICanGetBackMoney/>
       <ArticlesList
         articles={articles}
         className="flex mb-[120px] overflow-x-auto"
       />
       <Reviews />
       <Footer />
-    </>
+    </div>
   );
 }

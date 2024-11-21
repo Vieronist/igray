@@ -3,7 +3,7 @@ import { MarketplacesList } from "@/features/marketplaces";
 
 
 
-export const ReturnGoodsPanel = () => {
+export const ContactsPanel = () => {
   return (
     <section className="mb-[50px] xl:mb-[120px]">
       <h3 className="font-extrabold text-[36px] sm:text-[46px] text-center xl:text-left mb-[27px] text-gray-800">Наши контакты</h3>
