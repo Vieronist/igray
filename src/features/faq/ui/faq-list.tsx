@@ -46,7 +46,10 @@ export const FaqList = () => {
         Частые вопросы
       </h6>
       <ul className="">
-<FaqItemAccardion paddingBottom="pb-6" title="Как Скоро происходит пополнение?"  content="В течении 2х минут с Момента Оплаты"  />
+      <FaqItemAccardion 
+        paddingBottom="pb-6" 
+         title="Как Скоро происходит пополнение?"  
+         content="В течении 2х минут с Момента Оплаты"  />
         {faqs.map((faq, index) => (
           <FaqItemAccardion
             key={index}
