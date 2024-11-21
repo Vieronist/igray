@@ -47,7 +47,7 @@ export const FaqItemAccardion: FC<IProps> = ({
       }}
     >
       <div
-        className="pt-3 pb-5 pr-2 text-gray-800 bg-white rounded-[18px]"
+        className="pt-3 pb-6 pr-2 text-gray-800 bg-white rounded-[18px]"
         style={{
           borderColor: isActive ? "#66D8AD" : "transparent", // Для активного состояния
         }}
