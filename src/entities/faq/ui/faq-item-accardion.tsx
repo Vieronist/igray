@@ -6,6 +6,7 @@ interface IProps {
   content: string;
   isActive: boolean;
   onClick: () => void;
+  paddingBottom?: string
 }
 
 export const FaqItemAccardion: FC<IProps> = ({
@@ -13,6 +14,7 @@ export const FaqItemAccardion: FC<IProps> = ({
   content,
   isActive,
   onClick,
+  paddingBottom
 }) => {
   const contentRef = useRef<HTMLDivElement | null>(null);
 
@@ -47,7 +49,7 @@ export const FaqItemAccardion: FC<IProps> = ({
       }}
     >
       <div
-        className="pt-3 pb-6 pr-2 text-gray-800 bg-white rounded-[18px]"
+        className={`pt-3 ${paddingBottom ? paddingBottom : "pb-2"} pr-2 text-gray-800 bg-white rounded-[18px]`}
         style={{
           borderColor: isActive ? "#66D8AD" : "transparent", // Для активного состояния
         }}
