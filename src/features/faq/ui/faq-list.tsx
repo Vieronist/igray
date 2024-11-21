@@ -49,7 +49,10 @@ export const FaqList = () => {
       <FaqItemAccardion 
         paddingBottom="pb-6" 
          title="Как Скоро происходит пополнение?"  
-         content="В течении 2х минут с Момента Оплаты"  />
+         content="В течении 2х минут с Момента Оплаты" 
+isActive={activeIndex === 100}
+            onClick={() => toggleIndex(100)}
+ />
         {faqs.map((faq, index) => (
           <FaqItemAccardion
             key={index}
