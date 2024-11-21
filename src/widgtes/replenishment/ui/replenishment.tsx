@@ -38,8 +38,7 @@ export const Replenishment = () => {
   const [discount, setDiscount] = useState(0);
   const [paymentType, setPaymentType] = useState<PaymentMethods>("SPB");
   const [touchedSumInput, setTouchedSumInput] = useState(false);
-  const [isModalVisible, setIsModalVisible] = useState(false)
-
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
   const {
     register,
@@ -64,13 +63,18 @@ export const Replenishment = () => {
 
   const { currencyData, currencyIsLoading } = useGetCurrencyRate(currency);
 
-  const { sendPayment, sendPaymentSuccess, sendPaymentData, sendPaymentPending } = usePayment();
+  const {
+    sendPayment,
+    sendPaymentSuccess,
+    sendPaymentData,
+    sendPaymentPending,
+  } = usePayment();
 
   const handleCheckPromo = (promoValue: string) => checkPromo(promoValue);
 
   const handleTouchSumInput = () => setTouchedSumInput(true);
 
-  const toggleModal = () => setIsModalVisible(prev => !prev)
+  const toggleModal = () => setIsModalVisible((prev) => !prev);
 
   const handlePayment: SubmitHandler<IPaymentInputs> = (data) => {
     const { login, email } = data;
@@ -81,7 +85,12 @@ export const Replenishment = () => {
       sendPayment({
         login,
         email,
-        amount: extractNumber(sum),
+        amount: Number(
+          convertFromRub(Number(sum), currency, {
+            usdToRub: currencyData?.data,
+            kztToRub: currencyData?.data,
+          })
+        ),
         currency,
         payment_type: paymentType,
         amount_after: Number(
@@ -140,15 +149,15 @@ export const Replenishment = () => {
   useEffect(() => {
     if (sendPaymentSuccess) {
       router.push(sendPaymentData?.link || "/");
-      toggleModal()
+      toggleModal();
     }
   }, [router, sendPaymentData?.link, sendPaymentSuccess]);
 
   useEffect(() => {
     if (sendPaymentPending) {
-      toggleModal()
+      toggleModal();
     }
-  },[sendPaymentPending])
+  }, [sendPaymentPending]);
 
   useEffect(() => {
     const numericSum = Number(sum);
