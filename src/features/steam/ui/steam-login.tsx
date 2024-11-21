@@ -26,7 +26,7 @@ export const SteamLogin: FC<IProps> = ({ register, errors, currency }) => {
         </div>
         {errors.login && (
           <span className="text-red-600 block text-[12px] ml-2 absolute bottom-[-2px] sm:bottom-[-18px]">
-            currency === "USD" ? "Обязательное поле" : "Steam Логин обязателен"}
+            {currency === "USD" ? "Обязательное поле" : "Steam Логин обязателен"}
           </span>
         )}
       </div>
