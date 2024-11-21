@@ -47,7 +47,7 @@ export const FaqList = () => {
       </h6>
       <ul className="">
       <FaqItemAccardion 
-        paddingBottom="pb-6" 
+        paddingBottom="pb-7" 
          title="Как Скоро происходит пополнение?"  
          content="В течении 2х минут с Момента Оплаты" 
 isActive={activeIndex === 100}
