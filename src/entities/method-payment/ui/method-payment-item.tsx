@@ -26,7 +26,7 @@ export const MethodPaymentItem: FC<IProps> = ({
         currentPaymentType === method ? "border-opacity-100" : ""
       }`}
     >
-      <button className="flex sm:flex-col items-center sm:w-full gap-[15px] sm:gap-[6px] ">
+      <button type="button" className="flex sm:flex-col items-center sm:w-full gap-[15px] sm:gap-[6px] ">
         <ReactSVG src={svg} className="" />
         <div className="text-left sm:text-center">
           <h5 className="text-gray-800 md:text-center">{title}</h5>
