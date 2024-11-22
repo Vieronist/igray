@@ -13,7 +13,7 @@ export const PlatformsList: FC<IProps> = ({ title, options, className }) => {
       <h5 className={`font-extrabold	text-[#4FCA9C] mb-[22px] text-[22px]`}>
         {title}
       </h5>
-      <ul className="px-[5px]">
+      <ul className="px-[2px]">
         {options.map((option, idx) => (
           <PlatformItem name={option} key={idx} />
         ))}
