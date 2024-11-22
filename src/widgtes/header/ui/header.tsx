@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export const Header = () => {
   return (
-    <header className="mb-[6px] md:mb-[36px]">
+    <header className="mb-[13px] md:mb-[36px]">
     <div className="flex items-center rounded-[40px] justify-between px-[12px] py-[10px] md:p-[20px] bg-white md:gap-[5px] mb-[10px] gap-[15px]">
       <Link href="/">
         <Image width={140} height={200} alt="logo" src="/logo.png" />
