@@ -139,8 +139,8 @@ export const Replenishment = () => {
   useEffect(() => {
     if (currency === "RUB" && sum === "10000") {
       setSum("10000");
-    } else if (currency === "KZT" && sum === "15000") {
-      setSum("15000");
+    } else if (currency === "KZT" && sum === "45000") {
+      setSum("45000");
     } else if (currency === "USD" && sum === "100") {
       setSum("100");
     }
@@ -175,7 +175,7 @@ export const Replenishment = () => {
         setCommission(22);
       } else if (numericSum >= 5000 && numericSum < 15000) {
         setCommission(20);
-      } else if (numericSum >= 15000 && numericSum <= 505617) {
+      } else if (numericSum >= 15000 && numericSum <= 46500) {
         setCommission(18);
       }
     } else if (currency === "USD" && numericSum) {

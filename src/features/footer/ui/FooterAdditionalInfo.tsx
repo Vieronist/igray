@@ -2,11 +2,14 @@ import { AdditionalInfo } from "@/entities/additionalInfo";
 
 export const FooterAdditionalInfo = () => {
   const items = [
-    "Copyright © 2024 GameShop. Все права защищены.",
+    "Copyright © 2024 Igray24. Все права защищены.",
     "Контакты",
     "Политика конфиденциальности",
     "Условия использования",
   ];
+
+ 
+
 
   return (
     <ul className="flex gap-x-5 md:gap-[24px] flex-wrap">

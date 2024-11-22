@@ -24,7 +24,15 @@ export const Contacts: FC<IProps> = ({
       <p className="mb-[42px] text-gray-800">{email}</p>
       <ul className="flex gap-[10px]">
         {svgs.map((svg, idx) => (
-          <ContactItem href={"tg.svg" === svg ? "https://t.me/igraem247" : "https://vk.com/igray24"} key={idx} path={svg} />
+          <ContactItem
+            href={
+              "tg.svg" === svg
+                ? "https://t.me/igraem247"
+                : "https://vk.com/igray24"
+            }
+            key={idx}
+            path={svg}
+          />
         ))}
       </ul>
     </article>

@@ -7,14 +7,14 @@ export const convertFromRub = (
 ): string => {
 
   
-  const { usdToRub, kztToRub } = exchangeRates;
+  const { usdToRub, kztToRub } = exchangeRates;                             
 
 
   switch (currency) {
     case "USD":
       return (amount * usdToRub).toFixed(2); // Переводим рубли в доллары
     case "KZT":
-      return ((100 / kztToRub) * amount).toFixed(2); // Переводим рубли в тенге
+      return ((amount / 100) * kztToRub).toFixed(2); // Переводим рубли в тенге
     case "RUB":
     default:
       return Number(amount).toFixed(1); // Если уже в рублях, возвращаем сумму
