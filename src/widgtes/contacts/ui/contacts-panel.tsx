@@ -5,10 +5,10 @@ import { MarketplacesList } from "@/features/marketplaces";
 
 export const ContactsPanel = () => {
   return (
-    <section className="mb-[50px] xl:mb-[120px]">
+    <section className="mb-[50px] xl:mb-[120px] max-w-[1150px] mx-auto">
       <h3 className="font-extrabold text-[36px] sm:text-[46px] text-center xl:text-left mb-[27px] text-gray-800">Наши контакты</h3>
-      <div className="flex gap-2 flex-wrap">
-        <div className="flex gap-2 flex-wrap flex-col md:flex-row mx-auto xl:w-[51%]">
+      <div className="flex flex-col xl:flex-row gap-2">
+        <div className="flex flex-wrap md:flex-nowrap gap-2 mx-auto xl:w-[51%]">
           <Contacts
             title="Заказы"
             phone="+7 919 346-11-58"
