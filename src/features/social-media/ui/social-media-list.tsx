@@ -1,9 +1,15 @@
 import { SocialMediaItem } from "@/entities/social-media";
+import { FC } from "react";
 
-export const SocialMediaList = () => {
+
+interface IProps {
+  className: string
+}
+
+export const SocialMediaList: FC<IProps> = ({ className}) => {
   
   return (
-    <ul className="md:grid grid-rows-2 grid-cols-4 gap-[15px] gap-x-12 hidden">
+    <ul className={`grid-rows-2 grid-cols-4 ${className}`}>
       <SocialMediaItem
         href="https://aliexpress.ru/store/1100219963?spm=a2g38.sc_product_list.0.0.252d2304G11LgS"
         svg={"aliexpress.svg"}
