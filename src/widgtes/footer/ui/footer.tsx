@@ -14,7 +14,7 @@ export const Footer = () => {
         </div>
         <div>
           <FooterNavigation />
-          <div className="flex gap-[65px] flex-wrap mb-[44px] md:mb-0">
+          <div className="flex gap-[65px] flex-wrap mb-[44px]">
             <PlatformsList
               title="Играй"
               options={["PC", "Xbox", "PlayStation", "Nintendo", "Mobile"]}
@@ -45,7 +45,7 @@ export const Footer = () => {
             />
             <PlatformsList title="Mobile" options={["Apple Itunes"]} />
           </div>
-          <SocialMediaList className="grid md:hidden w-[350px] gap-y-2 mx-auto mb-2" />
+          <SocialMediaList className="grid md:hidden w-[350px] gap-y-2 mx-auto mb-2 md:mb-0 md:gap-0" />
         </div>
       </div>
       <FooterAdditionalInfo />
