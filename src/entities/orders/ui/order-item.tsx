@@ -4,7 +4,7 @@ import { FC } from "react";
 export const OrderItem: FC<IOrderItem> = ({
   email,
   login,
-  amount_usd,
+  amount,
   date,
   order_id
 }) => {
@@ -15,7 +15,7 @@ export const OrderItem: FC<IOrderItem> = ({
       </div>
       <div className="text-gray-800">email: {email}</div>
       <div className="text-gray-800">steam: {login}</div>
-      <div className="text-gray-800">amount: {amount_usd} $</div>
+      <div className="text-gray-800">amount: {amount.toFixed(2)} $</div>
       <p className="text-gray-800">date: {date}</p>
     </li>
   );
