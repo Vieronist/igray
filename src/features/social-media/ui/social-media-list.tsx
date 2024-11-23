@@ -15,9 +15,9 @@ export const SocialMediaList: FC<IProps> = ({ className}) => {
         svg={"aliexpress.svg"}
         name={"Aliexpress"}
       />
-      <SocialMediaItem href="" svg={"instagram.svg"} name={"Instagram"} />
+      <SocialMediaItem href="https://plati.market/seller/x-shop-174/1050934/" svg={"plati-icon.svg"} name={"Plati.ru"} />
       <SocialMediaItem href="https://t.me/Igray24_bot" svg={"tg.svg"} name={"Telegram"} />
-      <SocialMediaItem href="" svg={"avito.svg"} name={"Avito"} />
+      <SocialMediaItem href="https://avito.ru/brands/igray24" svg={"avito.svg"} name={"Avito"} />
       <SocialMediaItem href="https://www.youtube.com/@%D0%98%D0%B3%D1%80%D0%B0%D0%B924" svg={"yt.svg"} name={"YouTube"} />
       <SocialMediaItem href="https://vk.com/igray24" svg={"vk.svg"} name={"Вконтаке"} />
       <SocialMediaItem href="https://api.whatsapp.com/send/?phone=79193461158&text&type=phone_number&app_absent=0  " svg={"whatsapp.svg"} name={"WhatsApp"} />
