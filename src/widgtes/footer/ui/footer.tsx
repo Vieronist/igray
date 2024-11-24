@@ -12,9 +12,9 @@ export const Footer = () => {
           <SearchPanel classNameDiv="bg-transparent h-[52px] px-[25px] w-full flex gap-[15px] items-center md:mb-5" />
           <SocialMediaList className="hidden md:grid gap-y-2 gap-x-8 md:gap-x-[10px]" />
         </div>
-        <div>
+        <div className="mx-auto">
           <FooterNavigation />
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:flex md:flex-wrap gap-[65px]  mb-[44px]">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:flex md:flex-wrap gap-[65px] mb-[44px] ">
             <PlatformsList
               title="Играй"
               options={[
@@ -63,7 +63,7 @@ export const Footer = () => {
               options={["Apple Itunes"]}
             />
           </div>
-          <SocialMediaList className="grid md:hidden w-[350px] gap-y-2 mx-auto mb-2 md:mb-0 md:gap-0" />
+          <SocialMediaList className="grid md:hidden w-[350px] gap-y-4 mx-auto mb-2 md:mb-0 md:gap-3" />
         </div>
       </div>
       <FooterAdditionalInfo />
