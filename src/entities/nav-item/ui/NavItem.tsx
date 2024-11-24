@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { FC } from "react";
-import { useServiceStore } from "@/shared/";
-
+import { useServiceStore } from "@/shared/model/store/service.store";
 
 interface IProps {
   label: string;
@@ -11,14 +10,14 @@ interface IProps {
 }
 
 export const NavItem: FC<IProps> = ({ label, href, className, target }) => {
-
-  const { setIsModalVisible } = useServiceStore()
+  const { setIsModalVisible } = useServiceStore();
 
   const handleClick = (e: React.MouseEvent) => {
     e.stopPropagation();
 
-     setIsModalVisible(href === "#" && true)
+    e.preventDefault();
 
+    setIsModalVisible(href === "#" && true);
   };
 
   return (
@@ -26,9 +25,16 @@ export const NavItem: FC<IProps> = ({ label, href, className, target }) => {
       className={`text-[18px] sm:text-[18px] z-10 text-gray-800 ${className}`}
       onClick={handleClick}
     >
-      <Link target={target !== undefined ? target : "_self"} href={href}>
-        {label}
-      </Link>
+      {href === "#" ? (
+        <button className="">{label}</button>
+      ) : (
+        <Link
+          target={target !== undefined ? target : "_self"}
+          href={href === "#" ? "/" : href}
+        >
+          {label}
+        </Link>
+      )}
     </li>
   );
 };
