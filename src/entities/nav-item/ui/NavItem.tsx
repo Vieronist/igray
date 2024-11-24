@@ -15,8 +15,6 @@ export const NavItem: FC<IProps> = ({ label, href, className, target }) => {
   const handleClick = (e: React.MouseEvent) => {
     e.stopPropagation();
 
-    e.preventDefault();
-
     setIsModalVisible(href === "#" && true);
   };
 
@@ -30,7 +28,7 @@ export const NavItem: FC<IProps> = ({ label, href, className, target }) => {
       ) : (
         <Link
           target={target !== undefined ? target : "_self"}
-          href={href === "#" ? "/" : href}
+          href={href}
         >
           {label}
         </Link>
