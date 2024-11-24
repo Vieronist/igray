@@ -27,7 +27,7 @@ export const Contacts: FC<IProps> = ({
           <ContactItem
             href={
               "tg.svg" === svg
-                ? "https://t.me/igraem247"
+                ? "https://t.me/igray247"
                 : "https://vk.com/igray24"
             }
             key={idx}

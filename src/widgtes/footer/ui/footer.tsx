@@ -14,12 +14,11 @@ export const Footer = () => {
         </div>
         <div className="mx-auto">
           <FooterNavigation />
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:flex md:flex-wrap gap-[65px] mb-[44px] ">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:flex md:flex-wrap gap-[25px] md:gap-[65px] mb-[44px] ">
             <PlatformsList
               title="Играй"
               options={[
                 "Бонусы",
-                "Подарочный сертификат",
                 "О сервисе",
                 "Партнерам",
                 "Блог",
@@ -32,7 +31,7 @@ export const Footer = () => {
             />
             <PlatformsList
               title="PC"
-              hrefs={["#", "#", "#", "#", "#"]}
+              hrefs={["/", "#", "#", "#", "#"]}
               options={[
                 "Steam",
                 "Battle NET",

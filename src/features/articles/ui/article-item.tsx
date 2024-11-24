@@ -12,8 +12,8 @@ export const ArticleItem: FC<IProps> = ({ content, avatar }) => {
       <Image
         className=""
         src={`/${avatar}`}
-        height={80}
-        width={80}
+        height={120}
+        width={120}
         alt="icon"
       />
       <p className="w-[180px] text-gray-800 text-center xl:text-left">{content}</p>
