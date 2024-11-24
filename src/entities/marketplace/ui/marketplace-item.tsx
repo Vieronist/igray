@@ -28,6 +28,7 @@ export const MarketplaceItem: FC<IProps> = ({ path, href }) => {
           {path === "vk-full.svg" ? "7 921 подписчик" : "каталог"}
         </p>
         <Link
+          target="_blank"
           className="text-center text-[#4FCA9C] text-[16px] block"
           href={href}
         >

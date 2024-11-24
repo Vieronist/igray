@@ -11,7 +11,7 @@ export const FooterNavigation = () => {
         <NavItem label={"Блог"} href={"#"} />
         <NavItem label={"Возврат"} href={"#"} />
         <NavItem label={"Вопросы"} href={"#"} />
-        <NavItem label={"Контакты"} href={"#"} />
+        <NavItem label={"Контакты"} href={"/contacts"} />
       </ul>
     </nav>
   );

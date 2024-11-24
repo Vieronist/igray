@@ -4,10 +4,11 @@ import { FC } from "react";
 interface IProps {
   title: string;
   options: string[];
-  className?: string
+  className?: string;
+  hrefs: string[];
 }
 
-export const PlatformsList: FC<IProps> = ({ title, options, className }) => {
+export const PlatformsList: FC<IProps> = ({ title, options, className, hrefs }) => {
   return (
     <div className={`${className}`}>
       <h5 className={`font-extrabold	text-[#4FCA9C] mb-[22px] text-[22px]`}>
@@ -15,7 +16,7 @@ export const PlatformsList: FC<IProps> = ({ title, options, className }) => {
       </h5>
       <ul className="px-[2px]">
         {options.map((option, idx) => (
-          <PlatformItem name={option} key={idx} />
+          <PlatformItem href={hrefs[idx]} name={option} key={idx} />
         ))}
       </ul>
     </div>

@@ -9,7 +9,7 @@ interface IProps {
 export const NavItem: FC<IProps> = ({ label, href }) => {
   return (
     <li className="text-[16px] sm:text-[18px] z-10 text-gray-800">
-      <Link href={href}>{label}</Link>
+      <Link target="_blank" href={href}>{label}</Link>
     </li>
   );
 };
