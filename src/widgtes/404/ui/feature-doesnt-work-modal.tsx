@@ -24,7 +24,7 @@ export const FeatureDoesntWorkModal = () => {
         </button>
         <h3 className="font-extrabold text-[32px] leading-[35px] mb-[27px]">Сервис недоступен</h3>
         <p className="text-[16px] leading-[19px] mb-[34px]">
-          Страница временно не доступна. Не переживайте, мы уже трудимся над
+          Страница временно недоступна. Не переживайте, мы уже трудимся над
           решением проблемы.
         </p>
         <button className="bg-[#66D8AD] text-white py-[21px] w-full rounded-[18px]" onClick={removeHash}>Хорошо</button>
