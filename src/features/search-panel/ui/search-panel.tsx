@@ -9,7 +9,7 @@ interface IProps {
 export const SearchPanel: FC<IProps> = ({ classNameDiv, classNameInput }) => {
   return (
     <div
-      className={` py-[7px] border-2 rounded-[18px] ${
+      className={`py-[7px] border-2 rounded-[18px] ${
         classNameDiv ? classNameDiv : ""
       }`}
     >

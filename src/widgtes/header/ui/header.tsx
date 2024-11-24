@@ -4,6 +4,7 @@ import { UserButtons } from "@/features/user-buttons";
 import Link from "next/link";
 import Image from "next/image";
 
+
 export const Header = () => {
   return (
     <header className="mb-[13px] md:mb-[36px] mx-auto w-full">
@@ -15,7 +16,7 @@ export const Header = () => {
       <div className="flex gap-[15px] max-[1410px]:gap-[26px]">
         <SearchPanel
           classNameInput="w-full"
-          classNameDiv="gap-[15px] hidden md:flex md:items-center md:w-[250px] lg:w-[300px] px-5"
+          classNameDiv="gap-[15px] hidden md:flex md:items-center md:w-[250px] lg:w-[380px] px-5"
         />
         <UserButtons />
       </div>

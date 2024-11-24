@@ -26,7 +26,7 @@ export const Footer = () => {
                 "Вопросы",
                 "Контакты",
               ]}
-              hrefs={["#", "#", "#", "#", "#", "#", "#", "/contacts"]}
+              hrefs={["#", "#", "#", "#", "#","#", "/contacts"]}
               className="block md:hidden"
             />
             <PlatformsList

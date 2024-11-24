@@ -2,7 +2,6 @@ import { Contacts } from "@/features/contacts";
 import { MarketplacesList } from "@/features/marketplaces";
 
 
-
 export const ContactsPanel = () => {
   return (
     <section className="mb-[50px] xl:mb-[120px] max-w-[1150px] mx-auto">
