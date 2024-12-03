@@ -8,7 +8,7 @@ interface IProps {
 	classNameInput?: string;
 }
 
-export const SearchPanel: FC<IProps> = ({ classNameDiv }) => {
+export const SearchPanel: FC<IProps> = () => {
 	const ref = useRef<HTMLInputElement>(null);
 
 	return (
