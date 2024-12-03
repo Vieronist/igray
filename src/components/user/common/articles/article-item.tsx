@@ -11,10 +11,10 @@ export const ArticleItem: FC<IProps> = ({ content, avatar }) => {
 		<li className='flex gap-4 flex-col md:flex-row justify-center items-center w-[307px] text-balance text-[16px] '>
 			<div className='p-1 flex-shrink-0'>
 				<Image
-					className=''
+					className='w-[112px] h-[112px]'
 					src={`/${avatar}`}
-					height={60}
-					width={60}
+					height={120}
+					width={120}
 					alt='icon'
 				/>
 			</div>
