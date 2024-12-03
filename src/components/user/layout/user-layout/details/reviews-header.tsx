@@ -2,15 +2,15 @@ import Link from "next/link";
 
 export const ReviewsHeader = () => {
 	return (
-		<div className='p-[30px] md:px-[60px] md:pt-[60px]'>
-			<h3 className='text-[#4FCA9C]  font-medium mb-8'>Отзывы</h3>
-			<div className='flex items-center justify-between'>
-				<h3 className='font-steppe font-extrabold leading-[35px] text-[32px] text-wrap min-w-[150px] md:text-[46px]  '>
-					<span className='text-[#1F3238]'>Более 10 000 покупок, </span>
-					<span className='text-[#4FCA9C]'>5 000 отзывов!</span>
+		<div className='px-[30px] md:px-[60px] md:pt-[60px] mb-7'>
+			<h3 className='text-secondary_color font-medium mb-8'>Отзывы</h3>
+			<div className='flex items-center gap-2 justify-between'>
+				<h3 className='font-steppe font-extrabold text-3xl lg:text-5xl text-wrap min-w-[150px]'>
+					<span className='text-primary_color'>Более 10 000 покупок, </span>
+					<span className='text-secondary_color'>5 000 отзывов!</span>
 				</h3>
 				<Link
-					className=' font-medium border-[#66D8AD] border rounded-[18px] py-[12px] px-5 hidden md:block text-gray-800'
+					className=' font-medium border-bg_color border rounded-[18px] py-3 px-5 flex-shrink-0 hidden md:block text-gray-800'
 					href='/reviews'
 				>
 					Все отзывы

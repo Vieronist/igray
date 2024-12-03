@@ -3,7 +3,7 @@ import { NavItem } from "./nav-item";
 export const FooterNavigation = () => {
 	return (
 		<nav className='hidden lg:block'>
-			<ul className='flex gap-[27px] mb-[40px] flex-wrap '>
+			<ul className='flex gap-[27px]   flex-wrap '>
 				<NavItem
 					className='hover:text-gray-400 active:text-gray-400 transition-colors duration-300'
 					label={"Бонусы"}

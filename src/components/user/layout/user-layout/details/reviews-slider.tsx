@@ -14,8 +14,8 @@ export const ReviewsSlider = () => {
 	const swiperRef = useRef<SwiperType>();
 
 	return (
-		<div className='h-[250px] md:h-[280px] bg-gradient-to-r from-[#E4FAF3] via-[rgba(228,250,243,0.29)] to-[#E4FAF3] rounded-[34px] p-[2px] sm:p-[5px] lg:p-[10px] xl:p-[20px] w-[95%] sm:w-[80%] md:w-[50%] mx-auto lg:w-[50%]'>
-			<div className='relative'>
+		<div className='relative py-4 bg-gradient-to-r from-[#E4FAF3] via-[rgba(228,250,243,0.29)] to-[#E4FAF3] rounded-[34px] p-[2px] sm:p-[5px] lg:p-[10px] xl:p-[20px] w-full lg:w-[50%] lg:h-[280px] lg:rounded-[50px]'>
+			<div>
 				<Swiper
 					onBeforeInit={(swiper) => {
 						swiperRef.current = swiper;
@@ -56,7 +56,8 @@ export const ReviewsSlider = () => {
 						/>
 					</SwiperSlide>
 				</Swiper>
-				<div className='flex items-center justify-between gap-[10px] mx-[20px] lg:mx-[0px] absolute md:bottom-2  lg:absolute lg:right-[10px] lg:bottom-[5px] z-50'>
+
+				<div className='mt-4 flex  items-center justify-between gap-[10px] px-4 lg:mx-[0px] lg:absolute lg:bottom-3 lg:right-2 z-50'>
 					<div className='z-20 flex gap-[10px]'>
 						<button
 							className='px-[15px] bg-white rounded-[18px]'
@@ -71,8 +72,9 @@ export const ReviewsSlider = () => {
 							<ReactSVG src='/arrow-left.svg' />
 						</button>
 					</div>
+
 					<Link
-						className='border-[#66D8AD] border rounded-[18px] py-[10px] px-3 text-[14px] block md:hidden text-gray-800'
+						className='border-bg_color border rounded-[14px] py-3 px-5 text-[14px] block md:hidden font-medium'
 						href='/reviews'
 					>
 						Все отзывы

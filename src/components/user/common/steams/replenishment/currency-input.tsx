@@ -38,7 +38,7 @@ export const CurrencyInput: FC<IProps> = ({
 
 	return (
 		<>
-			<div className='rounded-[18px] border-[#DDF1EA] border px-[7px] py-[10px] flex justify-between items-center w-full'>
+			<div className='rounded-[18px] border-[#DDF1EA] border px-[15px] py-[10px] flex justify-between items-center w-full'>
 				<div className='w-full'>
 					<span className='text-[11px] leading-[-20px] tracking-tight font-medium text-[#AFC5BE]'>
 						Сумма попалнения

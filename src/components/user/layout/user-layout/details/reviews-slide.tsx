@@ -9,7 +9,7 @@ interface IProps {
 
 export const ReviewsSlide: FC<IProps> = ({ date, text, userName }) => {
 	return (
-		<div className='bg-gradient-to-r from-[#E4FAF3] via-[rgba(228,250,243,0.29)] to-[#E4FAF3] p-[20px] rounded-[50px] h-[180px] md:h-[250px]'>
+		<div className='p-[20px] rounded-[50px] cursor-pointer'>
 			<div className='flex items-center w-full mb-[25px]'>
 				<div className='flex gap-2 sm:w-[50%] '>
 					<Image
@@ -19,6 +19,7 @@ export const ReviewsSlide: FC<IProps> = ({ date, text, userName }) => {
 						src={"/user-logo-mini.png"}
 						className='object-contain rounded-full'
 					/>
+
 					<div>
 						<span className='text-[#AFC5BE] block text-[10px] md:text-[12px] leading-[20px]'>
 							{date}
@@ -32,41 +33,42 @@ export const ReviewsSlide: FC<IProps> = ({ date, text, userName }) => {
 					<Image
 						alt='star'
 						src='/star.png'
-						width={14}
-						height={14}
-						className='w-[14px] h-[14px] sm:w-[26px] sm:h-[26px]'
+						width={16}
+						height={16}
+						className='w-4 h-4 lg:w-6 lg:h-6'
+					/>
+
+					<Image
+						alt='star'
+						src='/star.png'
+						width={16}
+						height={16}
+						className='w-4 h-4 lg:w-6 lg:h-6'
 					/>
 					<Image
 						alt='star'
 						src='/star.png'
-						width={14}
-						height={14}
-						className='w-[14px] h-[14px] sm:w-[26px] sm:h-[26px] '
+						width={16}
+						height={16}
+						className='w-4 h-4 lg:w-6 lg:h-6'
 					/>
 					<Image
 						alt='star'
 						src='/star.png'
-						width={14}
-						height={14}
-						className='w-[14px] h-[14px] sm:w-[26px] sm:h-[26px] '
+						width={16}
+						height={16}
+						className='w-4 h-4 lg:w-6 lg:h-6'
 					/>
 					<Image
 						alt='star'
 						src='/star.png'
-						width={14}
-						height={14}
-						className='w-[14px] h-[14px] sm:w-[26px] sm:h-[26px] '
-					/>
-					<Image
-						alt='star'
-						src='/star.png'
-						width={14}
-						height={14}
-						className='w-[14px] h-[14px] sm:w-[26px] sm:h-[26px] '
+						width={16}
+						height={16}
+						className='w-4 h-4 lg:w-6 lg:h-6'
 					/>
 				</div>
 			</div>
-			<p className='font-steppe font-normal text-[22px] leading-[23px] lg:text-[30px] lg:leading-[30px] xl:text-[35px] xl:leading-[35px]  max-w-[465px] w-full md:max-w-[460] text-gray-800'>
+			<p className='font-steppe md:text-3xl font-normal leading-[23px] max-w-[465px] w-full md:max-w-[460] '>
 				{text}
 			</p>
 		</div>

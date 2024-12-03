@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-*,
-&::before,
-&::after {
-	box-sizing: border-box;
-}
-
 @font-face {
 	font-family: "Steppe";
 	src: url("./fonts/Steppe-ExtraBold.woff2");
@@ -29,8 +23,33 @@
 	font-style: normal;
 }
 
+:root {
+	/* fonts */
+	--font-steppe: "Steppe", sans-serif;
+
+	/* shadcn */
+	--radius: 0.5rem;
+	--sidebar-background: 0 0% 98%;
+	--sidebar-foreground: 240 5.3% 26.1%;
+	--sidebar-primary: 240 5.9% 10%;
+	--sidebar-primary-foreground: 0 0% 98%;
+	--sidebar-accent: 240 4.8% 95.9%;
+	--sidebar-accent-foreground: 240 5.9% 10%;
+	--sidebar-border: 220 13% 91%;
+	--sidebar-ring: 217.2 91.2% 59.8%;
+
+	/* custom-colors */
+	--primary-color: #1f3238;
+	--secondary-color: #4fca9c;
+	--bg-color: #66d8ad;
+	--gray-color: #afc5be;
+	--gray-color-primary: #a3bdb5;
+	--light-green: #ddf1ea;
+}
+
 body {
 	font-weight: 400;
+	color: var(--primary-color);
 }
 
 @layer utilities {
@@ -55,19 +74,6 @@ body {
 	}
 }
 
-:root {
-	--font-steppe: "Steppe", sans-serif;
-
-	--radius: 0.5rem;
-	--sidebar-background: 0 0% 98%;
-	--sidebar-foreground: 240 5.3% 26.1%;
-	--sidebar-primary: 240 5.9% 10%;
-	--sidebar-primary-foreground: 0 0% 98%;
-	--sidebar-accent: 240 4.8% 95.9%;
-	--sidebar-accent-foreground: 240 5.9% 10%;
-	--sidebar-border: 220 13% 91%;
-	--sidebar-ring: 217.2 91.2% 59.8%;
-}
 @layer base {
 	.dark {
 		--sidebar-background: 240 5.9% 10%;

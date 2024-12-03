@@ -11,7 +11,7 @@ export const PlatformItem: FC<IProps> = ({ name, href, onClick }) => {
 	return (
 		<li
 			onClick={() => onClick(href)}
-			className='text-[14px] font-medium mb-[12px] text-gray-800 hover:text-gray-400 active:text-gray-400 transition-colors duration-300'
+			className='text-[14px] text-primary_color font-medium hover:text-secondary_color active:text-secondary_color transition-colors duration-300'
 		>
 			{href === "#" ? (
 				<button>{name}</button>

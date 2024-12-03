@@ -34,7 +34,7 @@ export const PromoInput: FC<IProps> = ({ checkPromo, discount }) => {
 			<button
 				onClick={() => checkPromo(promoValue)}
 				type='button'
-				className='bg-[#E4FAF3] rounded-[14px] py-[15px] px-[12px] sm:w-auto sm:px-[12px] sm:py-[15px] flex-shrink-0 text-gray-800'
+				className='bg-[linear-gradient(100.65deg,_#E4FAF3_0.34%,_rgba(228,250,243,0.29)_47.86%,_#E4FAF3_92.62%,_rgba(228,250,243,0.34)_138.07%)] rounded-[14px] py-[15px] px-3 sm:w-auto sm:px-5 sm:py-4 font-medium flex-shrink-0 text-gray_color'
 			>
 				{discount ? `Ваша скидка - ${discount} %` : "Применить"}
 			</button>

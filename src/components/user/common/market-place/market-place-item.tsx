@@ -31,7 +31,7 @@ export const MarketplaceItem: FC<IProps> = ({ path, href }) => {
 				</p>
 				<Link
 					target='_blank'
-					className='text-center text-[#4FCA9C] text-[16px] block'
+					className='text-center text-secondary_color text-[16px] block'
 					href={href}
 				>
 					Смотреть

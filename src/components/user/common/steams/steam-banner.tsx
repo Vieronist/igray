@@ -7,8 +7,9 @@ export const SteamBanner = () => {
 	return (
 		<div
 			className={cn(
-				"bg-[url('/steam-bg.png')] bg-no-repeat w-[350px] xl:w-[490px] xl:h-[306px] bg-contain bg-center h-[206px] mb-[10px] relative mx-auto"
+				"bg-[url('/steam-bg.png')] w-full bg-no-repeat bg-cover  md:w-[490px] md:h-[306px]  bg-center  rounded-[40px] h-[206px] mb-[10px] relative mx-auto"
 			)}
+			//
 		>
 			<ReactSVG
 				src='steam-logo.svg'

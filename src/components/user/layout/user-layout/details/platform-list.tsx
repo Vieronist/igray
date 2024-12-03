@@ -25,10 +25,12 @@ export const PlatformsList: FC<IProps> = ({
 
 	return (
 		<div className={`${className}`}>
-			<h5 className={`font-extrabold	text-[#4FCA9C] mb-[22px] text-[22px]`}>
+			<h5
+				className={`font-extrabold	text-secondary_color mb-[22px] text-[22px]`}
+			>
 				{title}
 			</h5>
-			<ul className='px-[2px]'>
+			<ul className='px-[2px] space-y-3'>
 				{options.map((option, idx) => (
 					<PlatformItem
 						onClick={handleClick}

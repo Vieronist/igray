@@ -1,6 +1,6 @@
 "use client";
 
-import { FC } from "react";
+import { FC, useRef } from "react";
 import { ReactSVG } from "react-svg";
 
 interface IProps {
@@ -8,22 +8,26 @@ interface IProps {
 	classNameInput?: string;
 }
 
-export const SearchPanel: FC<IProps> = ({ classNameDiv, classNameInput }) => {
-	return (
-		<div
-			className={`py-[7px] border-2 rounded-[18px] ${
-				classNameDiv ? classNameDiv : ""
-			}`}
-		>
-			<ReactSVG src='/lupa.svg' className='' />
+export const SearchPanel: FC<IProps> = ({ classNameDiv }) => {
+	const ref = useRef<HTMLInputElement>(null);
 
-			<input
-				className={`outline-none bg-transparent text-gray-800 ${
-					classNameInput ? classNameInput : ""
-				}`}
-				placeholder='Search'
-				type='text'
-			/>
+	return (
+		<div className='hidden md:block'>
+			<div className='relative'>
+				<button onClick={() => ref.current?.focus()} type='button'>
+					<ReactSVG
+						src='/search.svg'
+						className='cursor-pointer absolute left-5 top-1/2 -translate-y-1/2'
+					/>
+				</button>
+
+				<input
+					ref={ref}
+					className={`border-[1px] hover:border-secondary_color transition-border duration-100 focus:border-secondary_color border-light_green w-full py-3 pr-4 text-lg rounded-[18px] outline-none pl-12 bg-transparent text-primary_color placeholder:text-gray_color lg:w-[390px]`}
+					placeholder='Быстрый поиск...'
+					type='text'
+				/>
+			</div>
 		</div>
 	);
 };

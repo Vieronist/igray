@@ -22,7 +22,7 @@ export const NavItem: FC<IProps> = ({ label, href, className, target }) => {
 
 	return (
 		<li
-			className={`text-[18px] sm:text-[18px]  z-10 text-gray-800 ${className}`}
+			className={`text-base hover:text-secondary_color  z-10 text-gray-800 ${className}`}
 			onClick={handleClick}
 		>
 			{href === "#" ? (

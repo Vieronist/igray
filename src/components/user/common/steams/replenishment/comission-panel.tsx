@@ -55,7 +55,7 @@ export const CommissionPanel: FC<IProps> = ({ currency }) => {
 	return (
 		<div className='mb-5'>
 			<h5 className='text-[#AFC5BE] text-[12px] font-medium mb-2'>Комиссия</h5>
-			<div className='rounded-[18px] bg-[#66D8AD] flex'>
+			<div className='rounded-[18px] bg-bg_color flex'>
 				<div className='basis-1/3 py-2 px-2 z-30'>
 					<p className='text-gray-800'>
 						{commissions[currency][0].commission} %

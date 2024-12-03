@@ -22,7 +22,7 @@ export const MethodPaymentItem: FC<IProps> = ({
 	return (
 		<li
 			onClick={() => onChange(method)}
-			className={`border-[#1F3238] border-opacity-10 border rounded-[18px] p-[10px] md:basis-[30%] text-center ${
+			className={`border-[#1f3238] border-opacity-10 border rounded-[18px] p-[10px] md:basis-[30%] text-center ${
 				currentPaymentType === method ? "border-opacity-100" : ""
 			}`}
 		>

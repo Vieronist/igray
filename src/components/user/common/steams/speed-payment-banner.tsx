@@ -26,7 +26,7 @@ export const SpeedPaymentBanner: FC<IProps> = ({ className }) => {
 						Моментальное пополнение за 2 минуты
 					</h6>
 
-					<p className='text-[#A3BDB5]'>
+					<p className='text-gray_color_primary'>
 						Покупай желанные игры в два клика, без ожиданий и лишних действий на
 						сервисе ИгРай
 					</p>

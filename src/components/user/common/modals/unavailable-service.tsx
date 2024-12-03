@@ -32,7 +32,7 @@ export const UnavailableServiceModal = () => {
 					решением проблемы.
 				</p>
 				<button
-					className='bg-[#66D8AD] text-white py-[21px] w-full rounded-[18px]'
+					className='bg-bg_color text-white py-[21px] w-full rounded-[18px]'
 					onClick={removeHash}
 				>
 					Хорошо

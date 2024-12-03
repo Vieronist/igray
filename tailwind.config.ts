@@ -9,6 +9,9 @@ const config: Config = {
 	],
 	theme: {
 		extend: {
+			screens: {
+				// xl: { min: "1350px" },
+			},
 			colors: {
 				background: "var(--background)",
 				foreground: "var(--foreground)",
@@ -33,6 +36,13 @@ const config: Config = {
 							"linear-gradient(141.87deg, #62CEA6 -13.43%, #72F2C1 46.91%, #66D7AD 98.32%)",
 					},
 				},
+
+				primary_color: "var(--primary-color)",
+				secondary_color: "var(--secondary-color)",
+				gray_color: "var(--gray-color)",
+				bg_color: "var(--bg-color)",
+				light_green: "var(--light-green)",
+				gray_color_primary: "var(--gray-color-primary)",
 			},
 			fontFamily: {
 				steppe: ["var(--font-steppe)", "sans-serif"],
@@ -41,6 +51,9 @@ const config: Config = {
 				lg: "var(--radius)",
 				md: "calc(var(--radius) - 2px)",
 				sm: "calc(var(--radius) - 4px)",
+			},
+			fontSize: {
+				sm1: "0.8125rem", // ,
 			},
 		},
 	},

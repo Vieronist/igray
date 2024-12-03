@@ -65,9 +65,7 @@ export const ModalLayout = (props: ModalProps) => {
 						)}
 
 						<div className='flex justify-between items-center mb-4'>
-							{title && (
-								<h3 className='text-3xl font-extrabold font-bold'>{title}</h3>
-							)}
+							{title && <h3 className='text-3xl font-extrabold'>{title}</h3>}
 						</div>
 
 						<div className='mb-4'>{children}</div>

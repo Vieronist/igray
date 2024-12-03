@@ -7,7 +7,7 @@ interface IProps {
 
 export const SocialMediaList: FC<IProps> = ({ className }) => {
 	return (
-		<ul className={`grid-rows-3 grid-cols-4 ${className}`}>
+		<ul className={`grid-rows-2 grid-cols-4 ${className}`}>
 			<SocialMediaItem
 				href='https://aliexpress.ru/store/1100219963?spm=a2g38.sc_product_list.0.0.252d2304G11LgS'
 				svg={"aliexpress.svg"}

@@ -13,7 +13,7 @@ interface IProps {
 export const SocialMediaItem: FC<IProps> = ({ svg, name, href }) => {
 	return (
 		<li
-			className={`h-[80px] w-[80px] justify-self-center p-[5px] bg-white flex items-center justify-center content-center rounded-[24px] transition-all duration-300 border-[white] active:border-[#4FCA9C] hover:border-[#4FCA9C] border-2 `}
+			className={`h-[80px] w-[80px] lg:w-[90px] lg:h-[90px] justify-self-center p-[5px] bg-white flex items-center justify-center content-center rounded-[24px] transition-all duration-300 border-[white] active:border-secondary_color hover:border-secondary_color border-2 `}
 		>
 			<Link href={href} className='flex flex-col items-center'>
 				<ReactSVG

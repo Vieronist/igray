@@ -1,10 +1,10 @@
-import { Reviews } from "@/components/user/layout/user-layout/details/reviews";
-import { Footer } from "@/components/user/layout/user-layout/footer";
 import { Header } from "@/components/user/layout/user-layout/header";
 import { Container } from "@/components/user/ui/container";
 import { cn } from "@/lib/utils";
 
-import cls from "./user.module.css";
+import { Reviews } from "@/components/user/layout/user-layout/details/reviews";
+import { Footer } from "@/components/user/layout/user-layout/footer";
+import cls from "./user.module.scss";
 
 export default function RootLayout({
 	children,

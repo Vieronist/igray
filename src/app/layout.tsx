@@ -1,7 +1,7 @@
 import { UnavailableServiceModal } from "@/components/user/common/modals/unavailable-service";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import "./globals.css";
+import "./globals.scss";
 import Providers from "./providers";
 
 const onset = localFont({
