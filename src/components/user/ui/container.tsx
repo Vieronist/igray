@@ -1,9 +1,9 @@
 interface ContainerProps {
-	children: React.ReactNode;
+	children: React.ReactNode
 }
 
 export const Container = (props: ContainerProps) => {
-	const { children } = props;
+	const { children } = props
 
-	return <div className={`max-w-[1450px] mx-auto px-[10px]`}>{children}</div>;
-};
+	return <div className={`max-w-[1450px] mx-auto px-[10px]`}>{children}</div>
+}

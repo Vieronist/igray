@@ -7,7 +7,8 @@ export const countTotalAmoutWithCommission = (
 		return (
 			Number(price) +
 			Number(price) * (commission / 100) -
-			(Number(price) + Number(price) * (commission / 100)) * (discount / 100)
-		);
-	else return Number(price) + Number(price) * (commission / 100);
-};
+			(Number(price) + Number(price) * (commission / 100)) *
+				(discount / 100)
+		)
+	else return Number(price) + Number(price) * (commission / 100)
+}

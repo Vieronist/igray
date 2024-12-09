@@ -1,21 +1,22 @@
-import { Header } from "@/components/user/layout/user-layout/header";
-import { Container } from "@/components/user/ui/container";
-import { cn } from "@/lib/utils";
+import { Footer } from '@/components/user/layout/user-layout/Footer'
+import { Header } from '@/components/user/layout/user-layout/Header'
+import { Reviews } from '@/components/user/layout/user-layout/footer/Reviews'
+import { Container } from '@/components/user/ui/Container'
 
-import { Reviews } from "@/components/user/layout/user-layout/details/reviews";
-import { Footer } from "@/components/user/layout/user-layout/footer";
-import cls from "./user.module.scss";
+import { cn } from '@/utils/clsx'
+
+import cls from './user.module.scss'
 
 export default function RootLayout({
-	children,
+	children
 }: Readonly<{
-	children: React.ReactNode;
+	children: React.ReactNode
 }>) {
 	return (
 		<div
-			className={cn("pt-5 pb-5", cls.backgroundMain)}
+			className={cn('pt-5 pb-5', cls.backgroundMain)}
 			style={{
-				background: "/background.jpg')",
+				background: "/background.jpg')"
 			}}
 		>
 			<Container>
@@ -27,5 +28,5 @@ export default function RootLayout({
 				<Footer />
 			</Container>
 		</div>
-	);
+	)
 }

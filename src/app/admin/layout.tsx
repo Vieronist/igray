@@ -1,9 +1,9 @@
-import { AdminLayout } from "@/components/admin/admin-layout";
+import { AdminLayout } from '@/components/admin/admin-layout'
 
 export default function RootLayout({
-	children,
+	children
 }: Readonly<{
-	children: React.ReactNode;
+	children: React.ReactNode
 }>) {
-	return <AdminLayout>{children}</AdminLayout>;
+	return <AdminLayout>{children}</AdminLayout>
 }

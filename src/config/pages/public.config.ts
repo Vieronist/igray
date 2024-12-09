@@ -1,5 +1,5 @@
 class PublicPages {
-	HOME = "/";
+	HOME = '/'
 }
 
-export const PUBLIC_PAGES = new PublicPages();
+export const PUBLIC_PAGES = new PublicPages()

@@ -1,12 +1,14 @@
-"use client";
+'use client'
 
-import { UnavailableServiceModal } from "@/components/user/common/modals/unavailable-service";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { FC, PropsWithChildren, useState } from "react";
-import { Toaster } from "react-hot-toast";
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools/production'
+import { FC, PropsWithChildren, useState } from 'react'
+import { Toaster } from 'react-hot-toast'
+
+import { UnavailableServiceModal } from '@/components/user/common/modals/UnavailableServiceModal'
 
 const Providers: FC<PropsWithChildren<unknown>> = ({ children }) => {
-	const [client] = useState(new QueryClient());
+	const [client] = useState(new QueryClient())
 
 	// {
 	// 	defaultOptions: {
@@ -23,17 +25,18 @@ const Providers: FC<PropsWithChildren<unknown>> = ({ children }) => {
 				toastOptions={{
 					duration: 2000,
 					style: {
-						background: "#333",
-						color: "#fff",
-					},
+						background: '#333',
+						color: '#fff'
+					}
 				}}
 			/>
 
 			{children}
 
 			<UnavailableServiceModal />
+			<ReactQueryDevtools initialIsOpen={false} />
 		</QueryClientProvider>
-	);
-};
+	)
+}
 
-export default Providers;
+export default Providers

@@ -1,20 +1,21 @@
-"use client";
+'use client'
 
-import ReactPaginate from "react-paginate";
+import ReactPaginate from 'react-paginate'
 
 interface OrderPaginationProps {
-	onClickPage: (page: number) => void;
-	count: number;
+	onClickPage: (page: number) => void
+	count: number
 }
 
 export const OrderPagination = (props: OrderPaginationProps) => {
-	const { onClickPage, count } = props;
+	const { onClickPage, count } = props
 
 	return (
 		<ReactPaginate
+			disabledClassName={'red-500'}
 			nextLabel='>'
 			previousLabel='<'
-			onPageChange={(test) => onClickPage(test.selected)}
+			onPageChange={test => onClickPage(test.selected)}
 			pageRangeDisplayed={3}
 			marginPagesDisplayed={2}
 			pageCount={count}
@@ -31,5 +32,5 @@ export const OrderPagination = (props: OrderPaginationProps) => {
 			activeClassName='bg-black text-white rounded-lg'
 			renderOnZeroPageCount={null}
 		/>
-	);
-};
+	)
+}

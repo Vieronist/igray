@@ -1,5 +1,5 @@
 export const symbols = {
-	RUB: "₽",
-	KZT: "₸",
-	USD: "$",
-};
+	RUB: '₽',
+	KZT: '₸',
+	USD: '$'
+}

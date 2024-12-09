@@ -1,29 +1,30 @@
-import { ArticlesList } from "@/components/user/common/articles/article-list";
-import { FaqList } from "@/components/user/common/faq-list/faq-list";
-import { Replenishment } from "@/components/user/common/steams/replenishment/replenishment";
-import { SpeedPaymentBanner } from "@/components/user/common/steams/speed-payment-banner";
-import { SteamInfo } from "@/components/user/common/steams/steam-info";
+import Image from 'next/image'
+
+import { FaqList } from '@/components/user/common/faq-list/FaqList'
+import { SpeedPaymentBanner } from '@/components/user/common/steams/SpeedPaymentBanner'
+import { SteamInfo } from '@/components/user/common/steams/SteamInfo'
+import { Replenishment } from '@/components/user/common/steams/replenishment/Replenishment'
 
 interface IArticle {
-	content: string;
-	avatar: string;
+	content: string
+	avatar: string
 }
 
 export default function HomePage() {
 	const articles: IArticle[] = [
 		{
-			content: "Как пополнить свой Steam бесплатно?",
-			avatar: "gabe.png",
+			content: 'Как пополнить свой Steam бесплатно?',
+			avatar: 'articles/img1.png'
 		},
 		{
-			content: "Что было на презентации Xbox 2024",
-			avatar: "someone.png",
+			content: 'Что было на презентации Xbox 2024',
+			avatar: 'articles/img2.png'
 		},
 		{
-			avatar: "dracon.png",
-			content: "Магический выживач Nightingale",
-		},
-	];
+			avatar: 'articles/img3.png',
+			content: 'Магический выживач Nightingale'
+		}
+	]
 
 	return (
 		<div className='block 2xl:flex gap-[10px] justify-between mb-[40px] md:mb-[130px]'>
@@ -32,11 +33,30 @@ export default function HomePage() {
 			<section>
 				<SpeedPaymentBanner className='hidden 2xl:block' />
 				<FaqList />
-				<ArticlesList
-					articles={articles}
-					className='flex sm:justify-center md:justify-end overflow-x-auto whitespace-nowrap flex-shrink-0 xl:hidden mb-5'
-				/>
+
+				<ul className='2xl:hidden flex flex-row overflow-x-auto gap-4 mx-auto max-w-[1000px] items-center'>
+					{articles.map(article => (
+						<li
+							key={article.avatar}
+							className='flex gap-4 flex-col md:flex-row justify-center items-center w-[307px] text-balance text-[16px] '
+						>
+							<div className='p-1 flex-shrink-0'>
+								<Image
+									className={'w-[96px] h-[96px]'}
+									src={`/${article.avatar}`}
+									height={96}
+									width={96}
+									alt='icon'
+								/>
+							</div>
+
+							<p className='w-[180px] lg:w-auto text-center md:text-left leading-5 font-medium text-base'>
+								{article.content}
+							</p>
+						</li>
+					))}
+				</ul>
 			</section>
 		</div>
-	);
+	)
 }

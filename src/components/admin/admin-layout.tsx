@@ -1,44 +1,42 @@
-"use client";
+'use client'
+
+import { BringToFront } from 'lucide-react'
 
 import {
 	Sidebar,
 	SidebarFooter,
 	SidebarGroupContent,
-	SidebarGroupLabel,
 	SidebarHeader,
 	SidebarMenu,
 	SidebarMenuButton,
 	SidebarMenuItem,
 	SidebarProvider,
-	SidebarTrigger,
-} from "@/components/shadcn-ui/sidebar";
-
-import { BringToFront } from "lucide-react";
+	SidebarTrigger
+} from '@/components/shadcn-ui/sidebar'
 
 interface AdminLayoutProps {
-	children: React.ReactNode;
+	children: React.ReactNode
 }
 
 const items = [
 	{
-		title: "Список заказов",
-		url: "#",
-		icon: BringToFront,
-	},
-];
+		title: 'Список заказов',
+		url: '#',
+		icon: BringToFront
+	}
+]
 
 export const AdminLayout = (props: AdminLayoutProps) => {
-	const { children } = props;
+	const { children } = props
 
 	return (
 		<div>
 			<SidebarProvider>
 				<Sidebar>
 					<SidebarHeader />
-					<SidebarGroupLabel>Админ панель</SidebarGroupLabel>
 					<SidebarGroupContent>
 						<SidebarMenu>
-							{items.map((item) => (
+							{items.map(item => (
 								<SidebarMenuItem key={item.title}>
 									<SidebarMenuButton asChild isActive={true}>
 										<a href={item.url}>
@@ -59,5 +57,5 @@ export const AdminLayout = (props: AdminLayoutProps) => {
 				</main>
 			</SidebarProvider>
 		</div>
-	);
-};
+	)
+}

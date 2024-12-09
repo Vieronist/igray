@@ -1,25 +1,28 @@
-"use client";
+'use client'
 
-import { useGetOrders } from "@/api/queries/orders.queries";
+import { useState } from 'react'
+
 import {
 	Table,
 	TableBody,
 	TableCell,
 	TableHead,
 	TableHeader,
-	TableRow,
-} from "@/components/shadcn-ui/table";
-import { useState } from "react";
-import { OrderPagination } from "./order-pagination";
+	TableRow
+} from '@/components/shadcn-ui/table'
+
+import { useGetOrders } from '@/hooks/queries/useGetOrders'
+
+import { OrderPagination } from './order-pagination'
 
 export default function OrderTable() {
-	const [currentPage, setCurrentPage] = useState(1);
+	const [currentPage, setCurrentPage] = useState(1)
 
-	const { orders } = useGetOrders({ limit: 5, page: currentPage });
+	const { orders } = useGetOrders({ limit: 5, page: currentPage })
 
 	const handlePageChange = (pageNumber: number) => {
-		setCurrentPage(pageNumber + 1);
-	};
+		setCurrentPage(pageNumber + 1)
+	}
 
 	return (
 		<div className='max-w-3xl flex flex-col items-center gap-4'>
@@ -50,9 +53,9 @@ export default function OrderTable() {
 			<div>
 				<OrderPagination
 					count={orders?.countPages || 1}
-					onClickPage={(pageNumber) => handlePageChange(pageNumber)}
+					onClickPage={pageNumber => handlePageChange(pageNumber)}
 				/>
 			</div>
 		</div>
-	);
+	)
 }

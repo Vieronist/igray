@@ -1,8 +1,9 @@
-import Image from "next/image";
-import Link from "next/link";
-import { Navigation } from "./details/navigation";
-import { SearchPanel } from "./details/search-panel";
-import { UserButtons } from "./details/user-buttons";
+import Image from 'next/image'
+import Link from 'next/link'
+
+import { SearchPanel } from './SearchPanel'
+import { Navigation } from './header/Navigation'
+import { UserButtons } from './header/UserButtons'
 
 export const Header = () => {
 	return (
@@ -27,7 +28,7 @@ export const Header = () => {
 				</div>
 			</div>
 
-			<Navigation className='flex justify-between w-full sm:w-[70%] md:w-[60%] xl:hidden mx-auto ' />
+			<Navigation className='flex justify-between w-full max-w-[350px] xl:hidden mx-auto ' />
 		</header>
-	);
-};
+	)
+}

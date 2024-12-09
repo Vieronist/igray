@@ -3,29 +3,29 @@
 @tailwind utilities;
 
 @font-face {
-	font-family: "Steppe";
-	src: url("./fonts/Steppe-ExtraBold.woff2");
+	font-family: 'Steppe';
+	src: url('./fonts/Steppe-ExtraBold.woff2');
 	font-weight: 800;
 	font-style: normal;
 }
 
 @font-face {
-	font-family: "Steppe";
-	src: url("./fonts/Steppe-Medium.woff2");
-	font-weight: 700;
+	font-family: 'Steppe';
+	src: url('./fonts/Steppe-Medium.woff2');
+	font-weight: 500;
 	font-style: normal;
 }
 
 @font-face {
-	font-family: "Steppe";
-	src: url("./fonts/Steppe-Regular.woff2");
+	font-family: 'Steppe';
+	src: url('./fonts/Steppe-Regular.woff2');
 	font-weight: 400;
 	font-style: normal;
 }
 
 :root {
 	/* fonts */
-	--font-steppe: "Steppe", sans-serif;
+	--font-steppe: 'Steppe', sans-serif;
 
 	/* shadcn */
 	--radius: 0.5rem;
@@ -47,15 +47,22 @@
 	--light-green: #ddf1ea;
 }
 
+html,
+body {
+	overflow-x: hidden;
+}
+
 body {
 	font-weight: 400;
 	color: var(--primary-color);
+	font-size: 16px;
 }
 
 @layer utilities {
 	.text-shadow {
 		text-shadow: 0px 0px 24px #ffffff80;
 	}
+
 	.border-gradient {
 		@apply border-[17px] border-solid;
 		border-image-source: linear-gradient(
@@ -87,7 +94,7 @@ body {
 	}
 }
 
-input[type="range"] {
+input[type='range'] {
 	-webkit-appearance: none;
 	height: 2px;
 	background: #66d8ad; /* bg-gray-200 */
@@ -96,19 +103,19 @@ input[type="range"] {
 	transition: all 0.3s ease; /* Плавный переход */
 }
 
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
 	-webkit-appearance: none;
 	margin: 0;
 }
 
 /* Для Firefox */
 
-input[type="number"] {
+input[type='number'] {
 	-moz-appearance: textfield;
 }
 
-input[type="range"] {
+input[type='range'] {
 	-webkit-appearance: none;
 	height: 2px;
 	background: #66d8ad; /* bg-gray-200 */
@@ -118,7 +125,7 @@ input[type="range"] {
 }
 
 /* Стили для ползунка */
-input[type="range"]::-webkit-slider-thumb {
+input[type='range']::-webkit-slider-thumb {
 	-webkit-appearance: none;
 	width: 16px;
 	height: 16px;
@@ -129,7 +136,7 @@ input[type="range"]::-webkit-slider-thumb {
 	transition: all 0.3s ease; /* Плавный переход */
 }
 
-input[type="range"]::-moz-range-thumb {
+input[type='range']::-moz-range-thumb {
 	width: 16px;
 	height: 16px;
 	background: white; /* Зеленый цвет */

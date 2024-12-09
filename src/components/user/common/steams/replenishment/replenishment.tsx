@@ -1,92 +1,101 @@
-"use client";
+'use client'
 
-import { useGetCurrencyRate } from "@/api/queries/currency.queries";
-import { useCheckPromo, usePayment } from "@/api/queries/steam.queries";
-import { maxSums, minSums } from "@/constants/sum";
-import { Currencies } from "@/types/currency.interface";
-import { IPaymentInputs, PaymentMethods } from "@/types/payments.interface";
-import { convertFromRub } from "@/utils/convertToRub";
-import { countTotalAmoutWithCommission } from "@/utils/count-total-amout-with-commission";
-import { extractNumber } from "@/utils/extractNumber";
-import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
-import { ProccesingPersonalDataPanel } from "../../../ui/proccesing-personal-data-panel";
-import { Spinner } from "../../../ui/spinner";
-import { ModalLayout } from "../../modals/modal-layout";
-import { CommissionPanel } from "./comission-panel";
-import { CurrencyInput } from "./currency-input";
-import { EmailInput } from "./email-input";
-import { MethodsPayment } from "./methods-payment";
-import { PayButton } from "./pay-button";
-import { PromoInput } from "./promoInput";
-import { SteamLogin } from "./steam-login";
-import { TotalAmount } from "./total-amount";
+import { useRouter } from 'next/navigation'
+import { useEffect, useState } from 'react'
+import { SubmitHandler, useForm } from 'react-hook-form'
+
+import { maxSums, minSums } from '@/constants/sum'
+
+import { useCheckPromo } from '@/hooks/queries/steam/useCheckPromo'
+import { usePayment } from '@/hooks/queries/steam/usePayment'
+import { useGetCurrencyRate } from '@/hooks/queries/useGetCurrencyRate'
+
+import { convertFromRub } from '@/utils/convertToRub'
+import { countTotalAmoutWithCommission } from '@/utils/count-total-amout-with-commission'
+import { extractNumber } from '@/utils/extractNumber'
+
+import { ProccesingPersonalDataPanel } from '../../../ui/ProccesingPersonalDataPanel/ProccesingPersonalDataPanel'
+import { Spinner } from '../../../ui/Spinner'
+import { ModalLayout } from '../../modals/ModalLayout'
+
+import { CommissionPanel } from './ComissionPanel'
+import { CurrencyInput } from './CurrencyInput'
+import { EmailInput } from './EmailInput'
+import { MethodsPayment } from './MethodsPayment'
+import { PayButton } from './PayButton'
+import { PromoInput } from './PromoInput'
+import { SteamLogin } from './SteamLogin'
+import { TotalAmount } from './TotalAmount'
+import { Currencies } from '@/types/currency.interface'
+import { IPaymentInputs, PaymentMethods } from '@/types/payments.interface'
 
 export const Replenishment = () => {
-	const router = useRouter();
+	const router = useRouter()
 
-	const [sum, setSum] = useState<string>("100");
-	const [currency, setCurrency] = useState<Currencies>("RUB");
-	const [commission, setCommission] = useState(22);
-	const [discount, setDiscount] = useState(0);
-	const [paymentType, setPaymentType] = useState<PaymentMethods>("SPB");
-	const [touchedSumInput, setTouchedSumInput] = useState(false);
-	const [isModalVisible, setIsModalVisible] = useState(false);
+	const [sum, setSum] = useState<string>('100')
+	const [currency, setCurrency] = useState<Currencies>('RUB')
+	const [commission, setCommission] = useState(22)
+	const [discount, setDiscount] = useState(0)
+	const [paymentType, setPaymentType] = useState<PaymentMethods>('SPB')
+	const [touchedSumInput, setTouchedSumInput] = useState(false)
+	const [isModalVisible, setIsModalVisible] = useState(false)
 
 	const {
 		register,
 		handleSubmit,
 		watch,
-		formState: { errors },
+		formState: { errors }
 	} = useForm<IPaymentInputs>({
 		defaultValues: {
-			login: "",
-			email: "",
-		},
-	});
+			login: '',
+			email: ''
+		}
+	})
 
 	const {
 		checkPromo,
 		checkPromoIsSuccess,
-		data: discountPromo,
-	} = useCheckPromo();
+		data: discountPromo
+	} = useCheckPromo()
 
-	const { currencyData, currencyIsLoading } = useGetCurrencyRate(currency);
+	const { currencyData, currencyIsLoading } = useGetCurrencyRate(currency)
 
 	useEffect(() => {
-		console.log(discountPromo);
+		console.log(discountPromo)
 		if (checkPromoIsSuccess) {
-			setDiscount(discountPromo?.discount_percentage || 0);
+			setDiscount(discountPromo?.discount_percentage || 0)
 		}
-	}, [checkPromoIsSuccess, discountPromo, discountPromo?.discount_percentage]);
+	}, [checkPromoIsSuccess, discountPromo, discountPromo?.discount_percentage])
 
 	const {
 		sendPayment,
 		sendPaymentSuccess,
 		sendPaymentData,
-		sendPaymentPending,
-	} = usePayment();
+		sendPaymentPending
+	} = usePayment()
 
-	const handleCheckPromo = (promoValue: string) => checkPromo(promoValue);
+	const handleCheckPromo = (promoValue: string) => checkPromo(promoValue)
 
-	const handleTouchSumInput = () => setTouchedSumInput(true);
+	const handleTouchSumInput = () => setTouchedSumInput(true)
 
-	const toggleModal = () => setIsModalVisible((prev) => !prev);
+	const toggleModal = () => setIsModalVisible(prev => !prev)
 
-	const handlePayment: SubmitHandler<IPaymentInputs> = (data) => {
-		const { login, email } = data;
+	const handlePayment: SubmitHandler<IPaymentInputs> = data => {
+		const { login, email } = data
 
-		const currentSum = Number(extractNumber(sum));
+		const currentSum = Number(extractNumber(sum))
 
-		if (currentSum >= minSums[currency] && currentSum <= maxSums[currency]) {
+		if (
+			currentSum >= minSums[currency] &&
+			currentSum <= maxSums[currency]
+		) {
 			sendPayment({
 				login,
 				email,
 				amount: Number(
 					convertFromRub(Number(sum), currency, {
 						usdToRub: currencyData?.data,
-						kztToRub: currencyData?.data,
+						kztToRub: currencyData?.data
 					})
 				),
 				currency,
@@ -95,150 +104,161 @@ export const Replenishment = () => {
 					countTotalAmoutWithCommission(
 						convertFromRub(Number(sum), currency, {
 							usdToRub: currencyData?.data,
-							kztToRub: currencyData?.data,
+							kztToRub: currencyData?.data
 						}),
 						commission,
 						discount
 					).toFixed(2)
-				),
-			});
+				)
+			})
 		}
-	};
+	}
 
 	const handleChangePaymentType = (paymentType: PaymentMethods) => {
-		setPaymentType(paymentType);
-	};
+		setPaymentType(paymentType)
+	}
 
 	const handleChangeCurrency = (currency: Currencies) => {
-		setCurrency(currency);
+		setCurrency(currency)
 		switch (currency) {
-			case "RUB":
-				setSum("100");
-				break;
-			case "KZT":
-				setSum("500");
-				break;
-			case "USD":
-				setSum("5");
-				break;
+			case 'RUB':
+				setSum('100')
+				break
+			case 'KZT':
+				setSum('500')
+				break
+			case 'USD':
+				setSum('5')
+				break
 		}
-	};
+	}
 
-	const handleChangeSum = (e: React.ChangeEvent<HTMLInputElement> | string) => {
-		if (typeof e === "string") {
-			setSum(e);
+	const handleChangeSum = (
+		e: React.ChangeEvent<HTMLInputElement> | string
+	) => {
+		if (typeof e === 'string') {
+			setSum(e)
 		} else {
-			console.log(e.target.value.replace(/[^0-9.]/g, ""));
-			const rawValue = e.target.value.replace(/[^0-9.]/g, "");
-			setSum(rawValue);
+			console.log(e.target.value.replace(/[^0-9.]/g, ''))
+			const rawValue = e.target.value.replace(/[^0-9.]/g, '')
+			setSum(rawValue)
 		}
-	};
+	}
 
 	useEffect(() => {
-		if (currency === "RUB" && sum === "10000") {
-			setSum("10000");
-		} else if (currency === "KZT" && sum === "45000") {
-			setSum("45000");
-		} else if (currency === "USD" && sum === "100") {
-			setSum("100");
+		if (currency === 'RUB' && sum === '10000') {
+			setSum('10000')
+		} else if (currency === 'KZT' && sum === '45000') {
+			setSum('45000')
+		} else if (currency === 'USD' && sum === '100') {
+			setSum('100')
 		}
-	}, [sum, currency]);
+	}, [sum, currency])
 
 	useEffect(() => {
 		if (sendPaymentSuccess) {
-			router.push(sendPaymentData?.link || "/");
+			router.push(sendPaymentData?.link || '/')
 
-			toggleModal();
+			toggleModal()
 		}
-	}, [router, sendPaymentData?.link, sendPaymentSuccess]);
+	}, [router, sendPaymentData?.link, sendPaymentSuccess])
 
 	useEffect(() => {
 		if (sendPaymentPending) {
-			toggleModal();
+			toggleModal()
 		}
-	}, [sendPaymentPending]);
+	}, [sendPaymentPending])
 
 	useEffect(() => {
-		const numericSum = Number(sum);
+		const numericSum = Number(sum)
 
-		if (currency === "RUB" && numericSum) {
+		if (currency === 'RUB' && numericSum) {
 			if (numericSum >= 100 && numericSum < 1000) {
-				setCommission(22);
+				setCommission(22)
 			} else if (numericSum >= 1000 && numericSum < 3000) {
-				setCommission(20);
+				setCommission(20)
 			} else if (numericSum >= 3000 && numericSum <= 10000) {
-				setCommission(18);
+				setCommission(18)
 			}
-		} else if (currency === "KZT" && numericSum) {
+		} else if (currency === 'KZT' && numericSum) {
 			if (numericSum >= 500 && numericSum < 5000) {
-				setCommission(22);
+				setCommission(22)
 			} else if (numericSum >= 5000 && numericSum < 15000) {
-				setCommission(20);
+				setCommission(20)
 			} else if (numericSum >= 15000 && numericSum <= 46500) {
-				setCommission(18);
+				setCommission(18)
 			}
-		} else if (currency === "USD" && numericSum) {
+		} else if (currency === 'USD' && numericSum) {
 			if (numericSum >= 5 && numericSum < 10) {
-				setCommission(22);
+				setCommission(22)
 			} else if (numericSum >= 10 && numericSum < 30) {
-				setCommission(20);
+				setCommission(20)
 			} else if (numericSum >= 30 && numericSum <= 100) {
-				setCommission(18);
+				setCommission(18)
 			}
 		}
-	}, [sum, currency, watch]);
+	}, [sum, currency, watch])
 
 	return (
 		<>
-			<form
-				onSubmit={handleSubmit(handlePayment)}
-				className='bg-[#ffffff] rounded-[60px] px-[30px] py-[50px] mb-[35px] md:w-[540px] md:mx-auto md:px-[30px] xl:px-[50px]'
-			>
-				<h3 className='font-steppe font-extrabold text-[22px] mb-[20px] text-gray-800'>
-					Быстрое пополнение
-				</h3>
+			<form onSubmit={handleSubmit(handlePayment)}>
+				<div className='bg-[#ffffff] rounded-[40px] lg:rounded-[60px] px-4 py-[50px] mb-[35px] md:w-[540px] md:mx-auto md:px-[30px] xl:px-[50px]'>
+					<h3 className='font-steppe font-extrabold text-xl_1 mb-5 '>
+						Быстрое пополнение
+					</h3>
 
-				<CurrencyInput
-					onTouch={handleTouchSumInput}
-					touchedSumInput={touchedSumInput}
-					onChangeCurrency={handleChangeCurrency}
-					onChangeSum={handleChangeSum}
-					currency={currency}
-					sum={sum}
-				/>
+					<CurrencyInput
+						onTouch={handleTouchSumInput}
+						touchedSumInput={touchedSumInput}
+						onChangeCurrency={handleChangeCurrency}
+						onChangeSum={handleChangeSum}
+						currency={currency}
+						sum={sum}
+					/>
 
-				<div className='flex flex-col sm:flex-row gap-[5px] mb-5'>
-					<SteamLogin currency={currency} register={register} errors={errors} />
+					<div className='flex flex-col sm:flex-row gap-[5px] mb-5'>
+						<SteamLogin
+							currency={currency}
+							register={register}
+							errors={errors}
+						/>
 
-					<TotalAmount
+						<TotalAmount
+							currencyRate={currencyData?.data}
+							currencyIsLoading={currencyIsLoading}
+							currency={currency}
+							sum={Number(sum)}
+							commission={commission}
+							discount={discount}
+						/>
+					</div>
+					<CommissionPanel currency={currency} />
+					<PromoInput
+						discount={discount}
+						checkPromo={handleCheckPromo}
+					/>
+
+					<EmailInput register={register} errors={errors} />
+
+					<MethodsPayment
+						currentPaymentType={paymentType}
+						onChange={handleChangePaymentType}
+					/>
+
+					<PayButton
+						discount={discount}
+						commission={commission}
 						currencyRate={currencyData?.data}
 						currencyIsLoading={currencyIsLoading}
 						currency={currency}
-						sum={Number(sum)}
-						commission={commission}
-						discount={discount}
+						sum={sum}
+					/>
+
+					<ProccesingPersonalDataPanel
+						checked={true}
+						text='Принимаю условия обработки персональных данных'
 					/>
 				</div>
-				<CommissionPanel currency={currency} />
-				<PromoInput discount={discount} checkPromo={handleCheckPromo} />
-
-				<EmailInput register={register} errors={errors} />
-
-				<MethodsPayment
-					currentPaymentType={paymentType}
-					onChange={handleChangePaymentType}
-				/>
-
-				<PayButton
-					discount={discount}
-					commission={commission}
-					currencyRate={currencyData?.data}
-					currencyIsLoading={currencyIsLoading}
-					currency={currency}
-					sum={sum}
-				/>
-
-				<ProccesingPersonalDataPanel />
 			</form>
 
 			<ModalLayout isClose={false} isOpen={isModalVisible}>
@@ -247,5 +267,5 @@ export const Replenishment = () => {
 				</div>
 			</ModalLayout>
 		</>
-	);
-};
+	)
+}

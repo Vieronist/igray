@@ -1,14 +1,15 @@
-"use client";
+'use client'
 
-import { useRef } from "react";
-import { ReactSVG } from "react-svg";
-import { FooterAdditionalInfo } from "./details/footer-additional-info";
-import { FooterNavigation } from "./details/footer-navigation";
-import { PlatformsList } from "./details/platform-list";
-import { SocialMediaList } from "./details/social-media";
+import { useRef } from 'react'
+import { ReactSVG } from 'react-svg'
+
+import { FooterAdditionalInfo } from './footer/FooterAdditionalInfo'
+import { FooterNavigation } from './footer/FooterNavigation'
+import { PlatformsList } from './footer/PlatformList'
+import { SocialMediaList } from './footer/SocialMedia'
 
 export const Footer = () => {
-	const ref = useRef<HTMLInputElement>(null);
+	const ref = useRef<HTMLInputElement>(null)
 
 	return (
 		<footer>
@@ -41,48 +42,58 @@ export const Footer = () => {
 						<PlatformsList
 							title='Играй'
 							options={[
-								"Бонусы",
-								"О сервисе",
-								"Партнерам",
-								"Блог",
-								"Возврат",
-								"Вопросы",
-								"Контакты",
+								'Бонусы',
+								'О сервисе',
+								'Партнерам',
+								'Блог',
+								'Возврат',
+								'Вопросы',
+								'Контакты'
 							]}
-							hrefs={["#", "#", "#", "#", "#", "#", "/contacts"]}
+							hrefs={['#', '#', '#', '#', '#', '#', '/contacts']}
 							className='block md:hidden'
 						/>
 						<PlatformsList
 							title='PC'
-							hrefs={["/", "#", "#", "#", "#"]}
+							hrefs={['/', '#', '#', '#', '#']}
 							options={[
-								"Steam",
-								"Battle NET",
-								"Epic Games",
-								"Microsoft Office",
-								"Windows",
+								'Steam',
+								'Battle NET',
+								'Epic Games',
+								'Microsoft Office',
+								'Windows'
 							]}
 						/>
 						<PlatformsList
-							hrefs={["#", "#", "#", "#"]}
+							hrefs={['#', '#', '#', '#']}
 							title='Xbox'
-							options={["Игры", "Подписки", "Консоли", "Аксессуары"]}
+							options={[
+								'Игры',
+								'Подписки',
+								'Консоли',
+								'Аксессуары'
+							]}
 						/>
 						<PlatformsList
-							hrefs={["#", "#", "#", "#"]}
+							hrefs={['#', '#', '#', '#']}
 							title='PlayStation'
-							options={["Игры", "Подписки", "Консоли", "Аксессуары"]}
+							options={[
+								'Игры',
+								'Подписки',
+								'Консоли',
+								'Аксессуары'
+							]}
 						/>
 
 						<PlatformsList
-							hrefs={["#", "#"]}
+							hrefs={['#', '#']}
 							title='Nintendo'
-							options={["Пополнение кошелька", "Подписки"]}
+							options={['Пополнение кошелька', 'Подписки']}
 						/>
 						<PlatformsList
-							hrefs={["#"]}
+							hrefs={['#']}
 							title='Mobile'
-							options={["Apple Itunes"]}
+							options={['Apple Itunes']}
 						/>
 					</div>
 
@@ -91,5 +102,5 @@ export const Footer = () => {
 			</div>
 			<FooterAdditionalInfo />
 		</footer>
-	);
-};
+	)
+}
