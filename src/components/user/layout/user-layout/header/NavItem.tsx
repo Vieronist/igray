@@ -29,6 +29,8 @@ export const NavItem: FC<IProps> = ({ label, href, className, target }) => {
 		leaveDelay: 200
 	})
 
+	const { setIsModalVisible } = useServiceStore()
+
 	// useEffect(() => {
 	// 	if (isHovering || isHoveringSubMenu) {
 	// 		setIsMenu(true)
@@ -36,8 +38,6 @@ export const NavItem: FC<IProps> = ({ label, href, className, target }) => {
 	// 		setIsMenu(false)
 	// 	}
 	// }, [isHovering, isHoveringSubMenu])
-
-	const { setIsModalVisible } = useServiceStore()
 
 	const handleClick = (e: React.MouseEvent) => {
 		e.stopPropagation()
