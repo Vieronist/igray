@@ -1,3 +1,5 @@
+import { publicUrl } from '@/config/page-routes/public'
+
 import { NavItem } from '../header/NavItem'
 
 export const FooterNavigation = () => {
@@ -44,7 +46,7 @@ export const FooterNavigation = () => {
 					className='hover:text-gray-400 active:text-gray-400 transition-colors duration-300'
 					target={'_blank'}
 					label={'Контакты'}
-					href={'/contacts'}
+					href={publicUrl.contacts()}
 				/>
 			</ul>
 		</nav>

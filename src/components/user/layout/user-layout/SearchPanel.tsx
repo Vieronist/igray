@@ -23,7 +23,7 @@ export const SearchPanel: FC<IProps> = () => {
 
 				<input
 					ref={ref}
-					className={`border-[1px] hover:border-secondary_color transition-border duration-100 focus:border-secondary_color border-light_green w-full py-3 pr-4 text-lg rounded-[18px] outline-none pl-12 bg-transparent text-primary_color placeholder:text-gray_color lg:w-[390px]`}
+					className={`border-[1px] hover:border-secondary_color transition-border duration-200 focus:border-secondary_color border-light_green w-full py-3 pr-4 text-lg rounded-[18px] outline-none pl-12 bg-transparent text-primary_color placeholder:text-gray_color lg:w-[390px]`}
 					placeholder='Быстрый поиск...'
 					type='text'
 				/>

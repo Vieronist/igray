@@ -12,7 +12,7 @@ export const ReviewsHeader = () => {
 					<span className='text-secondary_color'>5 000 отзывов!</span>
 				</h3>
 				<Link
-					className=' font-medium border-bg_color border rounded-[18px] py-3 px-5 flex-shrink-0 hidden md:block'
+					className=' font-medium border-bg_color border rounded-[18px] py-3 px-5 flex-shrink-0 hidden md:block hover:bg-secondary_color transition-all duration-300 hover:text-white'
 					href='/reviews'
 				>
 					Все отзывы

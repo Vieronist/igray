@@ -1,8 +1,11 @@
 'use client'
 
-import { FC } from 'react'
+import useHover from '@react-hook/hover'
+import { FC, useRef, useState } from 'react'
 
 import { symbols } from '@/constants/symbols'
+
+import { cn } from '@/utils/clsx'
 
 import { CurrencyButton } from '../../../ui/Currency-button'
 
@@ -25,6 +28,14 @@ export const CurrencyInput: FC<IProps> = ({
 	touchedSumInput,
 	onTouch
 }) => {
+	const currencyInputRef = useRef<HTMLInputElement>(null)
+	const isHovering = useHover(currencyInputRef, {
+		enterDelay: 100,
+		leaveDelay: 100
+	})
+
+	const [isFocused, setIsFocused] = useState(false)
+
 	const minSums = {
 		USD: 1,
 		RUB: 100,
@@ -41,13 +52,24 @@ export const CurrencyInput: FC<IProps> = ({
 
 	return (
 		<>
-			<div className='rounded-[18px] border-light_green border pl-3 pr-2 h-size_1 flex justify-between items-center w-full'>
+			<div
+				className={cn(
+					`rounded-[18px] border-light_green border pl-3 pr-2 h-size_1 flex justify-between items-center w-full transition-border duration-300`,
+					{
+						'hover:border-secondary_color': isHovering,
+						'border-secondary_color': isFocused
+					}
+				)}
+			>
 				<div className='w-full'>
 					<span className='text-xs tracking-tight font-medium text-gray_color'>
 						Сумма пополнения
 					</span>
 					<div className='relative'>
 						<input
+							onFocus={() => setIsFocused(true)}
+							onBlur={() => setIsFocused(false)}
+							ref={currencyInputRef}
 							type='text'
 							onChange={e => {
 								onTouch()

@@ -1,6 +1,9 @@
 'use client'
 
-import { FC, useState } from 'react'
+import useHover from '@react-hook/hover'
+import { FC, useRef, useState } from 'react'
+
+import { cn } from '@/utils/clsx'
 
 interface IProps {
 	checkPromo: (code: string) => void
@@ -10,12 +13,28 @@ interface IProps {
 export const PromoInput: FC<IProps> = ({ checkPromo, discount }) => {
 	const [promoValue, setPromoValue] = useState('')
 
+	const currencyInputRef = useRef<HTMLInputElement>(null)
+	const isHovering = useHover(currencyInputRef, {
+		enterDelay: 100,
+		leaveDelay: 100
+	})
+
+	const [isFocused, setIsFocused] = useState(false)
+
 	const handleChangeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setPromoValue(e.target.value)
 	}
 
 	return (
-		<div className='border-light_green border rounded-[18px] flex items-center px-1 md:pr-1 md:pl-3 h-size_1 pl-3 w-full mb-5'>
+		<div
+			className={cn(
+				'border-light_green border rounded-[18px] flex items-center px-1 md:pr-1 md:pl-3 h-size_1 pl-3 w-full mb-5 transition-border duration-300',
+				{
+					'hover:border-secondary_color': isHovering,
+					'border-secondary_color': isFocused
+				}
+			)}
+		>
 			<div className='flex-grow w-[20%]'>
 				<label
 					className='block text-xs font-medium tracking-tighter'
@@ -29,6 +48,9 @@ export const PromoInput: FC<IProps> = ({ checkPromo, discount }) => {
 					placeholder='Уменьши комиссию...'
 					className='outline-none p-0 bg-transparent block placeholder:text-gray_color'
 					onChange={handleChangeValue}
+					onFocus={() => setIsFocused(true)}
+					onBlur={() => setIsFocused(false)}
+					ref={currencyInputRef}
 				/>
 			</div>
 			<button

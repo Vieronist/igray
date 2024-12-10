@@ -1,5 +1,6 @@
 import { axiosClassic } from '@/api/axios'
-import { SERVICE_URL } from '@/api/constants'
+
+import { publicApiUrl } from '@/config/api-routes/public'
 
 import {
 	IPayment,
@@ -12,7 +13,7 @@ export const steamService = {
 
 	async checkPromo(promo: string): Promise<IPromoResponse> {
 		const res = (
-			await this.axios.post(`${SERVICE_URL.STEAM}/check_promo`, { promo })
+			await this.axios.post(publicApiUrl.steamCheckPromo(), { promo })
 		).data
 
 		return res
@@ -20,7 +21,7 @@ export const steamService = {
 
 	async pay(payload: IPayment): Promise<IPaymentResponse> {
 		return (
-			await this.axios.post(`${SERVICE_URL.STEAM}/send_data`, {
+			await this.axios.post(publicApiUrl.steamSendData(), {
 				...payload
 			})
 		).data

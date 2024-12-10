@@ -18,7 +18,7 @@ export const CurrencyButton: FC<IProps> = ({
 			type='button'
 			id={currency}
 			onClick={() => onChangeCurrency(currency)}
-			className={`border-[#E2ECEC] block border rounded-xl w-[50px] h-[38px] ${
+			className={`border-[#E2ECEC] hover:bg-primary_color hover:text-white border-transparent transition-all duration-300  block border rounded-xl w-[50px] h-[38px] ${
 				currency === currentCurrency
 					? 'bg-primary_color text-white border-transparent'
 					: ''

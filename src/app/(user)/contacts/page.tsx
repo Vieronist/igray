@@ -39,7 +39,7 @@ export default function ContactsPage() {
 
 			<ul
 				className={cn(
-					'flex flex-row gap-4 mx-auto items-start mb-6 max-w-[1311px] w-full overflow-x-auto'
+					'flex flex-row gap-4 mx-auto items-start mb-6 max-w-[1311px] w-full overflow-x-auto mb-16'
 				)}
 			>
 				{articles?.map(article => (

@@ -20,7 +20,7 @@ export const FaqItemAccardion: FC<IProps> = ({
 
 	return (
 		<li
-			className={`bg-white rounded-[18px] overflow-hidden pl-[20px] 2xl:w-[300px] transition-all duration-300 ease-in-out ${
+			className={`group bg-white rounded-[18px] overflow-hidden pl-[20px] 2xl:w-[300px] transition-all duration-300 ease-in-out ${
 				isActive ? 'shadow-lg scale-[1.02] border-[2px]' : ''
 			}`}
 			style={{
@@ -33,7 +33,7 @@ export const FaqItemAccardion: FC<IProps> = ({
 				onClick={onClick}
 			>
 				<p className='text-sm font-medium '>{title}</p>
-				<button className='rounded-[12px] bg-gradient-to-r from-[#E4FAF3] via-[rgba(228,250,243,0.29)] to-[#E4FAF3] p-3'>
+				<button className='rounded-[12px] border border-transparent group-hover:border-secondary_color transition-border duration-300 bg-gradient-to-r from-[#E4FAF3] via-[rgba(228,250,243,0.29)] to-[#E4FAF3] p-3'>
 					<ReactSVG src='arrow-up-right.svg' />
 				</button>
 			</div>

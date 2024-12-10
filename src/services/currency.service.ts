@@ -1,5 +1,6 @@
 import { axiosClassic } from '@/api/axios'
-import { QUERY_KEYS, SERVICE_URL } from '@/api/constants'
+
+import { publicApiUrl } from '@/config/api-routes/public'
 
 import { Currencies } from '@/types/currency.interface'
 
@@ -12,9 +13,7 @@ export const currencyService = {
 		queryParams.set('currency', currency)
 
 		return await this.axios
-			.get(
-				`${SERVICE_URL.STEAM}/${QUERY_KEYS.CARRENCY_RATE}?${queryParams.toString()}`
-			)
+			.get(publicApiUrl.currency_rate(queryParams.toString()))
 			.then(res => res.data)
 	}
 }

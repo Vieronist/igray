@@ -1,9 +1,7 @@
 import axios, { CreateAxiosDefaults } from 'axios'
 
-import { BASE_URL } from './constants'
-
 const axiosOptions: CreateAxiosDefaults = {
-	baseURL: BASE_URL
+	baseURL: process.env.SERVER_URL as string
 }
 
 export const axiosClassic = axios.create(axiosOptions)

@@ -18,7 +18,13 @@ import { OrderPagination } from './order-pagination'
 export default function OrderTable() {
 	const [currentPage, setCurrentPage] = useState(1)
 
-	const { orders } = useGetOrders({ limit: 5, page: currentPage })
+	const { orders, error } = useGetOrders({ limit: 5, page: currentPage })
+
+	if (error) {
+		console.log('error', error)
+
+		return <h1>Возникла ошибка</h1>
+	}
 
 	const handlePageChange = (pageNumber: number) => {
 		setCurrentPage(pageNumber + 1)
@@ -38,15 +44,18 @@ export default function OrderTable() {
 					</TableRow>
 				</TableHeader>
 				<TableBody>
-					{orders?.items.map((order, idx) => (
-						<TableRow key={idx}>
-							<TableCell>{order.order_id}</TableCell>
-							<TableCell>{order.email}</TableCell>
-							<TableCell>{order.login}</TableCell>
-							<TableCell>{order.amount.toFixed(2)} $</TableCell>
-							<TableCell>{order.date}</TableCell>
-						</TableRow>
-					))}
+					{orders?.items?.length &&
+						orders.items.map((order, idx) => (
+							<TableRow key={idx}>
+								<TableCell>{order.order_id}</TableCell>
+								<TableCell>{order.email}</TableCell>
+								<TableCell>{order.login}</TableCell>
+								<TableCell>
+									{order.amount.toFixed(2)} $
+								</TableCell>
+								<TableCell>{order.date}</TableCell>
+							</TableRow>
+						))}
 				</TableBody>
 			</Table>
 

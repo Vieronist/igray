@@ -1,6 +1,6 @@
 import { useMutation } from '@tanstack/react-query'
 
-import { QUERY_KEYS } from '@/api/constants'
+import { STEAM_KEYS } from '@/constants/query-keys'
 
 import { steamService } from '@/services/steam.service'
 
@@ -14,7 +14,7 @@ export const usePayment = () => {
 		isPending: sendPaymentPending,
 		data: sendPaymentData
 	} = useMutation({
-		mutationKey: [QUERY_KEYS.STEAM],
+		mutationKey: [STEAM_KEYS.CHECK_PROMO],
 		mutationFn: (payload: IPayment) => steamService.pay(payload)
 	})
 

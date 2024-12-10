@@ -60,13 +60,13 @@ export const ReviewsSlider = () => {
 				<div className='mt-4 flex  items-center justify-between gap-[10px] px-4 lg:mx-[0px] lg:absolute lg:bottom-3 lg:right-2 z-50'>
 					<div className='z-20 flex gap-[10px]'>
 						<button
-							className='px-[15px] bg-white rounded-[18px]'
+							className='px-[15px] bg-white rounded-[18px] hover:border-secondary_color border border-transparent duration-300'
 							onClick={() => swiperRef.current?.slidePrev()}
 						>
 							<ReactSVG src='/arrow-right.svg' />
 						</button>
 						<button
-							className='p-[15px] bg-white rounded-[18px]'
+							className='p-[15px] bg-white rounded-[18px] border border-transparent hover:border-secondary_color duration-300'
 							onClick={() => swiperRef.current?.slideNext()}
 						>
 							<ReactSVG src='/arrow-left.svg' />
@@ -74,7 +74,7 @@ export const ReviewsSlider = () => {
 					</div>
 
 					<Link
-						className='border-bg_color border rounded-[14px] py-3 px-5 text-[14px] block md:hidden font-medium'
+						className='border-bg_color border rounded-[14px] py-3 px-5 text-[14px] block md:hidden font-medium hover:bg-secondary_color transition-all duration-300 hover:text-white'
 						href='/reviews'
 					>
 						Все отзывы

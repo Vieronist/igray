@@ -1,5 +1,6 @@
 import { axiosClassic } from '@/api/axios'
-import { QUERY_KEYS, SERVICE_URL } from '@/api/constants'
+
+import { adminApiUrl } from '@/config/api-routes/admin'
 
 import {
 	IGetOrdersQueryParams,
@@ -16,13 +17,8 @@ export const ordersService = {
 		const queryParams = new URLSearchParams()
 		queryParams.set('page', page.toString())
 		queryParams.set('limit', limit.toString())
-
 		return await this.axios
-			.get(
-				`${SERVICE_URL.ADMIN}/${
-					QUERY_KEYS.GET_STEAM_ORDERS
-				}?${queryParams.toString()}`
-			)
+			.get(adminApiUrl.getSteamOrders(queryParams.toString()))
 			.then(res => res.data)
 	}
 }
