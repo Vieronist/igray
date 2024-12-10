@@ -1,6 +1,5 @@
 'use client'
 
-import useHover from '@react-hook/hover'
 import Link from 'next/link'
 import React, { FC } from 'react'
 
@@ -22,12 +21,7 @@ export const NavItem: FC<IProps> = ({ label, href, className, target }) => {
 	// const [isMenu, setIsMenu] = useState(false)
 
 	const ref = React.useRef(null)
-	const subMenuRef = React.useRef(null)
-	const isHovering = useHover(ref, { enterDelay: 100, leaveDelay: 200 })
-	const isHoveringSubMenu = useHover(subMenuRef, {
-		enterDelay: 200,
-		leaveDelay: 200
-	})
+	// const subMenuRef = React.useRef(null)
 
 	const { setIsModalVisible } = useServiceStore()
 
@@ -65,11 +59,11 @@ export const NavItem: FC<IProps> = ({ label, href, className, target }) => {
 			) : (
 				<Link
 					className={cn(
-						'transition-colors duration-300 hover:text-secondary_color md:text-lg',
-						{
-							'text-secondary_color':
-								isHovering || isHoveringSubMenu
-						}
+						'transition-colors duration-300 hover:text-secondary_color md:text-lg'
+						// {
+						// 	// 'text-secondary_color':
+						// 	// 	isHovering || isHoveringSubMenu
+						// }
 					)}
 					target={target !== undefined ? target : '_self'}
 					href={href}
