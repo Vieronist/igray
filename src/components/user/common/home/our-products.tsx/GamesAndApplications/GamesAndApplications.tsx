@@ -40,7 +40,7 @@ export const GamesAndApplications = (props: AllXBoxProps) => {
 
 			<div
 				className={
-					'absolute right-0 top-[-10px] max-w-[180px] md:max-w-[230px] lg:max-w-[200px] xl_1:max-w-[320px] min-h-[134px]'
+					'absolute right-0 top-[-10px] max-w-[140px] sm_1:max-w-[180px] md:max-w-[230px] lg:max-w-[200px] xl_1:max-w-[320px] min-h-[134px]'
 				}
 			>
 				<Image

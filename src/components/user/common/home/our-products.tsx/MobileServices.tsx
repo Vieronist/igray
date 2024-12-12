@@ -26,7 +26,7 @@ export const MobileServices = (props: MobileServicesProps) => {
 
 			<div
 				className={
-					'absolute right-0 -top-10 max-w-[150px] md:max-w-[230px] -min-h-[134px] xl_1:max-w-[300px] xl_1:w-full xl_1:-right-11'
+					'absolute -right-12 sm_1:right-0 -top-10 max-w-[150px] md:max-w-[230px] -min-h-[134px] xl_1:max-w-[300px] xl_1:w-full xl_1:-right-11'
 				}
 			>
 				<Image

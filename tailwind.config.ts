@@ -10,6 +10,9 @@ const config: Config = {
 	theme: {
 		extend: {
 			screens: {
+				sm_1: {
+					min: '24.375rem'
+				},
 				xl_1: {
 					min: '90.625rem'
 				}

@@ -16,7 +16,7 @@ export default function HomePage() {
 			<Breadcrumbs breadcrumbs={breadcrumbs} />
 
 			<Heading level={1} className='mb-5'>
-				Игры и приложения для PC
+				Игры и&nbsp;приложения для&nbsp;PC
 			</Heading>
 
 			<ProductMenuAccardion />

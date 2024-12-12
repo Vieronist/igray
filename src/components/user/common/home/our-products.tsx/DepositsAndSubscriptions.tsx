@@ -28,7 +28,7 @@ export const DepositsAndSubscriptions = (
 
 			<div
 				className={
-					'absolute right-5 top-[0] max-w-[178px] min-h-[134px]'
+					'absolute -right-1 sm_1:right-5 top-4 sm_1:top-0 max-w-[150px] sm_1:max-w-[178px] min-h-[134px]'
 				}
 			>
 				<Image

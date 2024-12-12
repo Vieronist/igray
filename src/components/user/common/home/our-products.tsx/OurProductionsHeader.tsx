@@ -8,7 +8,7 @@ export const OurProductionsHeader = (props: OurProductionsHeaderProps) => {
 	const { className } = props
 
 	return (
-		<div className={cn('px-7 mb-6', className)}>
+		<div className={cn('px-2 mb-6', className)}>
 			<p
 				className={
 					'mb-6 text-secondary_color text-sm lg:text-base font-medium'
