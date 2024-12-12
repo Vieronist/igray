@@ -37,7 +37,7 @@
 .container .checkmark:after {
 	@apply left-[50%] top-[50%] w-2.5 h-2.5;
 	transform: translate(-50%, -50%);
-	background-image: url('/icons/check.svg');
+	background-image: url('/images/icons/check.svg');
 	background-repeat: no-repeat;
 }
 

@@ -12,7 +12,7 @@ interface IProps {
 
 export const MarketplaceItem: FC<IProps> = ({ path, href }) => {
 	return (
-		<li className='bg-[white] h-[155px] w-[170px] md:w-[180px] px-[21px] py-[36px] rounded-[34px] flex flex-col items-center justify-between'>
+		<li className='bg-[white] h-[155px] w-[170px] md:w-[180px] xl:w-[210px] px-[21px] py-[36px] rounded-[34px] flex flex-col items-center justify-between'>
 			{href.endsWith('.svg') ? (
 				<ReactSVG
 					src={path}

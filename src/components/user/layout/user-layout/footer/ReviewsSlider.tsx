@@ -63,13 +63,13 @@ export const ReviewsSlider = () => {
 							className='px-[15px] bg-white rounded-[18px] hover:border-secondary_color border border-transparent duration-300'
 							onClick={() => swiperRef.current?.slidePrev()}
 						>
-							<ReactSVG src='/arrow-right.svg' />
+							<ReactSVG src='/images/icons/arrow-right.svg' />
 						</button>
 						<button
 							className='p-[15px] bg-white rounded-[18px] border border-transparent hover:border-secondary_color duration-300'
 							onClick={() => swiperRef.current?.slideNext()}
 						>
-							<ReactSVG src='/arrow-left.svg' />
+							<ReactSVG src='/images/icons/arrow-left.svg' />
 						</button>
 					</div>
 

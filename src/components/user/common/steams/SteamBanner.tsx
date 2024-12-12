@@ -10,11 +10,11 @@ export const SteamBanner = () => {
 	return (
 		<div
 			className={cn(
-				"bg-[url('/steam-bg.png')] w-full bg-no-repeat bg-cover  md:w-[490px] md:h-[306px]  bg-center  rounded-[40px] h-[206px] mb-[10px] relative mx-auto pt-8 pb-6 2xl:pb-12 px-8 flex flex-col justify-between"
+				"bg-[url('/images/steam-bg.png')] w-full bg-no-repeat bg-cover  md:w-[490px] md:h-[306px]  bg-center  rounded-[40px] h-[206px] mb-[10px] relative mx-auto pt-8 pb-6 2xl:pb-12 px-8 flex flex-col justify-between"
 			)}
 			//
 		>
-			<ReactSVG src='steam-logo.svg' className='mb-8' />
+			<ReactSVG src='/images/icons/steam-logo.svg' className='mb-8' />
 
 			<p className={cn(styles.text)}>
 				Пополни <br /> баланс Steam

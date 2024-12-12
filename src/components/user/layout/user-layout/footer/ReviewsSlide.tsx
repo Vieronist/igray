@@ -16,7 +16,7 @@ export const ReviewsSlide: FC<IProps> = ({ date, text, userName }) => {
 						width={36}
 						height={36}
 						alt='logo'
-						src={'/user-logo-mini.png'}
+						src={'/images/user-logo-mini.png'}
 						className='object-contain rounded-full'
 					/>
 
@@ -32,7 +32,7 @@ export const ReviewsSlide: FC<IProps> = ({ date, text, userName }) => {
 				<div className='flex ml-auto'>
 					<Image
 						alt='star'
-						src='/star.png'
+						src='/images/star.png'
 						width={16}
 						height={16}
 						className='w-4 h-4 lg:w-6 lg:h-6'
@@ -40,28 +40,28 @@ export const ReviewsSlide: FC<IProps> = ({ date, text, userName }) => {
 
 					<Image
 						alt='star'
-						src='/star.png'
+						src='/images/star.png'
 						width={16}
 						height={16}
 						className='w-4 h-4 lg:w-6 lg:h-6'
 					/>
 					<Image
 						alt='star'
-						src='/star.png'
+						src='/images/star.png'
 						width={16}
 						height={16}
 						className='w-4 h-4 lg:w-6 lg:h-6'
 					/>
 					<Image
 						alt='star'
-						src='/star.png'
+						src='/images/star.png'
 						width={16}
 						height={16}
 						className='w-4 h-4 lg:w-6 lg:h-6'
 					/>
 					<Image
 						alt='star'
-						src='/star.png'
+						src='/images/star.png'
 						width={16}
 						height={16}
 						className='w-4 h-4 lg:w-6 lg:h-6'

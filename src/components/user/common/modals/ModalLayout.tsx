@@ -49,7 +49,7 @@ export const ModalLayout = (props: ModalProps) => {
 				>
 					<motion.div
 						ref={contentRef}
-						className='bg-white rounded-[50px] max-w-[400px] w-full p-6 shadow-lg'
+						className='bg-white rounded-xl_1 max-w-[400px] w-full p-6 shadow-lg'
 						initial={{ scale: 0.95, opacity: 0 }}
 						animate={{ scale: 1, opacity: 1 }}
 						exit={{ scale: 0.95, opacity: 0 }}

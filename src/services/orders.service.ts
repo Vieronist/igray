@@ -17,6 +17,7 @@ export const ordersService = {
 		const queryParams = new URLSearchParams()
 		queryParams.set('page', page.toString())
 		queryParams.set('limit', limit.toString())
+
 		return await this.axios
 			.get(adminApiUrl.getSteamOrders(queryParams.toString()))
 			.then(res => res.data)

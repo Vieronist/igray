@@ -34,7 +34,7 @@ export const FaqItemAccardion: FC<IProps> = ({
 			>
 				<p className='text-sm font-medium '>{title}</p>
 				<button className='rounded-[12px] border border-transparent group-hover:border-secondary_color transition-border duration-300 bg-gradient-to-r from-[#E4FAF3] via-[rgba(228,250,243,0.29)] to-[#E4FAF3] p-3'>
-					<ReactSVG src='arrow-up-right.svg' />
+					<ReactSVG src='/images/icons/arrow-up-right.svg' />
 				</button>
 			</div>
 			<div

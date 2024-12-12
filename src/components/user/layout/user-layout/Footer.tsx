@@ -21,7 +21,7 @@ export const Footer = () => {
 							onClick={() => ref.current?.focus()}
 							type='button'
 						>
-							<ReactSVG src='/search-big.svg' />
+							<ReactSVG src='images/icons/search-big.svg' />
 						</button>
 
 						<input
@@ -53,6 +53,7 @@ export const Footer = () => {
 							hrefs={['#', '#', '#', '#', '#', '#', '/contacts']}
 							className='block md:hidden'
 						/>
+
 						<PlatformsList
 							title='PC'
 							hrefs={['/', '#', '#', '#', '#']}
@@ -64,6 +65,7 @@ export const Footer = () => {
 								'Windows'
 							]}
 						/>
+
 						<PlatformsList
 							hrefs={['#', '#', '#', '#']}
 							title='Xbox'
@@ -74,6 +76,7 @@ export const Footer = () => {
 								'Аксессуары'
 							]}
 						/>
+
 						<PlatformsList
 							hrefs={['#', '#', '#', '#']}
 							title='PlayStation'

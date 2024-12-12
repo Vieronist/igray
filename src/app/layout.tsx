@@ -4,7 +4,7 @@ import localFont from 'next/font/local'
 import { UnavailableServiceModal } from '@/components/user/common/modals/UnavailableServiceModal'
 
 import Providers from './Providers'
-import './globals.scss'
+import './globals.css'
 
 const onset = localFont({
 	src: [

@@ -22,7 +22,7 @@ export const MethodsPayment: FC<IProps> = ({
 					currentPaymentType={currentPaymentType}
 					method='CARD'
 					onChange={onChange}
-					svg='cards.svg'
+					svg='/images/icons/cards.svg'
 					text='Карты Visa, МИР,
 Mastercard'
 					title='Оплата картой'
@@ -31,7 +31,7 @@ Mastercard'
 					method='SPB'
 					currentPaymentType={currentPaymentType}
 					onChange={onChange}
-					svg='spb.svg'
+					svg='/images/icons/spb.svg'
 					text='Через приложение
 вашего банка'
 					title='Через СБП'
@@ -40,7 +40,7 @@ Mastercard'
 					method='USDT'
 					currentPaymentType={currentPaymentType}
 					onChange={onChange}
-					svg='crypto.svg'
+					svg='/images/icons/crypto.svg'
 					text='Возможна оплата
 в TRC20 и BTC'
 					title='Криптовалюта'

@@ -3,11 +3,11 @@
 import Link from 'next/link'
 import React, { FC } from 'react'
 
+import { ProductMenu } from '@/components/user/common/product-menu/ProductMenu'
+
 import { useServiceStore } from '@/store/service.store'
 
 import { cn } from '@/utils/clsx'
-
-import styles from './NavigationChildren.module.scss'
 
 interface IProps {
 	label: string
@@ -17,7 +17,7 @@ interface IProps {
 	isChildrenNavigation?: boolean
 }
 
-export const NavItem: FC<IProps> = ({ label, href, className, target }) => {
+export const NavItem: FC<IProps> = ({ label, href, className }) => {
 	// const [isMenu, setIsMenu] = useState(false)
 
 	const ref = React.useRef(null)
@@ -39,42 +39,23 @@ export const NavItem: FC<IProps> = ({ label, href, className, target }) => {
 	}
 
 	return (
-		<li
-			ref={ref}
-			className={cn(styles.parentListItem, className, `relative z-10`)}
-			onClick={handleClick}
-		>
-			{href === '#' ? (
-				<button
-					className={cn(
-						'transition-colors duration-300 hover:text-secondary_color md:text-lg'
-						// {
-						// 	'text-secondary_color':
-						// 		isHovering || isHoveringSubMenu
-						// }
-					)}
-				>
-					{label}
-				</button>
-			) : (
-				<Link
-					className={cn(
-						'transition-colors duration-300 hover:text-secondary_color md:text-lg'
-						// {
-						// 	// 'text-secondary_color':
-						// 	// 	isHovering || isHoveringSubMenu
-						// }
-					)}
-					target={target !== undefined ? target : '_self'}
-					href={href}
-				>
-					{label}
-				</Link>
-			)}
+		<li ref={ref} className={cn(className, `group relative z-10`)}>
+			<Link
+				onClick={handleClick}
+				className={cn(
+					'block transition-colors duration-300 group-hover:text-secondary_color hover:text-secondary_color md:text-lg py-2',
+					{
+						'xl:pointer-events-none': label === 'PC'
+					}
+				)}
+				href={href}
+			>
+				{label}
+			</Link>
 
-			{/* {label === 'PC' && (
-				<NavigationChildren ref={subMenuRef} isMenu={isMenu} />
-			)} */}
+			{label === 'PC' && (
+				<ProductMenu className='-left-6 top-11 hidden xl:group-hover:block transition-all duration-200 group-hover:shadow-primary_bg' />
+			)}
 		</li>
 	)
 }

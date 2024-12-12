@@ -4,7 +4,7 @@ import { Contacts } from './Contacts'
 
 export const ContactsPanel = () => {
 	return (
-		<section className='mb-[50px] xl:mb-[120px] max-w-[1150px] mx-auto'>
+		<section className='mb-[50px] xl:mb-[120px] mx-auto'>
 			<h3 className='font-extrabold font-steppe text-[36px] sm:text-[46px] text-center xl:text-left mb-[27px] text-gray-800'>
 				Наши контакты
 			</h3>
@@ -15,7 +15,7 @@ export const ContactsPanel = () => {
 						phone='+7 919 346-11-58'
 						schedule='Пн - Вс:с 9:00-23:00 по МСК'
 						email='igraem247@gmail.com'
-						svgs={['vk.svg', 'tg.svg']}
+						svgs={['images/icons/vk.svg', 'images/icons/tg.svg']}
 					/>
 
 					<Contacts
@@ -23,9 +23,10 @@ export const ContactsPanel = () => {
 						phone='+7 919 346-11-58'
 						schedule='Пн - Вс:с 9:00-23:00 по МСК'
 						email='igraem247@gmail.com'
-						svgs={['tg.svg']}
+						svgs={['images/icons/tg.svg']}
 					/>
 				</div>
+
 				<MarketplacesList />
 			</div>
 		</section>

@@ -1,22 +1,23 @@
 'use client'
 
-import { FC } from 'react'
+import { NavigationItem } from '@/constants/navigations'
 
 import { NavItem } from './NavItem'
 
-interface IProps {
+interface NavigationProps {
 	className?: string
+	items: NavigationItem[]
 }
 
-export const Navigation: FC<IProps> = ({ className }) => {
+export const Navigation = (props: NavigationProps) => {
+	const { className, items } = props
+
 	return (
 		<>
 			<ul className={`${className}`}>
-				{['PC', 'Xbox', 'PlayStation', 'Nintendo', 'Mobile'].map(
-					(link, idx) => (
-						<NavItem href={`#`} label={link} key={idx} />
-					)
-				)}
+				{items.map((item, idx) => (
+					<NavItem href={item.href} label={item.label} key={idx} />
+				))}
 			</ul>
 		</>
 	)

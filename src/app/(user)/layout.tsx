@@ -5,7 +5,7 @@ import { Container } from '@/components/user/ui/Container'
 
 import { cn } from '@/utils/clsx'
 
-import cls from './user.module.scss'
+import styles from './user.module.scss'
 
 export default function RootLayout({
 	children
@@ -14,15 +14,15 @@ export default function RootLayout({
 }>) {
 	return (
 		<div
-			className={cn('pt-5 pb-5', cls.backgroundMain)}
+			className={cn('pt-5 pb-5', styles.backgroundMain)}
 			style={{
-				background: "/background.jpg')"
+				background: "/images/background.jpg')"
 			}}
 		>
-			<Container>
+			<Container size='xl'>
 				<Header />
 
-				<main>{children}</main>
+				<main className='mb-20'>{children}</main>
 
 				<Reviews />
 				<Footer />

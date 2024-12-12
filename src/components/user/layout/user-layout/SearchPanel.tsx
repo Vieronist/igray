@@ -16,7 +16,7 @@ export const SearchPanel: FC<IProps> = () => {
 			<div className='relative'>
 				<button onClick={() => ref.current?.focus()} type='button'>
 					<ReactSVG
-						src='/search.svg'
+						src='/images/icons/search.svg'
 						className='cursor-pointer absolute left-5 top-1/2 -translate-y-1/2'
 					/>
 				</button>

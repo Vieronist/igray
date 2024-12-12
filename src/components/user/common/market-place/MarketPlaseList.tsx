@@ -4,12 +4,12 @@ import { MarketplaceItem } from './MarketPlaceItem'
 
 export const MarketplacesList = () => {
 	const marketplaces = [
-		'avito-full.svg',
-		'plati-full.svg',
-		'telegram-logo-big.png',
-		'vk-full.svg',
-		'aliexpress-full.svg',
-		'wb-full.svg'
+		'images/icons/avito-full.svg',
+		'images/icons/plati-full.svg',
+		'images/icons/telegram-logo-big.png',
+		'images/icons/vk-full.svg',
+		'images/icons/aliexpress-full.svg',
+		'images/icons/wb-full.svg'
 	]
 
 	const hrefs = [

@@ -1,6 +1,10 @@
 import Image from 'next/image'
 
 import { ContactsPanel } from '@/components/user/common/contacts/ContactsPanel'
+import { Breadcrumbs } from '@/components/user/ui/Breadcrumbs'
+import { Container } from '@/components/user/ui/Container'
+
+import { publicUrl } from '@/config/page-routes/public'
 
 import { cn } from '@/utils/clsx'
 
@@ -13,33 +17,40 @@ export default function ContactsPage() {
 	const articles: IArticle[] = [
 		{
 			content: 'Как пополнить свой Steam бесплатно?',
-			avatar: 'articles/img1.png'
+			avatar: 'images/articles/img1.png'
 		},
 		{
 			content: 'Что было на презентации Xbox 2024',
-			avatar: 'articles/img2.png'
+			avatar: 'images/articles/img2.png'
 		},
 		{
-			avatar: 'articles/img3.png',
+			avatar: 'images/articles/img3.png',
 			content: 'Магический выживач Nightingale'
 		},
 		{
-			avatar: 'articles/img4.png',
+			avatar: 'images/articles/img4.png',
 			content: 'Foamstars выйдет 6 февраля'
 		},
 		{
-			avatar: 'articles/img5.png',
+			avatar: 'images/articles/img5.png',
 			content: 'Чарт продаж Steam захватили фритуплей'
 		}
 	]
 
+	const breadcrumbs = [
+		{ label: 'Главная', href: publicUrl.home() },
+		{ label: 'контакты', href: '' }
+	]
+
 	return (
-		<>
+		<Container>
+			<Breadcrumbs breadcrumbs={breadcrumbs} />
+
 			<ContactsPanel />
 
 			<ul
 				className={cn(
-					'flex flex-row gap-4 mx-auto items-start mb-6 max-w-[1311px] w-full overflow-x-auto mb-16'
+					'flex flex-row gap-4 mx-auto items-start mb-6 w-full overflow-x-auto xl:mb-16'
 				)}
 			>
 				{articles?.map(article => (
@@ -65,6 +76,6 @@ export default function ContactsPage() {
 					</li>
 				))}
 			</ul>
-		</>
+		</Container>
 	)
 }

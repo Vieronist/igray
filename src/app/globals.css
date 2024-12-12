@@ -40,22 +40,25 @@
 
 	/* custom-colors */
 	--primary-color: #1f3238;
+	--primary-opacity-color: rgba(31, 50, 56, 0.2);
 	--secondary-color: #4fca9c;
 	--bg-color: #66d8ad;
+
 	--gray-color: #afc5be;
 	--gray-color-primary: #a3bdb5;
 	--light-green: #ddf1ea;
+	--light-green-border: #d1e7df;
 }
 
 html,
 body {
 	overflow-x: hidden;
+	font-size: 16px;
 }
 
 body {
 	font-weight: 400;
 	color: var(--primary-color);
-	font-size: 16px;
 }
 
 @layer utilities {
@@ -143,4 +146,8 @@ input[type='range']::-moz-range-thumb {
 	border-radius: 50%;
 	cursor: pointer;
 	transition: all 0.3s ease; /* Плавный переход */
+}
+
+#nprogress .bar {
+	@apply bg-secondary_color !important;
 }

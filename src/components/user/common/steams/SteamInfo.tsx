@@ -12,14 +12,14 @@ export const SteamInfo = () => {
 	const articles: IArticle[] = [
 		{
 			content: 'Как пополнить свой Steam бесплатно?',
-			avatar: 'articles/img1.png'
+			avatar: 'images/articles/img1.png'
 		},
 		{
 			content: 'Что было на презентации Xbox 2024',
-			avatar: 'articles/img2.png'
+			avatar: 'images/articles/img2.png'
 		},
 		{
-			avatar: 'articles/img3.png',
+			avatar: 'images/articles/img3.png',
 			content: 'Магический выживач Nightingale'
 		}
 	]

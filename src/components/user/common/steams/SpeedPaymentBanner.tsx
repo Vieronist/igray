@@ -19,7 +19,7 @@ export const SpeedPaymentBanner: FC<IProps> = ({ className }) => {
 					height={118}
 					width={108}
 					alt='lighting'
-					src={'/lighting.png'}
+					src={'/images/lighting.png'}
 				/>
 				<div className='md:w-[250px]'>
 					<h6 className='font-steppe font-extrabold text-xl_1 leading-[1.2] tracking-[-0.04em] mb-[17px] '>

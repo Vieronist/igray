@@ -13,6 +13,14 @@ class PublicUrl extends UrlBuilder {
 		return this.root('/contacts')
 	}
 
+	pc(): string {
+		return this.root('/pc')
+	}
+
+	steam(): string {
+		return this.root('/pc/steam')
+	}
+
 	// auth(): string {
 	// 	return this.root('/auth')
 	// }
