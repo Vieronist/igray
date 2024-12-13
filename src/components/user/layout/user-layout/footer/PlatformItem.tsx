@@ -17,7 +17,7 @@ export const PlatformItem: FC<IProps> = ({ name, href, onClick }) => {
 				<button>{name}</button>
 			) : (
 				<Link
-					target={href === '#' ? '_self' : '_blank'}
+					target={href === '#' ? '_self' : ''}
 					href={href === '#' ? '' : href}
 				>
 					{name}

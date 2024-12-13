@@ -1,9 +1,9 @@
-interface Article {
+export interface News {
 	content: string
 	avatar: string
 }
 
-export const articles: Article[] = [
+export const news: News[] = [
 	{
 		content: 'Как пополнить свой Steam бесплатно?',
 		avatar: 'images/articles/img1.png'

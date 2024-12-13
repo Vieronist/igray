@@ -3,7 +3,7 @@
 import { cva } from 'class-variance-authority'
 
 interface HeadingProps {
-	level: 1
+	level: 1 | 2 | 3
 	size?: 'sm' | 'md' | 'lg'
 	color?: 'default' | 'primary' | 'secondary'
 	className?: string
@@ -13,9 +13,9 @@ interface HeadingProps {
 const headingVariants = cva('font-steppe font-extrabold leading-[1.1]', {
 	variants: {
 		level: {
-			1: 'text-xl_2 text:lg-xl_3'
-			// 2: 'text-3xl',
-			// 3: 'text-2xl'
+			1: 'text-xl_2 lg:text-xl_3',
+			2: 'text-xl_5',
+			3: 'text-xl_1'
 		},
 		size: {
 			// sm: 'text-sm',

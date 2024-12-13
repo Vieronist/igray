@@ -17,8 +17,20 @@ class PublicUrl extends UrlBuilder {
 		return this.root('/pc')
 	}
 
+	refund(): string {
+		return this.root('/refund')
+	}
+
 	steam(): string {
 		return this.root('/pc/steam')
+	}
+
+	frequentQuestions(): string {
+		return this.root('/frequent-questions')
+	}
+
+	notFound(): string {
+		return this.root('/404')
 	}
 
 	// auth(): string {

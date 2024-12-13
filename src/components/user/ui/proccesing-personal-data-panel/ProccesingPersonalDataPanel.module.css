@@ -17,7 +17,7 @@
 }
 
 .container:hover input ~ .checkmark {
-	// background-color: #ccc;
+	/* // background-color: #ccc; */
 }
 
 .container input:checked ~ .checkmark {

@@ -12,7 +12,7 @@ export const AllPlaystation = (props: AllPlaystationProps) => {
 	return (
 		<div
 			className={cn(
-				"relative max-w-[50%] lg:max-w-full w-full lg:w-full min-h-[170px] flex flex-col justify-end rounded-xl_3 bg-[url('/images/home/play-station-mobile-bg.jpg')] lg:bg-[url('/images/home/play-station-bg.jpg')] bg-cover bg-center px-2 sm_1:px-5 xl_1:px-10 pb-4 overflow-hidden lg:overflow-visible",
+				"relative max-w-[50%] lg:max-w-full w-full lg:w-full min-h-[170px] flex flex-col justify-end rounded-xl_3 bg-[url('/images/home/play-station-mobile-bg.jpg')] lg:bg-[url('/images/home/play-station-bg.jpg')] bg-cover bg-center px-2 xs:px-5 xl_1:px-10 pb-4 overflow-hidden lg:overflow-visible",
 				className
 			)}
 		>

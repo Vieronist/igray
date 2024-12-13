@@ -8,15 +8,24 @@ const config: Config = {
 		'./src/app/**/*.{js,ts,jsx,tsx,mdx}'
 	],
 	theme: {
+		screens: {
+			xs: '390px',
+			sm: '640px',
+			md: '768px',
+			lg: '1024px',
+			xl: '1280px',
+			xl_1: '1450px',
+			'2xl': '1536px'
+		},
 		extend: {
-			screens: {
-				sm_1: {
-					min: '24.375rem'
-				},
-				xl_1: {
-					min: '90.625rem'
-				}
-			},
+			// screens: {
+			// 	xs: {
+			// 		min: '24.375rem'
+			// 	},
+			// 	xl_1: {
+			// 		min: '90.625rem'
+			// 	}
+			// },
 			boxShadow: {
 				primary_bg: '0 4px 44px 0 rgba(31, 50, 56, 0.12)'
 			},
@@ -36,8 +45,6 @@ const config: Config = {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				backgroundImage: {
-					'custom-gradient':
-						'linear-gradient(100.65deg, #E4FAF3 0.34%, rgba(228, 250, 243, 0.29) 47.86%, #E4FAF3 92.62%, rgba(228, 250, 243, 0.34) 138.07%)',
 					'custom-gradient-2':
 						'linear-gradient(134deg, #e4faf3 0%, rgba(228, 250, 243, 0.29) 34.5%, #e4faf3 67%, rgba(228, 250, 243, 0.34) 100%)'
 				},
@@ -71,7 +78,8 @@ const config: Config = {
 				xl_1: '1.375rem',
 				xl_2: '2rem',
 				xl_3: '2.875rem',
-				xl_4: '1.875rem'
+				xl_4: '1.875rem',
+				xl_5: '1.75rem'
 			},
 			height: {
 				size_1: '3.625rem',

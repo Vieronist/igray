@@ -56,6 +56,7 @@ export const FaqList = () => {
 					isActive={activeIndex === 100}
 					onClick={() => toggleIndex(100)}
 				/>
+
 				{faqs.map((faq, index) => (
 					<FaqItemAccardion
 						key={index}

@@ -31,10 +31,10 @@ export const Sale = () => {
 			>
 				<Image
 					className='w-full h-full'
-					alt='asd'
+					alt='Подборка скидок Steam до&nbsp;90%'
 					width={385}
 					height={287}
-					src={'/images/home/discounts-img.png'}
+					src={'/images/home/discounnts-img.png'}
 				/>
 			</div>
 		</div>

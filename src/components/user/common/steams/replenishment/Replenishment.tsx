@@ -14,8 +14,8 @@ import { convertFromRub } from '@/utils/convertToRub'
 import { countTotalAmoutWithCommission } from '@/utils/count-total-amout-with-commission'
 import { extractNumber } from '@/utils/extractNumber'
 
-import { ProccesingPersonalDataPanel } from '../../../ui/ProccesingPersonalDataPanel/ProccesingPersonalDataPanel'
 import { Spinner } from '../../../ui/Spinner'
+import { ProccesingPersonalDataPanel } from '../../../ui/proccesing-personal-data-panel/ProccesingPersonalDataPanel'
 import { ModalLayout } from '../../modals/ModalLayout'
 
 import { CommissionPanel } from './ComissionPanel'

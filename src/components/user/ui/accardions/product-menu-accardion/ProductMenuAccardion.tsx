@@ -212,3 +212,9 @@ export const ProductMenuAccardion = () => {
 		</Accordion>
 	)
 }
+
+// {
+// 	'rounded-2xl': !isEnter,
+// 	'rounded-tl-2xl rounded-tr-2xl border-transparent bg-light-green':
+// 		isEnter
+// }

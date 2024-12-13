@@ -12,7 +12,7 @@ export const AllXBox = (props: AllXBoxProps) => {
 	return (
 		<div
 			className={cn(
-				"relative w-full min-h-[170px] flex flex-col justify-end rounded-xl_3 bg-[url('/images/home/xbox-mobile-bg.jpg')] lg:bg-[url('/images/home/xbox-bg.jpg')] bg-cover bg-center px-2 sm_1:px-5 xl_1:px-10 pb-4 overflow-hidden",
+				"relative w-full min-h-[170px] flex flex-col justify-end rounded-xl_3 bg-[url('/images/home/xbox-mobile-bg.jpg')] lg:bg-[url('/images/home/xbox-bg.jpg')] bg-cover bg-center px-2 xs:px-5 xl_1:px-10 pb-4 overflow-hidden",
 				className
 			)}
 		>

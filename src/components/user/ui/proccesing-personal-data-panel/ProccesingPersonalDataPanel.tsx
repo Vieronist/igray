@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 
-import styles from './ProccesingPersonalDataPanel.module.scss'
+import styles from './ProccesingPersonalDataPanel.module.css'
 
 interface ProccesingPersonalDataPanelProps {
 	checked?: boolean

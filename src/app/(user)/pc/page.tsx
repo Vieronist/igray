@@ -1,7 +1,7 @@
-import { ProductMenuAccardion } from '@/components/user/common/ProductMenuAccardion/ProductMenuAccardion'
 import { Breadcrumbs } from '@/components/user/ui/Breadcrumbs'
 import { Container } from '@/components/user/ui/Container'
 import { Heading } from '@/components/user/ui/Heading'
+import { ProductMenuAccardion } from '@/components/user/ui/accardions/product-menu-accardion/ProductMenuAccardion'
 
 import { publicUrl } from '@/config/page-routes/public'
 

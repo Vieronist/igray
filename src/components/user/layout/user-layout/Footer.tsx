@@ -3,6 +3,8 @@
 import { useRef } from 'react'
 import { ReactSVG } from 'react-svg'
 
+import { publicUrl } from '@/config/page-routes/public'
+
 import { FooterAdditionalInfo } from './footer/FooterAdditionalInfo'
 import { FooterNavigation } from './footer/FooterNavigation'
 import { PlatformsList } from './footer/PlatformList'
@@ -50,7 +52,15 @@ export const Footer = () => {
 								'Вопросы',
 								'Контакты'
 							]}
-							hrefs={['#', '#', '#', '#', '#', '#', '/contacts']}
+							hrefs={[
+								'#',
+								'#',
+								'#',
+								'#',
+								publicUrl.refund(),
+								publicUrl.frequentQuestions(),
+								publicUrl.contacts()
+							]}
 							className='block md:hidden'
 						/>
 
