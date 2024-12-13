@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 import { Badge } from '@/components/user/ui/Badge'
 
 export const Sale = () => {
@@ -29,11 +27,9 @@ export const Sale = () => {
 					'absolute right-0 max-w-[314px] md:max-w-[385px] lg:max-w-[280px] xl:max-w-[375px] h-auto bottom-[-70px] md:bottom-0 xl:bottom-0 md:right-0 xl:right-0 2xl:right-14 md:top-auto'
 				}
 			>
-				<Image
+				<img
 					className='w-full h-full'
 					alt='Подборка скидок Steam до&nbsp;90%'
-					width={385}
-					height={287}
 					src={'/images/home/discounnts-img.png'}
 				/>
 			</div>
