@@ -79,7 +79,8 @@ const config: Config = {
 				xl_2: '2rem',
 				xl_3: '2.875rem',
 				xl_4: '1.875rem',
-				xl_5: '1.75rem'
+				xl_5: '1.75rem',
+				xl_6: '0.625rem'
 			},
 			height: {
 				size_1: '3.625rem',

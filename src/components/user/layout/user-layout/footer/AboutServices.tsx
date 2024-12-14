@@ -15,9 +15,10 @@ export const AboutService = () => {
 				<p className='absolute bottom-[40px] left-[40px] text-[white] text-[20px] md:text-[30px] leading-[25.2px] tracking-tight text-left underline-from-font decoration-skip-ink-none font-steppe font-medium'>
 					Посмотри <br /> видео <br /> о сервисе
 				</p>
+
 				<ReactSVG
 					className='absolute bottom-[35px] right-[25px] lg:top-[50%] lg:right-[35%] lg:left-[50%] lg:transform lg:-translate-x-1/2 lg:-translate-y-1/2'
-					src='play-button.svg'
+					src='/images/icons/play-button.svg'
 				/>
 			</Link>
 		</>

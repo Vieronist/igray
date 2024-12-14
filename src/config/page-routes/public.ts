@@ -29,6 +29,10 @@ class PublicUrl extends UrlBuilder {
 		return this.root('/frequent-questions')
 	}
 
+	customerReviews(): string {
+		return this.root('/customer-reviews')
+	}
+
 	notFound(): string {
 		return this.root('/404')
 	}

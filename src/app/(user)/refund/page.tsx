@@ -109,7 +109,7 @@ export default function ContactsPage() {
 				<Heading className='mb-6' level={3}>
 					Частые вопросы
 				</Heading>
-				{/* xs:p-7  */}
+
 				<QuestionsAccardionList items={questions} />
 			</div>
 		</>
