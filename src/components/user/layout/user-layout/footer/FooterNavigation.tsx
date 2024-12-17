@@ -20,7 +20,7 @@ export const FooterNavigation = () => {
 				<NavItem
 					className='hover:text-gray-400 active:text-gray-400 transition-colors duration-300'
 					label={'О сервисе'}
-					href={'#'}
+					href={publicUrl.aboutServices()}
 				/>
 				<NavItem
 					className='hover:text-gray-400 active:text-gray-400 transition-colors duration-300'

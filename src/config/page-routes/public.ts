@@ -33,6 +33,10 @@ class PublicUrl extends UrlBuilder {
 		return this.root('/customer-reviews')
 	}
 
+	aboutServices(): string {
+		return this.root('/about-services')
+	}
+
 	notFound(): string {
 		return this.root('/404')
 	}

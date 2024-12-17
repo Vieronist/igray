@@ -4,13 +4,14 @@ import { cn } from '@/utils/clsx'
 
 interface FeedbackProps {
 	userName: string
+	avatar?: string
 	date: string
 	text: string
 	className?: string
 }
 
 export const Feedback = (props: FeedbackProps) => {
-	const { date, text, userName, className } = props
+	const { date, text, userName, avatar, className } = props
 
 	return (
 		<div
@@ -19,21 +20,25 @@ export const Feedback = (props: FeedbackProps) => {
 				className
 			)}
 		>
-			<div className='flex items-center w-full mb-6'>
-				<div className='flex gap-3 sm:w-[50%]'>
-					<Image
-						width={36}
-						height={36}
-						alt='logo'
-						src={'/images/user-logo-mini.png'}
-						className='object-contain rounded-full'
-					/>
+			<div className='flex items-center w-full mb-6 lg:mb-14'>
+				<div className='flex gap-4 items-center sm:w-[50%]'>
+					{avatar && (
+						<Image
+							width={36}
+							height={36}
+							alt='logo'
+							src={avatar}
+							className='rounded-xl w-11 h-11'
+						/>
+					)}
 
 					<div>
-						<span className='text-gray_color text-xl_6 block'>
+						<span className='text-gray_color text-xl_6 block mb-0.5'>
 							{date}
 						</span>
-						<span className='font-medium block'>{userName}</span>
+						<span className='font-medium block lg:text-xl'>
+							{userName}
+						</span>
 					</div>
 				</div>
 				<div className='flex ml-auto'>
@@ -75,6 +80,7 @@ export const Feedback = (props: FeedbackProps) => {
 					/>
 				</div>
 			</div>
+
 			<p className='font-steppe text-xl md:text-3xl font-normal leading-[1.2] max-w-[465px] w-full md:max-w-[460px]'>
 				{text}
 			</p>

@@ -54,7 +54,7 @@ export const Footer = () => {
 							]}
 							hrefs={[
 								'#',
-								'#',
+								publicUrl.aboutServices(),
 								'#',
 								'#',
 								publicUrl.refund(),

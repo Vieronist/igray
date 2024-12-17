@@ -1,5 +1,7 @@
 import { cva } from 'class-variance-authority'
 
+import { cn } from '@/utils/clsx'
+
 interface ContainerProps {
 	size?: 'sm' | 'xl'
 	className?: string
@@ -9,7 +11,7 @@ interface ContainerProps {
 const containerVariants = cva('mx-auto', {
 	variants: {
 		size: {
-			sm: 'max-w-[1330px]',
+			sm: 'max-w-[1310px]',
 			xl: 'max-w-[1450px] px-2.5'
 		}
 	},
@@ -19,7 +21,11 @@ const containerVariants = cva('mx-auto', {
 })
 
 export const Container = (props: ContainerProps) => {
-	const { children, size } = props
+	const { className, children, size } = props
 
-	return <div className={containerVariants({ size })}>{children}</div>
+	return (
+		<div className={cn(containerVariants({ size }), className)}>
+			{children}
+		</div>
+	)
 }

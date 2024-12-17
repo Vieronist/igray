@@ -1,7 +1,7 @@
 import { Bonus } from '@/components/user/common/home/Bonus'
 import { Sale } from '@/components/user/common/home/Sale'
-import { OurProducts } from '@/components/user/common/home/our-products.tsx/OurProducts'
 import { NewsList } from '@/components/user/common/news/NewsList'
+import { OurProducts } from '@/components/user/common/our-products/OurProducts'
 
 import { news } from '@/constants/news'
 
@@ -15,7 +15,11 @@ export default function HomePage() {
 
 			<NewsList className='my-10 lg:my-20' items={news} />
 
-			<OurProducts className='my-10 lg:my-16' />
+			<OurProducts
+				title='Наши продукты'
+				supTitle='Возможности'
+				className='my-10 lg:my-16'
+			/>
 		</div>
 	)
 }

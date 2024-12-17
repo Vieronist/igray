@@ -59,12 +59,16 @@ const config: Config = {
 				secondary_color: 'var(--secondary-color)',
 				gray_color: 'var(--gray-color)',
 				bg_color: 'var(--bg-color)',
+				bg_hover_color: 'var(--bg-hover-color)',
 				light_green: 'var(--light-green)',
 				light_green_border: 'var(--light-green-border)',
-				gray_color_primary: 'var(--gray-color-primary)'
+				gray_color_primary: 'var(--gray-color-primary)',
+				bg_dark_color: 'var(--bg-dark-color)',
+				secondary_gray_color: 'var(--secondary-gray-color)'
 			},
 			fontFamily: {
-				steppe: ['var(--font-steppe)', 'sans-serif']
+				steppe: ['var(--font-steppe)', 'sans-serif'],
+				montserrat: ['var(--font-montserrat)', 'sans-serif']
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -72,7 +76,8 @@ const config: Config = {
 				sm: 'calc(var(--radius) - 4px)',
 				xl_1: '2.5rem',
 				xl_2: '6.25rem',
-				xl_3: '2.125rem'
+				xl_3: '2.125rem',
+				xl_4: '3.125rem'
 			},
 			fontSize: {
 				xl_1: '1.375rem',

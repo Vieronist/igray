@@ -1,41 +1,65 @@
-import { FC } from 'react'
+import { cn } from '@/utils/clsx'
 
-import { ContactItem } from './ContactsItem'
+import { IconSvg } from '../../ui/Icon'
 
-interface IProps {
+export interface SocialNetwork {
+	iconName: string
+	link: string
+}
+
+interface ContactsProps {
 	title: string
 	phone: string
 	schedule: string
 	email: string
-	svgs: string[]
+	socialNetwork: SocialNetwork[]
+	className?: string
 }
 
-export const Contacts: FC<IProps> = ({
-	title,
-	phone,
-	schedule,
-	email,
-	svgs
-}) => {
+export const Contacts = (props: ContactsProps) => {
+	const { title, phone, schedule, email, socialNetwork, className } = props
+
 	return (
-		<article className='bg-white rounded-[50px] p-[30px] w-full h-[320px]'>
-			<h6 className='text-secondary_color mb-6 font-medium'>{title}</h6>
-			<p className='text-[28px] leading-[35px] '>{phone}</p>
-			<p className='text-[#ADADB8] mb-[21px] text-[12px]'>{schedule}</p>
-			<p className='mb-[42px] text-gray-800'>{email}</p>
-			<ul className='flex gap-[10px]'>
-				{svgs.map((svg, idx) => (
-					<ContactItem
-						href={
-							'tg.svg' === svg
-								? 'https://t.me/igray247'
-								: 'https://vk.com/igray24'
-						}
-						key={idx}
-						path={svg}
-					/>
+		<div
+			className={cn(
+				'bg-white rounded-xl_3 xl:w-[320px]  lg:rounded-xl_4 py-6 lg:py-8 px-5 lg:px-7 flex flex-col',
+				className
+			)}
+		>
+			<span className='block font-medium text-secondary_color mb-6 lg:mb-12'>
+				{title}
+			</span>
+
+			<div className='mb-5 lg:mb-14'>
+				<a
+					className='inline-block font-bold text-2xl xs:text-xl_2 font-montserrat mb-1.5'
+					href={`tel:${phone}`}
+				>
+					{phone}
+				</a>
+
+				<p className='font-montserrat font-medium text-secondary_gray_color text-xs mb-5'>
+					{schedule}
+				</p>
+
+				<a href={`mailto:${email}`}>{email}</a>
+			</div>
+
+			<div className='flex gap-2.5 mt-auto'>
+				{socialNetwork?.map(social => (
+					<a
+						key={social.iconName}
+						className='group hover:bg-primary_color hover:border-primary_color w-12 h-12 flex items-center justify-center border border-light_green rounded-2xl transition-all'
+						href={social.link}
+						target='_blank'
+					>
+						<IconSvg
+							id={social.iconName}
+							className='text-bg_dark_color w-5 h-5 group-hover:text-white transition-all'
+						/>
+					</a>
 				))}
-			</ul>
-		</article>
+			</div>
+		</div>
 	)
 }

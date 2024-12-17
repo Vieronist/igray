@@ -50,7 +50,7 @@ export default function ContactsPage() {
 					</div>
 
 					<div className='pb-12 border-b border-b-primary_opacity_color'>
-						<Heading className='text-2xl mb-5' level={2}>
+						<Heading className='text-2xl mb-5' level={2} size='md'>
 							Почему нельзя вернуть уже полученный товар?
 						</Heading>
 
@@ -86,7 +86,7 @@ export default function ContactsPage() {
 					</div>
 
 					<div>
-						<Heading className='text-2xl mb-5' level={2}>
+						<Heading className='text-2xl mb-5' level={2} size='md'>
 							Куда можно вернуть деньги?
 						</Heading>
 						<ol className='font-medium space-y-3 list-decimal pl-5'>
@@ -106,7 +106,7 @@ export default function ContactsPage() {
 			</Container>
 
 			<div className='p-5 xs:p-7 lg:p-10 xl_1:p-16 rounded-2xl xs:rounded-xl_1 xl_1:rounded-xl_2 border'>
-				<Heading className='mb-6' level={3}>
+				<Heading className='mb-6' level={3} size='sm'>
 					Частые вопросы
 				</Heading>
 

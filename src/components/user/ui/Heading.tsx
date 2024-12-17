@@ -12,31 +12,25 @@ interface HeadingProps {
 
 const headingVariants = cva('font-steppe font-extrabold leading-[1.1]', {
 	variants: {
-		level: {
-			1: 'text-xl_2 lg:text-xl_3',
-			2: 'text-xl_5',
-			3: 'text-xl_1'
-		},
 		size: {
-			// sm: 'text-sm',
-			// md: 'text-base',
-			// lg: 'text-lg'
+			lg: 'text-xl_2 lg:text-xl_3',
+			md: 'text-xl_5',
+			sm: 'text-xl_1'
 		}
 	},
 	defaultVariants: {
-		level: 1
-		// size: 'md'
+		size: 'lg'
 	}
 })
 
 export const Heading = (props: HeadingProps) => {
-	const { level, className, children } = props
+	const { level, className, children, size } = props
 
-	const Component = `h${level}` as keyof JSX.IntrinsicElements
+	const HeaderTag = `h${level}` as keyof JSX.IntrinsicElements
 
 	return (
-		<Component className={`${headingVariants({ level })} ${className}`}>
+		<HeaderTag className={`${headingVariants({ size })} ${className}`}>
 			{children}
-		</Component>
+		</HeaderTag>
 	)
 }
