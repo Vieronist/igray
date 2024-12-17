@@ -16,14 +16,6 @@ interface AdminLayoutProps {
 	children: React.ReactNode
 }
 
-const items = [
-	{
-		title: 'Список заказов',
-		url: '#',
-		icon: BringToFront
-	}
-]
-
 const menuItems = [
 	{ icon: BringToFront, label: 'Список заказов', href: '#' }
 	// { icon: User, label: 'Profile', href: '#' },

@@ -1,9 +1,5 @@
 'use client'
 
-import * as Dialog from '@radix-ui/react-dialog'
-import { useState } from 'react'
-
-import { Button } from '@/components/shadcn-ui/button'
 import { Badge } from '@/components/user/ui/Badge'
 
 import { cn } from '@/utils/clsx'
@@ -14,7 +10,6 @@ interface TopBannerServicesProps {
 
 export const TopBannerServices = (props: TopBannerServicesProps) => {
 	const { className } = props
-	const [modal, setModal] = useState(false)
 
 	return (
 		<div

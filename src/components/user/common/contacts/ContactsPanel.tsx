@@ -14,7 +14,7 @@ const socialNetwork = [
 	}
 ]
 
-const marketplaces = [
+export const marketplaces = [
 	{
 		name: 'Каталог',
 		iconName: '/images/icons/avito-full.svg',

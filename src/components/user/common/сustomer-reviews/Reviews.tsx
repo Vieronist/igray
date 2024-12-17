@@ -55,7 +55,7 @@ export const Reviews = () => {
 						/>
 					}
 					previousLabel={<img src='/images/icons/arrow-dark.svg' />}
-					onPageChange={test => console.log('Ок')}
+					onPageChange={() => console.log('Ок')}
 					pageRangeDisplayed={3}
 					marginPagesDisplayed={1}
 					pageCount={14}
