@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { cn } from '@/utils/clsx'
+import { cn } from '@/shared/utils/clsx'
 
 interface VideoReviewProps {
 	className?: string

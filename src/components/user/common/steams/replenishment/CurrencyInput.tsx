@@ -3,13 +3,11 @@
 import useHover from '@react-hook/hover'
 import { FC, useRef, useState } from 'react'
 
-import { symbols } from '@/constants/symbols'
+import { cn } from '@/shared/utils/clsx'
 
-import { cn } from '@/utils/clsx'
-
-import { CurrencyButton } from '../../../ui/Currency-button'
-
-import { Currencies } from '@/types/currency.interface'
+import { symbols } from '@/shared/constants/symbols'
+import { Currencies } from '@/shared/types/currency.interface'
+import { CurrencyButton } from '@/shared/ui/Currency-button'
 
 interface IProps {
 	currency: Currencies

@@ -1,12 +1,12 @@
-import { NewsList } from '@/components/user/common/news/NewsList'
+import { publicUrl } from '@/app/config/routes/page-routes/public'
+
 import { Reviews } from '@/components/user/common/сustomer-reviews/Reviews'
-import { Breadcrumbs } from '@/components/user/ui/Breadcrumbs'
-import { Container } from '@/components/user/ui/Container'
-import { Heading } from '@/components/user/ui/Heading'
 
-import { publicUrl } from '@/config/page-routes/public'
+import { NewsList } from '@/elements/news/ui/NewsList'
 
-import { news } from '@/constants/news'
+import { Breadcrumbs } from '@/shared/ui/Breadcrumbs'
+import { Container } from '@/shared/ui/Container'
+import { Heading } from '@/shared/ui/Heading'
 
 export default function CustomerReviewsPage() {
 	const breadcrumbs = [
@@ -24,7 +24,7 @@ export default function CustomerReviewsPage() {
 
 			<Reviews />
 
-			<NewsList className='mt-14' items={news} />
+			<NewsList className='mt-14' />
 		</Container>
 	)
 }

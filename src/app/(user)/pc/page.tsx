@@ -1,9 +1,9 @@
-import { Breadcrumbs } from '@/components/user/ui/Breadcrumbs'
-import { Container } from '@/components/user/ui/Container'
-import { Heading } from '@/components/user/ui/Heading'
-import { ProductMenuAccardion } from '@/components/user/ui/accardions/product-menu-accardion/ProductMenuAccardion'
+import { publicUrl } from '@/app/config/routes/page-routes/public'
 
-import { publicUrl } from '@/config/page-routes/public'
+import { Breadcrumbs } from '@/shared/ui/Breadcrumbs'
+import { Container } from '@/shared/ui/Container'
+import { Heading } from '@/shared/ui/Heading'
+import { ProductMenuAccardion } from '@/shared/ui/accardions/product-menu-accardion/ProductMenuAccardion'
 
 export default function HomePage() {
 	const breadcrumbs = [
@@ -12,7 +12,7 @@ export default function HomePage() {
 	]
 
 	return (
-		<Container size='sm'>
+		<Container>
 			<Breadcrumbs breadcrumbs={breadcrumbs} />
 
 			<Heading level={1} className='mb-5'>

@@ -1,9 +1,8 @@
 import { FC } from 'react'
 
-import { convertFromRub } from '@/utils/convertToRub'
-import { countTotalAmoutWithCommission } from '@/utils/count-total-amout-with-commission'
-
-import { Currencies } from '@/types/currency.interface'
+import { Currencies } from '@/shared/types/currency.interface'
+import { convertFromRub } from '@/shared/utils/convertToRub'
+import { countTotalAmoutWithCommission } from '@/shared/utils/count-total-amout-with-commission'
 
 interface IProps {
 	sum: number

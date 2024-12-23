@@ -1,16 +1,16 @@
+import { publicUrl } from '@/app/config/routes/page-routes/public'
+
 import { FaqList } from '@/components/user/common/faq-list/FaqList'
-import { NewsList } from '@/components/user/common/news/NewsList'
 import { SpeedPaymentBanner } from '@/components/user/common/steams/SpeedPaymentBanner'
 import { SteamInfo } from '@/components/user/common/steams/SteamInfo'
 import { Replenishment } from '@/components/user/common/steams/replenishment/Replenishment'
-import { Breadcrumbs } from '@/components/user/ui/Breadcrumbs'
-import { Container } from '@/components/user/ui/Container'
 
-import { publicUrl } from '@/config/page-routes/public'
+import { NewsList } from '@/elements/news/ui/NewsList'
 
-import { news } from '@/constants/news'
+import { Breadcrumbs } from '@/shared/ui/Breadcrumbs'
+import { Container } from '@/shared/ui/Container'
 
-export default function HomePage() {
+export default function SteamPage() {
 	const breadcrumbs = [
 		{ label: 'Главная', href: publicUrl.home() },
 		{ label: 'pc', href: publicUrl.pc() },
@@ -31,7 +31,7 @@ export default function HomePage() {
 					<SpeedPaymentBanner className='hidden 2xl:block' />
 					<FaqList />
 
-					<NewsList items={news} className='2xl:hidden' />
+					<NewsList className='2xl:hidden' />
 				</section>
 			</div>
 		</>

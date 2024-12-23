@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import { cn } from '@/utils/clsx'
+import { cn } from '@/shared/utils/clsx'
 
 interface FeedbackProps {
 	userName: string

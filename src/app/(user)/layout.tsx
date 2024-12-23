@@ -1,11 +1,11 @@
-import { Footer } from '@/components/user/layout/user-layout/Footer'
-import { Header } from '@/components/user/layout/user-layout/Header'
-import { Reviews } from '@/components/user/layout/user-layout/footer/Reviews'
-import { Container } from '@/components/user/ui/Container'
+import { cn } from '@/shared/utils/clsx'
 
-import { cn } from '@/utils/clsx'
+import { Footer } from '../config/layouts/user-layout/Footer'
+import { Header } from '../config/layouts/user-layout/Header'
+import { Reviews } from '../config/layouts/user-layout/footer/Reviews'
 
 import styles from './user.module.scss'
+import { Container } from '@/shared/ui/Container'
 
 export default function RootLayout({
 	children

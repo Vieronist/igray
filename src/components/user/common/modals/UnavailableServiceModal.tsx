@@ -2,9 +2,8 @@
 
 import { useEffect } from 'react'
 
-import { useServiceStore } from '@/store/service.store'
-
 import { ModalLayout } from './ModalLayout'
+import { useServiceStore } from '@/shared/store/service.store'
 
 export const UnavailableServiceModal = () => {
 	const { isModalVisible, setIsModalVisible } = useServiceStore()

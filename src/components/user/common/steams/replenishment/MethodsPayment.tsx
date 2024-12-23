@@ -1,7 +1,7 @@
 import { FC } from 'react'
 
 import { MethodPaymentItem } from './MethodsPaymentItem'
-import { PaymentMethods } from '@/types/payments.interface'
+import { PaymentMethods } from '@/shared/types/payments.interface'
 
 interface IProps {
 	onChange: (method: PaymentMethods) => void

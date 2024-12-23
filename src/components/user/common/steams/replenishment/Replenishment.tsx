@@ -4,18 +4,21 @@ import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
-import { maxSums, minSums } from '@/constants/sum'
+import { maxSums, minSums } from '@/shared/constants/sum'
+import { useCheckPromo } from '@/shared/hooks/queries/steam/useCheckPromo'
+import { usePayment } from '@/shared/hooks/queries/steam/usePayment'
+import { useGetCurrencyRate } from '@/shared/hooks/queries/useGetCurrencyRate'
+import { Currencies } from '@/shared/types/currency.interface'
+import {
+	IPaymentInputs,
+	PaymentMethods
+} from '@/shared/types/payments.interface'
+import { Spinner } from '@/shared/ui/Spinner'
+import { ProccesingPersonalDataPanel } from '@/shared/ui/proccesing-personal-data-panel/ProccesingPersonalDataPanel'
+import { convertFromRub } from '@/shared/utils/convertToRub'
+import { countTotalAmoutWithCommission } from '@/shared/utils/count-total-amout-with-commission'
+import { extractNumber } from '@/shared/utils/extractNumber'
 
-import { useCheckPromo } from '@/hooks/queries/steam/useCheckPromo'
-import { usePayment } from '@/hooks/queries/steam/usePayment'
-import { useGetCurrencyRate } from '@/hooks/queries/useGetCurrencyRate'
-
-import { convertFromRub } from '@/utils/convertToRub'
-import { countTotalAmoutWithCommission } from '@/utils/count-total-amout-with-commission'
-import { extractNumber } from '@/utils/extractNumber'
-
-import { Spinner } from '../../../ui/Spinner'
-import { ProccesingPersonalDataPanel } from '../../../ui/proccesing-personal-data-panel/ProccesingPersonalDataPanel'
 import { ModalLayout } from '../../modals/ModalLayout'
 
 import { CommissionPanel } from './ComissionPanel'
@@ -26,8 +29,6 @@ import { PayButton } from './PayButton'
 import { PromoInput } from './PromoInput'
 import { SteamLogin } from './SteamLogin'
 import { TotalAmount } from './TotalAmount'
-import { Currencies } from '@/types/currency.interface'
-import { IPaymentInputs, PaymentMethods } from '@/types/payments.interface'
 
 export const Replenishment = () => {
 	const router = useRouter()
@@ -82,6 +83,8 @@ export const Replenishment = () => {
 
 	const handlePayment: SubmitHandler<IPaymentInputs> = data => {
 		const { login, email } = data
+
+		console.log('data', data)
 
 		const currentSum = Number(extractNumber(sum))
 

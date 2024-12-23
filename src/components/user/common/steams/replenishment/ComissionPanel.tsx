@@ -1,8 +1,7 @@
 import { FC } from 'react'
 
-import { symbols } from '@/constants/symbols'
-
-import { Currencies } from '@/types/currency.interface'
+import { symbols } from '@/shared/constants/symbols'
+import { Currencies } from '@/shared/types/currency.interface'
 
 interface IProps {
 	currency: Currencies

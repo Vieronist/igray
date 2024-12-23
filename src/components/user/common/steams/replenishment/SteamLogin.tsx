@@ -1,11 +1,12 @@
+'use client'
+
 import useHover from '@react-hook/hover'
 import { FC, useRef, useState } from 'react'
 import { FieldErrors, UseFormRegister } from 'react-hook-form'
 
-import { cn } from '@/utils/clsx'
-
-import { Currencies } from '@/types/currency.interface'
-import { IPaymentInputs } from '@/types/payments.interface'
+import { Currencies } from '@/shared/types/currency.interface'
+import { IPaymentInputs } from '@/shared/types/payments.interface'
+import { cn } from '@/shared/utils/clsx'
 
 interface IProps {
 	register: UseFormRegister<IPaymentInputs>
@@ -51,7 +52,7 @@ export const SteamLogin: FC<IProps> = ({ register, errors, currency }) => {
 						{...register('login', { required: true })}
 						onFocus={() => setIsFocused(true)}
 						onBlur={() => setIsFocused(false)}
-						ref={currencyInputRef}
+						// ref={currencyInputRef}
 					/>
 				</div>
 				{errors.login && (

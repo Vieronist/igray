@@ -1,9 +1,7 @@
-'use client'
-
 import useHover from '@react-hook/hover'
 import { FC, useRef, useState } from 'react'
 
-import { cn } from '@/utils/clsx'
+import { cn } from '@/shared/utils/clsx'
 
 interface IProps {
 	checkPromo: (code: string) => void

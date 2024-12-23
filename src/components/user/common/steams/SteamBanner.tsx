@@ -2,9 +2,8 @@
 
 import { ReactSVG } from 'react-svg'
 
-import { cn } from '@/utils/clsx'
-
 import styles from './SteamBanner.module.scss'
+import { cn } from '@/shared/utils/clsx'
 
 export const SteamBanner = () => {
 	return (

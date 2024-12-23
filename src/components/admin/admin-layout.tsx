@@ -2,15 +2,14 @@
 
 import { BringToFront } from 'lucide-react'
 
+import { Button } from '@/shared/shadcn-ui/button'
 import {
 	Sidebar,
 	SidebarContent,
 	SidebarInset,
 	SidebarProvider,
 	SidebarTrigger
-} from '@/components/shadcn-ui/sidebar'
-
-import { Button } from '../shadcn-ui/button'
+} from '@/shared/shadcn-ui/sidebar'
 
 interface AdminLayoutProps {
 	children: React.ReactNode

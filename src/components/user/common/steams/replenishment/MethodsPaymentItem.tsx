@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { ReactSVG } from 'react-svg'
 
-import { PaymentMethods } from '@/types/payments.interface'
+import { PaymentMethods } from '@/shared/types/payments.interface'
 
 interface IProps {
 	svg: string

@@ -1,10 +1,11 @@
+'use client'
+
 import useHover from '@react-hook/hover'
 import { FC, useRef, useState } from 'react'
 import { FieldErrors, UseFormRegister } from 'react-hook-form'
 
-import { cn } from '@/utils/clsx'
-
-import { IPaymentInputs } from '@/types/payments.interface'
+import { IPaymentInputs } from '@/shared/types/payments.interface'
+import { cn } from '@/shared/utils/clsx'
 
 interface IProps {
 	register: UseFormRegister<IPaymentInputs>
@@ -40,9 +41,10 @@ export const EmailInput: FC<IProps> = ({ register, errors }) => {
 						required: true,
 						pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i
 					})}
+					id='email'
 					onFocus={() => setIsFocused(true)}
 					onBlur={() => setIsFocused(false)}
-					ref={currencyInputRef}
+					// ref={currencyInputRef}
 					placeholder='name@mail.com'
 					className='outline-none placeholder:text-gray_color'
 				/>

@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 
+import { useGetOrders } from '@/shared/hooks/queries/useGetOrders'
 import {
 	Table,
 	TableBody,
@@ -9,9 +10,7 @@ import {
 	TableHead,
 	TableHeader,
 	TableRow
-} from '@/components/shadcn-ui/table'
-
-import { useGetOrders } from '@/hooks/queries/useGetOrders'
+} from '@/shared/shadcn-ui/table'
 
 import { OrderPagination } from './order-pagination'
 
