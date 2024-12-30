@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+import tailwindcssAnimate from 'tailwindcss-animate'
 
 const config: Config = {
 	darkMode: ['class'],
@@ -17,6 +18,7 @@ const config: Config = {
 			md: '768px',
 			lg: '1024px',
 			xl: '1280px',
+			xl_2: '1310px',
 			xl_1: '1450px',
 			'2xl': '1536px'
 		},
@@ -47,27 +49,33 @@ const config: Config = {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
+				// backgroundImage: {
+				// 	'custom-gradient-2':
+				// 		'linear-gradient(134deg, #e4faf3 0%, rgba(228, 250, 243, 0.29) 34.5%, #e4faf3 67%, rgba(228, 250, 243, 0.34) 100%)'
+				// },
+
 				backgroundImage: {
-					'custom-gradient-2':
-						'linear-gradient(134deg, #e4faf3 0%, rgba(228, 250, 243, 0.29) 34.5%, #e4faf3 67%, rgba(228, 250, 243, 0.34) 100%)'
+					'my-gradient':
+						'linear-gradient(102deg, rgba(3, 5, 29, 0.85) 2.11%, rgba(255, 0, 0, 0.85) 100%)'
 				},
-				borderImage: {
-					gradients: {
-						'gradient-to-r':
-							'linear-gradient(141.87deg, #62CEA6 -13.43%, #72F2C1 46.91%, #66D7AD 98.32%)'
-					}
-				},
+
 				primary_color: 'var(--primary-color)',
 				primary_opacity_color: 'var(--primary-opacity-color)',
 				secondary_color: 'var(--secondary-color)',
 				gray_color: 'var(--gray-color)',
 				bg_color: 'var(--bg-color)',
 				bg_hover_color: 'var(--bg-hover-color)',
+				text_green: 'var(--text-green)',
 				light_green: 'var(--light-green)',
+				light_green_hover: 'var(--light-green-hover)',
 				light_green_border: 'var(--light-green-border)',
 				gray_color_primary: 'var(--gray-color-primary)',
+				gray_dark_color: 'var(--gray-dark-color)',
+				border_gray: 'var(--border-gray)',
 				bg_dark_color: 'var(--bg-dark-color)',
-				secondary_gray_color: 'var(--secondary-gray-color)'
+				secondary_gray_color: 'var(--secondary-gray-color)',
+				error_color: 'var(--error-color)',
+				bg_opacity_white: 'var(--bg-opacity-white)'
 			},
 			fontFamily: {
 				steppe: ['var(--font-steppe)', 'sans-serif'],
@@ -83,12 +91,13 @@ const config: Config = {
 				xl_4: '3.125rem'
 			},
 			fontSize: {
-				xl_1: '1.375rem',
-				xl_2: '2rem',
-				xl_3: '2.875rem',
-				xl_4: '1.875rem',
-				xl_5: '1.75rem',
-				xl_6: '0.625rem'
+				xl_1: '1.375rem', // 22px
+				xl_2: '2rem', // 32px
+				xl_3: '2.875rem', // 46px
+				xl_4: '1.875rem', // 30px
+				xl_5: '1.75rem', // 28px
+				xl_6: '0.625rem', // 10px
+				xl_7: '2.5rem' // 40px
 			},
 			height: {
 				size_1: '3.625rem',
@@ -122,7 +131,7 @@ const config: Config = {
 			}
 		}
 	},
-	plugins: [require('tailwindcss-animate')]
+	plugins: [tailwindcssAnimate]
 
 	//   require("tailwindcss-animate")
 }

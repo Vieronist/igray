@@ -1,3 +1,5 @@
+'use client'
+
 import { NewsList } from '@/elements/news/ui/NewsList'
 import { OurProducts } from '@/elements/our-products'
 

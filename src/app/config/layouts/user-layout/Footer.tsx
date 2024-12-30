@@ -23,7 +23,7 @@ export const Footer = () => {
 							onClick={() => ref.current?.focus()}
 							type='button'
 						>
-							<ReactSVG src='images/icons/search-big.svg' />
+							<ReactSVG src='/images/icons/search-big.svg' />
 						</button>
 
 						<input
@@ -66,7 +66,7 @@ export const Footer = () => {
 
 						<PlatformsList
 							title='PC'
-							hrefs={['/', '#', '#', '#', '#']}
+							hrefs={[publicUrl.steam(), '#', '#', '#', '#']}
 							options={[
 								'Steam',
 								'Battle NET',
@@ -77,7 +77,7 @@ export const Footer = () => {
 						/>
 
 						<PlatformsList
-							hrefs={['#', '#', '#', '#']}
+							hrefs={['#', publicUrl.xboxGame(), '#', '#']}
 							title='Xbox'
 							options={[
 								'Игры',
@@ -88,7 +88,7 @@ export const Footer = () => {
 						/>
 
 						<PlatformsList
-							hrefs={['#', '#', '#', '#']}
+							hrefs={['#', publicUrl.playstationGame(), '#', '#']}
 							title='PlayStation'
 							options={[
 								'Игры',

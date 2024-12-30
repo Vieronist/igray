@@ -1,21 +1,20 @@
-'use client'
-
 import { cva } from 'class-variance-authority'
 
 interface HeadingProps {
 	level: 1 | 2 | 3
-	size?: 'sm' | 'md' | 'lg'
+	size?: 'sm' | 'md' | 'lg' | 'lg_2'
 	color?: 'default' | 'primary' | 'secondary'
 	className?: string
 	children: React.ReactNode
 }
 
-const headingVariants = cva('font-steppe font-extrabold leading-[1.1]', {
+const headingVariants = cva('font-steppe leading-[1.1]', {
 	variants: {
 		size: {
-			lg: 'text-xl_2 lg:text-xl_3',
-			md: 'text-xl_5',
-			sm: 'text-xl_1'
+			lg: 'text-xl_2 lg:text-xl_3 font-extrabold ',
+			lg_2: 'text-xl_1 lg:text-4xl font-bold',
+			md: 'text-xl_5 font-extrabold',
+			sm: 'text-xl_1 font-extrabold'
 		}
 	},
 	defaultVariants: {

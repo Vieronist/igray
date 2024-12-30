@@ -1,4 +1,4 @@
-import type { ServiceCard } from './types'
+import type { ServiceCard } from './types/ServiceCard'
 
 export const servicesCard: ServiceCard[] = [
 	{

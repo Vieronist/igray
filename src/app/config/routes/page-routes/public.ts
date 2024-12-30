@@ -37,6 +37,14 @@ class PublicUrl extends UrlBuilder {
 		return this.root('/about-services')
 	}
 
+	xboxGame(): string {
+		return this.root('/xbox-game')
+	}
+
+	playstationGame(): string {
+		return this.root('/playstation-game')
+	}
+
 	notFound(): string {
 		return this.root('/404')
 	}

@@ -2,8 +2,9 @@
 
 import { FC } from 'react'
 
-import { PlatformItem } from './PlatformItem'
 import { useServiceStore } from '@/shared/store/service.store'
+
+import { PlatformItem } from './PlatformItem'
 
 interface IProps {
 	title: string

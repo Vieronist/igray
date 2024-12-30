@@ -1,4 +1,4 @@
-import type { QuestionItem, QuestionsCategory } from './types'
+import type { QuestionItem, QuestionsCategory } from '../model/types'
 
 export const questions: QuestionItem[] = [
 	{
