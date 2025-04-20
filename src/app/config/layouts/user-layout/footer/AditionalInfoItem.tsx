@@ -9,7 +9,7 @@ interface IProps {
 export const AdditionalInfo: FC<IProps> = ({ href, label }) => {
 	return (
 		<li>
-			<Link href={href} className='text-[12px] text-[#AFC5BE]'>
+			<Link href={href} className='text-[12px] "text-gray-700'>
 				{label}
 			</Link>
 		</li>

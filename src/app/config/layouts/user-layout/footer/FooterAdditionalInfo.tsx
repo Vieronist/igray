@@ -1,18 +1,20 @@
-import { AdditionalInfo } from './AditionalInfoItem'
+import { AdditionalInfo } from './AditionalInfoItem';
 
 export const FooterAdditionalInfo = () => {
-	const items = [
-		'Copyright © 2024 Igray24. Все права защищены.',
-		'Контакты',
-		'Политика конфиденциальности',
-		'Условия использования'
-	]
+  const items = [
+    { label: 'Контакты', href: '/contact' },
+    { label: 'Политика конфиденциальности', href: '/privacy-policy' },
+    { label: 'Условия использования', href: '/terms' },
+  ];
 
-	return (
-		<ul className='flex gap-x-5 md:gap-[24px] flex-wrap'>
-			{items.map((item, idx) => (
-				<AdditionalInfo href='#' label={item} key={idx} />
-			))}
-		</ul>
-	)
-}
+  return (
+    <ul className="w-full bg-transparent py-4 text-left text-sm flex flex-col md:flex-row justify-start items-center gap-x-5 md:gap-[24px]">
+      <li className="text-gray-700">
+        Copyright © 2024 Igray24. Все права защищены.
+      </li>
+      {items.map((item, idx) => (
+        <AdditionalInfo href={item.href} label={item.label} key={idx} />
+      ))}
+    </ul>
+  );
+};
