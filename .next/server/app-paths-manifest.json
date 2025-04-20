@@ -1,6 +1,7 @@
 {
-  "/(user)/page": "app/(user)/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
   "/(user)/privacy-policy/page": "app/(user)/privacy-policy/page.js",
+  "/(user)/page": "app/(user)/page.js",
   "/(user)/[...not-found]/page": "app/(user)/[...not-found]/page.js",
   "/(user)/pc/steam/page": "app/(user)/pc/steam/page.js"
 }
